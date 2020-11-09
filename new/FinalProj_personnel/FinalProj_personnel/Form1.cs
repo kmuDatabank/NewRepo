@@ -15,6 +15,7 @@ namespace FinalProj_personnel
         public Form1()
         {
 
+
             InitializeComponent();
         }
 
