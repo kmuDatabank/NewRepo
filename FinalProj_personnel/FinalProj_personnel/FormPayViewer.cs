@@ -26,5 +26,29 @@ namespace FinalProj_personnel
         {
             this.text = text;
         }
+
+        //기본금
+        private void buttonMoney_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //수당
+        private void buttonAllowance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //공제
+        private void buttonDeduction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //최종 임금
+        private void buttonFinalWage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

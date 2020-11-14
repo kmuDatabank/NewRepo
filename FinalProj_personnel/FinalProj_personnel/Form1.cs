@@ -13,7 +13,7 @@ namespace FinalProj_personnel
 {
     public partial class FormPersonnel : Form
     {
-        string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=databank;Charset=utf8";
+        string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
         private bool loadCompleted_ = false;
         public FormPersonnel()
         {
@@ -27,18 +27,26 @@ namespace FinalProj_personnel
             comboBoxMemberGender.Items.Add("남자");
             comboBoxMemberGender.Items.Add("여자");
 
+            //직급
+            comboBoxPosition.Items.Clear();
             comboBoxPosition.Items.Add("일반 사원");
             comboBoxPosition.Items.Add("부서장");
             comboBoxPosition.Items.Add("사장");
 
-            comboBoxDepartment.Items.Add("부서별");
-            comboBoxDepartment.Items.Add("이름별");
-            comboBoxDepartment.Items.Add("나이별");
+            //소속부서
+            comboBoxDepartment.Items.Clear();
+            comboBoxDepartment.Items.Add("인사부서");
+            comboBoxDepartment.Items.Add("개발부서");
+            comboBoxDepartment.Items.Add("관리부서");
 
+            //사원검색
+            comboBoxDepartmentType.Items.Clear();
             comboBoxDepartmentType.Items.Add("부서별");
             comboBoxDepartmentType.Items.Add("이름별");
             comboBoxDepartmentType.Items.Add("나이별");
 
+            //임의로 3개 생성하였음 -> 교수님 word파일참고하세요
+            comboBoxDepartmentName.Items.Clear();
             comboBoxDepartmentName.Items.Add("인사부서");
             comboBoxDepartmentName.Items.Add("개발부서");
             comboBoxDepartmentName.Items.Add("관리부서");
@@ -59,8 +67,10 @@ namespace FinalProj_personnel
         private void buttonMemberSave_Click(object sender, EventArgs e)
         {
 
+            /*
             if (loadCompleted_ == false)
                 return;
+            */
 
             PersonInfo personInfo = new PersonInfo();
             personInfo.name = textBoxMemberName.Text;
@@ -77,8 +87,8 @@ namespace FinalProj_personnel
             {
                 conn.Open();
 
-                string query = "INSERT INTO Personnel(name, gender, age,position, department, date , phoneNum, address) VALUES('" + personInfo.name + "' , " + personInfo.gender + ", '" + personInfo.age + ", '"
-                    + personInfo.position + ", '" + personInfo.department + ", '" + personInfo.date + ", '" + personInfo.phoneNum + ", '" + personInfo.address + "');";
+                string query = "INSERT INTO Personnel(name, gender, age,position, department, date , phoneNum, address) VALUES('" + personInfo.name + "' , '" + personInfo.gender + "', '" + personInfo.age + "', " 
+                    +"'"+ personInfo.position + "','" + personInfo.department + "','" + personInfo.date + "','" + personInfo.phoneNum + "','" + personInfo.address + "');";
                 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();             
