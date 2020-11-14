@@ -178,8 +178,12 @@ namespace FinalProj_personnel
 
 
 
+
         #endregion
 
-     
+        private void FormPersonnel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

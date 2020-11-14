@@ -69,6 +69,7 @@
             this.수당ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,9 +86,9 @@
             this.groupBox5.Controls.Add(this.buttonChangeDepartment);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Location = new System.Drawing.Point(314, 258);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(237, 116);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
@@ -97,7 +98,7 @@
             // 
             this.comboBoxDepartmentName.FormattingEnabled = true;
             this.comboBoxDepartmentName.Location = new System.Drawing.Point(104, 25);
-            this.comboBoxDepartmentName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxDepartmentName.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDepartmentName.Name = "comboBoxDepartmentName";
             this.comboBoxDepartmentName.Size = new System.Drawing.Size(98, 20);
             this.comboBoxDepartmentName.TabIndex = 19;
@@ -105,7 +106,7 @@
             // textBoxHeadDepartment
             // 
             this.textBoxHeadDepartment.Location = new System.Drawing.Point(104, 53);
-            this.textBoxHeadDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxHeadDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHeadDepartment.Multiline = true;
             this.textBoxHeadDepartment.Name = "textBoxHeadDepartment";
             this.textBoxHeadDepartment.Size = new System.Drawing.Size(98, 21);
@@ -114,7 +115,7 @@
             // buttonDeleteDepartment
             // 
             this.buttonDeleteDepartment.Location = new System.Drawing.Point(162, 84);
-            this.buttonDeleteDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeleteDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             this.buttonDeleteDepartment.Size = new System.Drawing.Size(50, 20);
             this.buttonDeleteDepartment.TabIndex = 5;
@@ -125,7 +126,7 @@
             // buttonSaveDepartment
             // 
             this.buttonSaveDepartment.Location = new System.Drawing.Point(18, 84);
-            this.buttonSaveDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSaveDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSaveDepartment.Name = "buttonSaveDepartment";
             this.buttonSaveDepartment.Size = new System.Drawing.Size(50, 20);
             this.buttonSaveDepartment.TabIndex = 1;
@@ -146,7 +147,7 @@
             // buttonChangeDepartment
             // 
             this.buttonChangeDepartment.Location = new System.Drawing.Point(90, 84);
-            this.buttonChangeDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonChangeDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChangeDepartment.Name = "buttonChangeDepartment";
             this.buttonChangeDepartment.Size = new System.Drawing.Size(50, 20);
             this.buttonChangeDepartment.TabIndex = 4;
@@ -174,9 +175,9 @@
             this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
             this.groupBox4.Controls.Add(this.listViewDepartmentType);
             this.groupBox4.Location = new System.Drawing.Point(314, 39);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(237, 199);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
@@ -185,7 +186,7 @@
             // textBoxInputDepartment
             // 
             this.textBoxInputDepartment.Location = new System.Drawing.Point(94, 25);
-            this.textBoxInputDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxInputDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxInputDepartment.Multiline = true;
             this.textBoxInputDepartment.Name = "textBoxInputDepartment";
             this.textBoxInputDepartment.Size = new System.Drawing.Size(72, 20);
@@ -194,7 +195,7 @@
             // buttonSearchDepartmentType
             // 
             this.buttonSearchDepartmentType.Location = new System.Drawing.Point(176, 24);
-            this.buttonSearchDepartmentType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchDepartmentType.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchDepartmentType.Name = "buttonSearchDepartmentType";
             this.buttonSearchDepartmentType.Size = new System.Drawing.Size(45, 21);
             this.buttonSearchDepartmentType.TabIndex = 22;
@@ -205,7 +206,7 @@
             // buttonTimeCard
             // 
             this.buttonTimeCard.Location = new System.Drawing.Point(20, 166);
-            this.buttonTimeCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTimeCard.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTimeCard.Name = "buttonTimeCard";
             this.buttonTimeCard.Size = new System.Drawing.Size(50, 20);
             this.buttonTimeCard.TabIndex = 21;
@@ -216,7 +217,7 @@
             // buttonDeletePerson
             // 
             this.buttonDeletePerson.Location = new System.Drawing.Point(162, 166);
-            this.buttonDeletePerson.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeletePerson.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeletePerson.Name = "buttonDeletePerson";
             this.buttonDeletePerson.Size = new System.Drawing.Size(50, 20);
             this.buttonDeletePerson.TabIndex = 20;
@@ -227,7 +228,7 @@
             // buttonChangePerson
             // 
             this.buttonChangePerson.Location = new System.Drawing.Point(94, 166);
-            this.buttonChangePerson.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonChangePerson.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChangePerson.Name = "buttonChangePerson";
             this.buttonChangePerson.Size = new System.Drawing.Size(47, 20);
             this.buttonChangePerson.TabIndex = 4;
@@ -239,7 +240,7 @@
             // 
             this.comboBoxDepartmentType.FormattingEnabled = true;
             this.comboBoxDepartmentType.Location = new System.Drawing.Point(18, 27);
-            this.comboBoxDepartmentType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxDepartmentType.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
             this.comboBoxDepartmentType.Size = new System.Drawing.Size(68, 20);
             this.comboBoxDepartmentType.TabIndex = 2;
@@ -250,7 +251,7 @@
             // 
             this.listViewDepartmentType.HideSelection = false;
             this.listViewDepartmentType.Location = new System.Drawing.Point(12, 59);
-            this.listViewDepartmentType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewDepartmentType.Margin = new System.Windows.Forms.Padding(2);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
             this.listViewDepartmentType.Size = new System.Drawing.Size(211, 105);
             this.listViewDepartmentType.TabIndex = 3;
@@ -276,9 +277,9 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.textBoxMemberName);
             this.groupBox3.Location = new System.Drawing.Point(88, 39);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(174, 324);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
@@ -287,7 +288,7 @@
             // buttonMemberSave
             // 
             this.buttonMemberSave.Location = new System.Drawing.Point(57, 296);
-            this.buttonMemberSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMemberSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMemberSave.Name = "buttonMemberSave";
             this.buttonMemberSave.Size = new System.Drawing.Size(53, 24);
             this.buttonMemberSave.TabIndex = 16;
@@ -298,7 +299,7 @@
             // textBoxAddress
             // 
             this.textBoxAddress.Location = new System.Drawing.Point(75, 273);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(73, 20);
@@ -317,7 +318,7 @@
             // textBoxPhoneNum
             // 
             this.textBoxPhoneNum.Location = new System.Drawing.Point(75, 241);
-            this.textBoxPhoneNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPhoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhoneNum.Multiline = true;
             this.textBoxPhoneNum.Name = "textBoxPhoneNum";
             this.textBoxPhoneNum.Size = new System.Drawing.Size(73, 20);
@@ -336,7 +337,7 @@
             // textBoxDate
             // 
             this.textBoxDate.Location = new System.Drawing.Point(75, 208);
-            this.textBoxDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDate.Multiline = true;
             this.textBoxDate.Name = "textBoxDate";
             this.textBoxDate.Size = new System.Drawing.Size(73, 20);
@@ -356,7 +357,7 @@
             // 
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(75, 172);
-            this.comboBoxDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(73, 20);
             this.comboBoxDepartment.TabIndex = 9;
@@ -375,7 +376,7 @@
             // 
             this.comboBoxPosition.FormattingEnabled = true;
             this.comboBoxPosition.Location = new System.Drawing.Point(75, 137);
-            this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPosition.Name = "comboBoxPosition";
             this.comboBoxPosition.Size = new System.Drawing.Size(73, 20);
             this.comboBoxPosition.TabIndex = 7;
@@ -393,7 +394,7 @@
             // textBoxMemberAge
             // 
             this.textBoxMemberAge.Location = new System.Drawing.Point(75, 97);
-            this.textBoxMemberAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMemberAge.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMemberAge.Multiline = true;
             this.textBoxMemberAge.Name = "textBoxMemberAge";
             this.textBoxMemberAge.Size = new System.Drawing.Size(73, 20);
@@ -413,7 +414,7 @@
             // 
             this.comboBoxMemberGender.FormattingEnabled = true;
             this.comboBoxMemberGender.Location = new System.Drawing.Point(75, 63);
-            this.comboBoxMemberGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMemberGender.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMemberGender.Name = "comboBoxMemberGender";
             this.comboBoxMemberGender.Size = new System.Drawing.Size(73, 20);
             this.comboBoxMemberGender.TabIndex = 3;
@@ -441,7 +442,7 @@
             // textBoxMemberName
             // 
             this.textBoxMemberName.Location = new System.Drawing.Point(75, 29);
-            this.textBoxMemberName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMemberName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMemberName.Multiline = true;
             this.textBoxMemberName.Name = "textBoxMemberName";
             this.textBoxMemberName.Size = new System.Drawing.Size(73, 20);
@@ -496,20 +497,31 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(591, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "도재우";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 398);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPersonnel";
             this.Text = "인사";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPersonnel_FormClosing);
+            this.Load += new System.EventHandler(this.FormPersonnel_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -564,6 +576,7 @@
         private System.Windows.Forms.ToolStripMenuItem 수당ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 공제ToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
