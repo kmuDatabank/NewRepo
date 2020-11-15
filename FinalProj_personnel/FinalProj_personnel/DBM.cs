@@ -30,7 +30,7 @@ namespace FinalProj_personnel
             String temppw = "";
             String result = "";
             String tempname = "";
-            String suc = "";
+            String suc = "0";
 
 
 
@@ -70,14 +70,17 @@ namespace FinalProj_personnel
                 MessageBox.Show("where is your ID?");
             }
 
-            if (suc == "1")
+            if (suc == "1")//recent 추가
             {
+                using (DBM.Getinstance())
+                {
+                    String query4 = "UPDATE " + "account" + " SET recently=" + "\'" + suc + "\'" + " WHERE NAME =" + "\'" + result + "\'";
+                    conn.Open();
 
+                    MySqlCommand cmd = new MySqlCommand(query4, conn);
+
+                }
             }
-
-
-
-
 
 
             return result;
