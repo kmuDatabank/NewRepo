@@ -186,7 +186,7 @@ namespace FinalProj_personnel
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("부서장이 등록되었습니다.");
+                MessageBox.Show("부서장 등록되었습니다.");
             }
 
 
