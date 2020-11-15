@@ -31,6 +31,11 @@ namespace FinalProj_personnel
                 form.Show();
             }
 
+            DBM.GetDBMinstance().checkauth(textBox_ID.Text, textBox_pw.Text);
+
+
+
+
         }
 
 
