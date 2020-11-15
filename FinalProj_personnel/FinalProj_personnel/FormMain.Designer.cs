@@ -45,6 +45,7 @@
             this.buttonPersonnel.TabIndex = 0;
             this.buttonPersonnel.Text = "인사";
             this.buttonPersonnel.UseVisualStyleBackColor = true;
+            this.buttonPersonnel.Click += new System.EventHandler(this.buttonPersonnel_Click);
             // 
             // buttonWork
             // 
@@ -54,6 +55,7 @@
             this.buttonWork.TabIndex = 1;
             this.buttonWork.Text = "업무";
             this.buttonWork.UseVisualStyleBackColor = true;
+            this.buttonWork.Click += new System.EventHandler(this.buttonWork_Click);
             // 
             // buttonApproval
             // 
@@ -63,6 +65,7 @@
             this.buttonApproval.TabIndex = 2;
             this.buttonApproval.Text = "결재";
             this.buttonApproval.UseVisualStyleBackColor = true;
+            this.buttonApproval.Click += new System.EventHandler(this.buttonApproval_Click);
             // 
             // buttonMail
             // 

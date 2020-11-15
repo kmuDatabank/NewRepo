@@ -16,7 +16,7 @@ namespace FinalProj_personnel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPersonnel());
+            Application.Run(new Loginform());
         }
     }
 }

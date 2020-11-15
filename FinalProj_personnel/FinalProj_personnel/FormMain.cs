@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FinalProj_personnel
 {
     public partial class FormMain : Form
@@ -17,9 +18,26 @@ namespace FinalProj_personnel
             InitializeComponent();
         }
 
+        private void buttonPersonnel_Click(object sender, EventArgs e)
+        {
+            FormPersonnel form = new FormPersonnel();
+            form.Show();
+        }
+
+        private void buttonWork_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonApproval_Click(object sender, EventArgs e)
+        {
+            FormApproval form = new FormApproval();
+            form.Show();
+        }
+
         private void button_logout_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
     }
 }
