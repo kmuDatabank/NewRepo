@@ -17,9 +17,14 @@ namespace FinalProj_personnel
             InitializeComponent();
         }
 
-        private void Loginform_Load(object sender, EventArgs e)
+        private void Loginform_Load(object sender, EventArgs e)//남은것은 체크가 된 정보를 어떻게 저장할지가,, 파일입출력? DB?
         {
-            String check=DBM.GetDBMinstance().autoload();
+            String check="";
+            if (checkBox_autoload.Checked)
+            {
+                check = DBM.GetDBMinstance().autoload();
+            }
+           
 
             if (check == "")//결과값 없음 
             {
