@@ -16,5 +16,10 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
         }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

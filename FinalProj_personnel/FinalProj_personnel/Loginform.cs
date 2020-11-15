@@ -25,6 +25,11 @@ namespace FinalProj_personnel
         private void button1_Click(object sender, EventArgs e)//loginb button
         {
 
+            DBM.GetDBMinstance().checkauth(textBox_ID.Text, textBox_pw.Text);
+
+
+
+
         }
 
 
