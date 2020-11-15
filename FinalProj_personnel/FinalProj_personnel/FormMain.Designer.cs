@@ -39,9 +39,10 @@
             // 
             // buttonPersonnel
             // 
-            this.buttonPersonnel.Location = new System.Drawing.Point(67, 125);
+            this.buttonPersonnel.Location = new System.Drawing.Point(129, 155);
+            this.buttonPersonnel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPersonnel.Name = "buttonPersonnel";
-            this.buttonPersonnel.Size = new System.Drawing.Size(156, 40);
+            this.buttonPersonnel.Size = new System.Drawing.Size(223, 60);
             this.buttonPersonnel.TabIndex = 0;
             this.buttonPersonnel.Text = "인사";
             this.buttonPersonnel.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // buttonWork
             // 
-            this.buttonWork.Location = new System.Drawing.Point(67, 195);
+            this.buttonWork.Location = new System.Drawing.Point(129, 259);
+            this.buttonWork.Margin = new System.Windows.Forms.Padding(4);
             this.buttonWork.Name = "buttonWork";
-            this.buttonWork.Size = new System.Drawing.Size(156, 39);
+            this.buttonWork.Size = new System.Drawing.Size(223, 58);
             this.buttonWork.TabIndex = 1;
             this.buttonWork.Text = "업무";
             this.buttonWork.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // buttonApproval
             // 
-            this.buttonApproval.Location = new System.Drawing.Point(67, 257);
+            this.buttonApproval.Location = new System.Drawing.Point(129, 353);
+            this.buttonApproval.Margin = new System.Windows.Forms.Padding(4);
             this.buttonApproval.Name = "buttonApproval";
-            this.buttonApproval.Size = new System.Drawing.Size(156, 42);
+            this.buttonApproval.Size = new System.Drawing.Size(223, 63);
             this.buttonApproval.TabIndex = 2;
             this.buttonApproval.Text = "결재";
             this.buttonApproval.UseVisualStyleBackColor = true;
@@ -69,9 +72,10 @@
             // 
             // buttonMail
             // 
-            this.buttonMail.Location = new System.Drawing.Point(67, 329);
+            this.buttonMail.Location = new System.Drawing.Point(129, 461);
+            this.buttonMail.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMail.Name = "buttonMail";
-            this.buttonMail.Size = new System.Drawing.Size(156, 42);
+            this.buttonMail.Size = new System.Drawing.Size(223, 63);
             this.buttonMail.TabIndex = 3;
             this.buttonMail.Text = "쪽지";
             this.buttonMail.UseVisualStyleBackColor = true;
@@ -79,26 +83,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 33);
+            this.label1.Location = new System.Drawing.Point(74, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "이름";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 66);
+            this.label2.Location = new System.Drawing.Point(74, 99);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(44, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "직급";
             // 
             // button_logout
             // 
-            this.button_logout.Location = new System.Drawing.Point(318, 28);
+            this.button_logout.Location = new System.Drawing.Point(358, 22);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(75, 23);
+            this.button_logout.Size = new System.Drawing.Size(107, 34);
             this.button_logout.TabIndex = 6;
             this.button_logout.Text = "logout";
             this.button_logout.UseVisualStyleBackColor = true;
@@ -106,9 +113,9 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 436);
+            this.ClientSize = new System.Drawing.Size(490, 559);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -116,6 +123,7 @@
             this.Controls.Add(this.buttonApproval);
             this.Controls.Add(this.buttonWork);
             this.Controls.Add(this.buttonPersonnel);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "메인 화면";
             this.ResumeLayout(false);
