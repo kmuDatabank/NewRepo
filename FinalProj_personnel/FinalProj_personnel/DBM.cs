@@ -11,7 +11,7 @@ namespace FinalProj_personnel
 {
     class DBM
     {
-        private static String strconn = "Server=49.50.174.201;Database=s5414529;Uid=s5414529;Pwd=s5414529;Charset=utf8";
+        private static String strconn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
         private static MySqlConnection conn = new MySqlConnection(strconn);
         private static DBM db = new DBM();//클래스의 객체 싱글톤 가능? 
         public static MySqlConnection Getinstance()//using 에 넣을것 
@@ -100,7 +100,7 @@ namespace FinalProj_personnel
             using (DBM.Getinstance())
             {
                 DBM.Getinstance().Open();
-                String query = "SELECT * FROM account WHERE  recent=" + "1";
+                String query = "SELECT * FROM account WHERE  recently=" + "1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
