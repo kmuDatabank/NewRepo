@@ -173,6 +173,22 @@ namespace FinalProj_personnel
         #region 부서등록 부분 -> 등록, 수정, 삭제
         private void buttonSaveDepartment_Click(object sender, EventArgs e) //등록
         {
+            PersonInfo personInfo = new PersonInfo();
+            personInfo.departmentName = comboBoxDepartmentName.SelectedItem.ToString();
+            personInfo.headDepartment = textBoxHeadDepartment.Text;
+
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+
+                string query = "INSERT INTO Department(departmentName, headDepartment ) VALUES('" + personInfo.departmentName + "' , '" + personInfo.headDepartment + "');";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("부서장이 등록되었습니다.");
+            }
+
 
         }
         private void buttonChangeDepartment_Click(object sender, EventArgs e) //수정
