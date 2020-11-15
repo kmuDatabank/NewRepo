@@ -19,21 +19,36 @@ namespace FinalProj_personnel
 
         private void Loginform_Load(object sender, EventArgs e)
         {
+            String check=DBM.GetDBMinstance().autoload();
+
+            if (check == "")//결과값 없음 
+            {
+
+            }
+            else if (check != "")//최근 접속한 아이디가 존재
+            {
+                var a=check.Split(',');
+                textBox_ID.Text = a[0];
+                textBox_pw.Text = a[1];
+            }
+            
+
+
+
+
+
 
         }
 
-        private void button1_Click(object sender, EventArgs e)//loginb button
+        private void button1_Click(object sender, EventArgs e)//login button
         {
-            int a = 0;
-            if (a == 0)
-            {
-                FormMain form = new FormMain();
-                form.Show();
-            }
-
-            DBM.GetDBMinstance().checkauth(textBox_ID.Text, textBox_pw.Text);
+            String checkname = "";
 
 
+
+            checkname=DBM.GetDBMinstance().checkauth(textBox_ID.Text, textBox_pw.Text);//사용자의 이름을 받음
+            
+            
 
 
         }
