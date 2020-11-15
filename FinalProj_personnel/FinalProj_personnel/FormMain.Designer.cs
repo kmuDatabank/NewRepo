@@ -34,6 +34,7 @@
             this.buttonMail = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button_logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonPersonnel
@@ -90,11 +91,21 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "직급";
             // 
+            // button_logout
+            // 
+            this.button_logout.Location = new System.Drawing.Point(318, 28);
+            this.button_logout.Name = "button_logout";
+            this.button_logout.Size = new System.Drawing.Size(75, 23);
+            this.button_logout.TabIndex = 6;
+            this.button_logout.Text = "logout";
+            this.button_logout.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 436);
+            this.ClientSize = new System.Drawing.Size(431, 436);
+            this.Controls.Add(this.button_logout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonMail);
@@ -116,5 +127,6 @@
         private System.Windows.Forms.Button buttonMail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_logout;
     }
 }
