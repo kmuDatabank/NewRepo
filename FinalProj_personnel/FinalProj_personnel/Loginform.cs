@@ -24,6 +24,12 @@ namespace FinalProj_personnel
 
         private void button1_Click(object sender, EventArgs e)//loginb button
         {
+            int a = 0;
+            if (a == 0)
+            {
+                FormMain form = new FormMain();
+                form.Show();
+            }
 
         }
 
