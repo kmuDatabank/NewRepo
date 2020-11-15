@@ -40,7 +40,7 @@
             // buttonPersonnel
             // 
             this.buttonPersonnel.Location = new System.Drawing.Point(129, 155);
-            this.buttonPersonnel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPersonnel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPersonnel.Name = "buttonPersonnel";
             this.buttonPersonnel.Size = new System.Drawing.Size(223, 60);
             this.buttonPersonnel.TabIndex = 0;
@@ -51,7 +51,7 @@
             // buttonWork
             // 
             this.buttonWork.Location = new System.Drawing.Point(129, 259);
-            this.buttonWork.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonWork.Margin = new System.Windows.Forms.Padding(4);
             this.buttonWork.Name = "buttonWork";
             this.buttonWork.Size = new System.Drawing.Size(223, 58);
             this.buttonWork.TabIndex = 1;
@@ -62,7 +62,7 @@
             // buttonApproval
             // 
             this.buttonApproval.Location = new System.Drawing.Point(129, 353);
-            this.buttonApproval.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonApproval.Margin = new System.Windows.Forms.Padding(4);
             this.buttonApproval.Name = "buttonApproval";
             this.buttonApproval.Size = new System.Drawing.Size(223, 63);
             this.buttonApproval.TabIndex = 2;
@@ -73,7 +73,7 @@
             // buttonMail
             // 
             this.buttonMail.Location = new System.Drawing.Point(129, 461);
-            this.buttonMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMail.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMail.Name = "buttonMail";
             this.buttonMail.Size = new System.Drawing.Size(223, 63);
             this.buttonMail.TabIndex = 3;
@@ -103,7 +103,7 @@
             // button_logout
             // 
             this.button_logout.Location = new System.Drawing.Point(358, 22);
-            this.button_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(107, 34);
             this.button_logout.TabIndex = 6;
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 564);
+            this.ClientSize = new System.Drawing.Size(490, 559);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -123,7 +123,7 @@
             this.Controls.Add(this.buttonApproval);
             this.Controls.Add(this.buttonWork);
             this.Controls.Add(this.buttonPersonnel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "메인 화면";
             this.ResumeLayout(false);
