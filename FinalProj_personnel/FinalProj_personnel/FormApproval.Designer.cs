@@ -31,53 +31,53 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelRank = new System.Windows.Forms.Label();
             this.groupBoxnewAppr = new System.Windows.Forms.GroupBox();
-            this.labelnewappr_name = new System.Windows.Forms.Label();
-            this.labelnewappr_work = new System.Windows.Forms.Label();
-            this.labelnewappr_text = new System.Windows.Forms.Label();
-            this.labelnewappr_comment = new System.Windows.Forms.Label();
-            this.textBoxnewappr_name = new System.Windows.Forms.TextBox();
-            this.textBoxnewappr_text = new System.Windows.Forms.TextBox();
-            this.textBoxnewappr_comment = new System.Windows.Forms.TextBox();
-            this.comboBoxnewappr_work = new System.Windows.Forms.ComboBox();
             this.buttonnewappr = new System.Windows.Forms.Button();
+            this.comboBoxnewappr_work = new System.Windows.Forms.ComboBox();
+            this.textBoxnewappr_comment = new System.Windows.Forms.TextBox();
+            this.textBoxnewappr_text = new System.Windows.Forms.TextBox();
+            this.textBoxnewappr_name = new System.Windows.Forms.TextBox();
+            this.labelnewappr_comment = new System.Windows.Forms.Label();
+            this.labelnewappr_text = new System.Windows.Forms.Label();
+            this.labelnewappr_work = new System.Windows.Forms.Label();
+            this.labelnewappr_name = new System.Windows.Forms.Label();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBoxSarch_name = new System.Windows.Forms.GroupBox();
-            this.textBoxsaerch_name = new System.Windows.Forms.TextBox();
-            this.labelSeach_name = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.buttonsearch_name = new System.Windows.Forms.Button();
-            this.buttonname_next = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxsearch_step = new System.Windows.Forms.ComboBox();
             this.buttonstep_next = new System.Windows.Forms.Button();
             this.buttonsearch_step = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxSearch_work = new System.Windows.Forms.GroupBox();
+            this.comboBoxsearch_work = new System.Windows.Forms.ComboBox();
             this.buttonwork_next = new System.Windows.Forms.Button();
             this.buttonsearch_work = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.labelsearch_work = new System.Windows.Forms.Label();
-            this.comboBoxsearch_work = new System.Windows.Forms.ComboBox();
-            this.comboBoxsearch_step = new System.Windows.Forms.ComboBox();
-            this.buttonappr = new System.Windows.Forms.Button();
-            this.textBoxappr_comment = new System.Windows.Forms.TextBox();
-            this.textBoxappr_text = new System.Windows.Forms.TextBox();
-            this.textBoxappr_name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelappr_name = new System.Windows.Forms.Label();
-            this.textBoxappr_work = new System.Windows.Forms.TextBox();
+            this.groupBoxSarch_name = new System.Windows.Forms.GroupBox();
+            this.buttonname_next = new System.Windows.Forms.Button();
+            this.buttonsearch_name = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBoxsaerch_name = new System.Windows.Forms.TextBox();
+            this.labelSeach_name = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonreturn = new System.Windows.Forms.Button();
             this.textBoxreturn = new System.Windows.Forms.TextBox();
             this.labelreturn = new System.Windows.Forms.Label();
-            this.buttonreturn = new System.Windows.Forms.Button();
+            this.textBoxappr_work = new System.Windows.Forms.TextBox();
+            this.buttonappr = new System.Windows.Forms.Button();
+            this.textBoxappr_text = new System.Windows.Forms.TextBox();
+            this.labelappr_name = new System.Windows.Forms.Label();
+            this.textBoxappr_comment = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxappr_name = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBoxnewAppr.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBoxSarch_name.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBoxSearch_work.SuspendLayout();
+            this.groupBoxSarch_name.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelName
@@ -116,32 +116,45 @@
             this.groupBoxnewAppr.TabStop = false;
             this.groupBoxnewAppr.Text = "신규 결재 작성";
             // 
-            // labelnewappr_name
+            // buttonnewappr
             // 
-            this.labelnewappr_name.AutoSize = true;
-            this.labelnewappr_name.Location = new System.Drawing.Point(22, 41);
-            this.labelnewappr_name.Name = "labelnewappr_name";
-            this.labelnewappr_name.Size = new System.Drawing.Size(57, 12);
-            this.labelnewappr_name.TabIndex = 3;
-            this.labelnewappr_name.Text = "결재 제목";
+            this.buttonnewappr.Location = new System.Drawing.Point(99, 377);
+            this.buttonnewappr.Name = "buttonnewappr";
+            this.buttonnewappr.Size = new System.Drawing.Size(101, 31);
+            this.buttonnewappr.TabIndex = 11;
+            this.buttonnewappr.Text = "결재 등록";
+            this.buttonnewappr.UseVisualStyleBackColor = true;
+            this.buttonnewappr.Click += new System.EventHandler(this.buttonnewappr_Click);
             // 
-            // labelnewappr_work
+            // comboBoxnewappr_work
             // 
-            this.labelnewappr_work.AutoSize = true;
-            this.labelnewappr_work.Location = new System.Drawing.Point(22, 81);
-            this.labelnewappr_work.Name = "labelnewappr_work";
-            this.labelnewappr_work.Size = new System.Drawing.Size(57, 12);
-            this.labelnewappr_work.TabIndex = 4;
-            this.labelnewappr_work.Text = "관련 업무";
+            this.comboBoxnewappr_work.FormattingEnabled = true;
+            this.comboBoxnewappr_work.Location = new System.Drawing.Point(127, 81);
+            this.comboBoxnewappr_work.Name = "comboBoxnewappr_work";
+            this.comboBoxnewappr_work.Size = new System.Drawing.Size(158, 20);
+            this.comboBoxnewappr_work.TabIndex = 10;
             // 
-            // labelnewappr_text
+            // textBoxnewappr_comment
             // 
-            this.labelnewappr_text.AutoSize = true;
-            this.labelnewappr_text.Location = new System.Drawing.Point(22, 128);
-            this.labelnewappr_text.Name = "labelnewappr_text";
-            this.labelnewappr_text.Size = new System.Drawing.Size(57, 12);
-            this.labelnewappr_text.TabIndex = 5;
-            this.labelnewappr_text.Text = "결재 내용";
+            this.textBoxnewappr_comment.Location = new System.Drawing.Point(127, 327);
+            this.textBoxnewappr_comment.Name = "textBoxnewappr_comment";
+            this.textBoxnewappr_comment.Size = new System.Drawing.Size(158, 21);
+            this.textBoxnewappr_comment.TabIndex = 9;
+            // 
+            // textBoxnewappr_text
+            // 
+            this.textBoxnewappr_text.Location = new System.Drawing.Point(127, 125);
+            this.textBoxnewappr_text.Multiline = true;
+            this.textBoxnewappr_text.Name = "textBoxnewappr_text";
+            this.textBoxnewappr_text.Size = new System.Drawing.Size(158, 185);
+            this.textBoxnewappr_text.TabIndex = 8;
+            // 
+            // textBoxnewappr_name
+            // 
+            this.textBoxnewappr_name.Location = new System.Drawing.Point(127, 38);
+            this.textBoxnewappr_name.Name = "textBoxnewappr_name";
+            this.textBoxnewappr_name.Size = new System.Drawing.Size(158, 21);
+            this.textBoxnewappr_name.TabIndex = 7;
             // 
             // labelnewappr_comment
             // 
@@ -152,44 +165,32 @@
             this.labelnewappr_comment.TabIndex = 6;
             this.labelnewappr_comment.Text = "결재 코멘트";
             // 
-            // textBoxnewappr_name
+            // labelnewappr_text
             // 
-            this.textBoxnewappr_name.Location = new System.Drawing.Point(127, 38);
-            this.textBoxnewappr_name.Name = "textBoxnewappr_name";
-            this.textBoxnewappr_name.Size = new System.Drawing.Size(158, 21);
-            this.textBoxnewappr_name.TabIndex = 7;
+            this.labelnewappr_text.AutoSize = true;
+            this.labelnewappr_text.Location = new System.Drawing.Point(22, 128);
+            this.labelnewappr_text.Name = "labelnewappr_text";
+            this.labelnewappr_text.Size = new System.Drawing.Size(57, 12);
+            this.labelnewappr_text.TabIndex = 5;
+            this.labelnewappr_text.Text = "결재 내용";
             // 
-            // textBoxnewappr_text
+            // labelnewappr_work
             // 
-            this.textBoxnewappr_text.Location = new System.Drawing.Point(127, 125);
-            this.textBoxnewappr_text.Multiline = true;
-            this.textBoxnewappr_text.Name = "textBoxnewappr_text";
-            this.textBoxnewappr_text.Size = new System.Drawing.Size(158, 185);
-            this.textBoxnewappr_text.TabIndex = 8;
+            this.labelnewappr_work.AutoSize = true;
+            this.labelnewappr_work.Location = new System.Drawing.Point(22, 81);
+            this.labelnewappr_work.Name = "labelnewappr_work";
+            this.labelnewappr_work.Size = new System.Drawing.Size(57, 12);
+            this.labelnewappr_work.TabIndex = 4;
+            this.labelnewappr_work.Text = "관련 업무";
             // 
-            // textBoxnewappr_comment
+            // labelnewappr_name
             // 
-            this.textBoxnewappr_comment.Location = new System.Drawing.Point(127, 327);
-            this.textBoxnewappr_comment.Name = "textBoxnewappr_comment";
-            this.textBoxnewappr_comment.Size = new System.Drawing.Size(158, 21);
-            this.textBoxnewappr_comment.TabIndex = 9;
-            // 
-            // comboBoxnewappr_work
-            // 
-            this.comboBoxnewappr_work.FormattingEnabled = true;
-            this.comboBoxnewappr_work.Location = new System.Drawing.Point(127, 81);
-            this.comboBoxnewappr_work.Name = "comboBoxnewappr_work";
-            this.comboBoxnewappr_work.Size = new System.Drawing.Size(158, 20);
-            this.comboBoxnewappr_work.TabIndex = 10;
-            // 
-            // buttonnewappr
-            // 
-            this.buttonnewappr.Location = new System.Drawing.Point(99, 377);
-            this.buttonnewappr.Name = "buttonnewappr";
-            this.buttonnewappr.Size = new System.Drawing.Size(101, 31);
-            this.buttonnewappr.TabIndex = 11;
-            this.buttonnewappr.Text = "결재 등록";
-            this.buttonnewappr.UseVisualStyleBackColor = true;
+            this.labelnewappr_name.AutoSize = true;
+            this.labelnewappr_name.Location = new System.Drawing.Point(22, 41);
+            this.labelnewappr_name.Name = "labelnewappr_name";
+            this.labelnewappr_name.Size = new System.Drawing.Size(57, 12);
+            this.labelnewappr_name.TabIndex = 3;
+            this.labelnewappr_name.Text = "결재 제목";
             // 
             // groupBoxSearch
             // 
@@ -202,84 +203,6 @@
             this.groupBoxSearch.TabIndex = 3;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "결재 검색";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.buttonreturn);
-            this.groupBox2.Controls.Add(this.textBoxreturn);
-            this.groupBox2.Controls.Add(this.labelreturn);
-            this.groupBox2.Controls.Add(this.textBoxappr_work);
-            this.groupBox2.Controls.Add(this.buttonappr);
-            this.groupBox2.Controls.Add(this.textBoxappr_text);
-            this.groupBox2.Controls.Add(this.labelappr_name);
-            this.groupBox2.Controls.Add(this.textBoxappr_comment);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBoxappr_name);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(693, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(323, 509);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "결재";
-            // 
-            // groupBoxSarch_name
-            // 
-            this.groupBoxSarch_name.Controls.Add(this.buttonname_next);
-            this.groupBoxSarch_name.Controls.Add(this.buttonsearch_name);
-            this.groupBoxSarch_name.Controls.Add(this.listBox1);
-            this.groupBoxSarch_name.Controls.Add(this.textBoxsaerch_name);
-            this.groupBoxSarch_name.Controls.Add(this.labelSeach_name);
-            this.groupBoxSarch_name.Location = new System.Drawing.Point(7, 21);
-            this.groupBoxSarch_name.Name = "groupBoxSarch_name";
-            this.groupBoxSarch_name.Size = new System.Drawing.Size(310, 157);
-            this.groupBoxSarch_name.TabIndex = 0;
-            this.groupBoxSarch_name.TabStop = false;
-            this.groupBoxSarch_name.Text = "제목별 검색";
-            // 
-            // textBoxsaerch_name
-            // 
-            this.textBoxsaerch_name.Location = new System.Drawing.Point(88, 20);
-            this.textBoxsaerch_name.Name = "textBoxsaerch_name";
-            this.textBoxsaerch_name.Size = new System.Drawing.Size(144, 21);
-            this.textBoxsaerch_name.TabIndex = 13;
-            // 
-            // labelSeach_name
-            // 
-            this.labelSeach_name.AutoSize = true;
-            this.labelSeach_name.Location = new System.Drawing.Point(15, 23);
-            this.labelSeach_name.Name = "labelSeach_name";
-            this.labelSeach_name.Size = new System.Drawing.Size(57, 12);
-            this.labelSeach_name.TabIndex = 12;
-            this.labelSeach_name.Text = "결재 제목";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(17, 47);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(215, 100);
-            this.listBox1.TabIndex = 14;
-            // 
-            // buttonsearch_name
-            // 
-            this.buttonsearch_name.Location = new System.Drawing.Point(245, 18);
-            this.buttonsearch_name.Name = "buttonsearch_name";
-            this.buttonsearch_name.Size = new System.Drawing.Size(59, 23);
-            this.buttonsearch_name.TabIndex = 15;
-            this.buttonsearch_name.Text = "검색";
-            this.buttonsearch_name.UseVisualStyleBackColor = true;
-            // 
-            // buttonname_next
-            // 
-            this.buttonname_next.Location = new System.Drawing.Point(245, 45);
-            this.buttonname_next.Name = "buttonname_next";
-            this.buttonname_next.Size = new System.Drawing.Size(59, 23);
-            this.buttonname_next.TabIndex = 16;
-            this.buttonname_next.Text = "자세히";
-            this.buttonname_next.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -294,6 +217,14 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "단계별 검색";
+            // 
+            // comboBoxsearch_step
+            // 
+            this.comboBoxsearch_step.FormattingEnabled = true;
+            this.comboBoxsearch_step.Location = new System.Drawing.Point(88, 18);
+            this.comboBoxsearch_step.Name = "comboBoxsearch_step";
+            this.comboBoxsearch_step.Size = new System.Drawing.Size(144, 20);
+            this.comboBoxsearch_step.TabIndex = 17;
             // 
             // buttonstep_next
             // 
@@ -345,6 +276,14 @@
             this.groupBoxSearch_work.TabStop = false;
             this.groupBoxSearch_work.Text = "업무별 검색";
             // 
+            // comboBoxsearch_work
+            // 
+            this.comboBoxsearch_work.FormattingEnabled = true;
+            this.comboBoxsearch_work.Location = new System.Drawing.Point(88, 20);
+            this.comboBoxsearch_work.Name = "comboBoxsearch_work";
+            this.comboBoxsearch_work.Size = new System.Drawing.Size(144, 20);
+            this.comboBoxsearch_work.TabIndex = 12;
+            // 
             // buttonwork_next
             // 
             this.buttonwork_next.Location = new System.Drawing.Point(245, 45);
@@ -381,95 +320,92 @@
             this.labelsearch_work.TabIndex = 12;
             this.labelsearch_work.Text = "관련 업무";
             // 
-            // comboBoxsearch_work
+            // groupBoxSarch_name
             // 
-            this.comboBoxsearch_work.FormattingEnabled = true;
-            this.comboBoxsearch_work.Location = new System.Drawing.Point(88, 20);
-            this.comboBoxsearch_work.Name = "comboBoxsearch_work";
-            this.comboBoxsearch_work.Size = new System.Drawing.Size(144, 20);
-            this.comboBoxsearch_work.TabIndex = 12;
+            this.groupBoxSarch_name.Controls.Add(this.buttonname_next);
+            this.groupBoxSarch_name.Controls.Add(this.buttonsearch_name);
+            this.groupBoxSarch_name.Controls.Add(this.listBox1);
+            this.groupBoxSarch_name.Controls.Add(this.textBoxsaerch_name);
+            this.groupBoxSarch_name.Controls.Add(this.labelSeach_name);
+            this.groupBoxSarch_name.Location = new System.Drawing.Point(7, 21);
+            this.groupBoxSarch_name.Name = "groupBoxSarch_name";
+            this.groupBoxSarch_name.Size = new System.Drawing.Size(310, 157);
+            this.groupBoxSarch_name.TabIndex = 0;
+            this.groupBoxSarch_name.TabStop = false;
+            this.groupBoxSarch_name.Text = "제목별 검색";
             // 
-            // comboBoxsearch_step
+            // buttonname_next
             // 
-            this.comboBoxsearch_step.FormattingEnabled = true;
-            this.comboBoxsearch_step.Location = new System.Drawing.Point(88, 18);
-            this.comboBoxsearch_step.Name = "comboBoxsearch_step";
-            this.comboBoxsearch_step.Size = new System.Drawing.Size(144, 20);
-            this.comboBoxsearch_step.TabIndex = 17;
+            this.buttonname_next.Location = new System.Drawing.Point(245, 45);
+            this.buttonname_next.Name = "buttonname_next";
+            this.buttonname_next.Size = new System.Drawing.Size(59, 23);
+            this.buttonname_next.TabIndex = 16;
+            this.buttonname_next.Text = "자세히";
+            this.buttonname_next.UseVisualStyleBackColor = true;
             // 
-            // buttonappr
+            // buttonsearch_name
             // 
-            this.buttonappr.Location = new System.Drawing.Point(184, 346);
-            this.buttonappr.Name = "buttonappr";
-            this.buttonappr.Size = new System.Drawing.Size(101, 31);
-            this.buttonappr.TabIndex = 20;
-            this.buttonappr.Text = "결재 승인";
-            this.buttonappr.UseVisualStyleBackColor = true;
+            this.buttonsearch_name.Location = new System.Drawing.Point(245, 18);
+            this.buttonsearch_name.Name = "buttonsearch_name";
+            this.buttonsearch_name.Size = new System.Drawing.Size(59, 23);
+            this.buttonsearch_name.TabIndex = 15;
+            this.buttonsearch_name.Text = "검색";
+            this.buttonsearch_name.UseVisualStyleBackColor = true;
             // 
-            // textBoxappr_comment
+            // listBox1
             // 
-            this.textBoxappr_comment.Location = new System.Drawing.Point(127, 309);
-            this.textBoxappr_comment.Name = "textBoxappr_comment";
-            this.textBoxappr_comment.Size = new System.Drawing.Size(158, 21);
-            this.textBoxappr_comment.TabIndex = 18;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(17, 47);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(215, 100);
+            this.listBox1.TabIndex = 14;
             // 
-            // textBoxappr_text
+            // textBoxsaerch_name
             // 
-            this.textBoxappr_text.Location = new System.Drawing.Point(127, 107);
-            this.textBoxappr_text.Multiline = true;
-            this.textBoxappr_text.Name = "textBoxappr_text";
-            this.textBoxappr_text.Size = new System.Drawing.Size(158, 185);
-            this.textBoxappr_text.TabIndex = 17;
+            this.textBoxsaerch_name.Location = new System.Drawing.Point(88, 20);
+            this.textBoxsaerch_name.Name = "textBoxsaerch_name";
+            this.textBoxsaerch_name.Size = new System.Drawing.Size(144, 21);
+            this.textBoxsaerch_name.TabIndex = 13;
             // 
-            // textBoxappr_name
+            // labelSeach_name
             // 
-            this.textBoxappr_name.Location = new System.Drawing.Point(127, 20);
-            this.textBoxappr_name.Name = "textBoxappr_name";
-            this.textBoxappr_name.Size = new System.Drawing.Size(158, 21);
-            this.textBoxappr_name.TabIndex = 16;
+            this.labelSeach_name.AutoSize = true;
+            this.labelSeach_name.Location = new System.Drawing.Point(15, 23);
+            this.labelSeach_name.Name = "labelSeach_name";
+            this.labelSeach_name.Size = new System.Drawing.Size(57, 12);
+            this.labelSeach_name.TabIndex = 12;
+            this.labelSeach_name.Text = "결재 제목";
             // 
-            // label2
+            // groupBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 312);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 12);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "결재 코멘트";
+            this.groupBox2.Controls.Add(this.buttonreturn);
+            this.groupBox2.Controls.Add(this.textBoxreturn);
+            this.groupBox2.Controls.Add(this.labelreturn);
+            this.groupBox2.Controls.Add(this.textBoxappr_work);
+            this.groupBox2.Controls.Add(this.buttonappr);
+            this.groupBox2.Controls.Add(this.textBoxappr_text);
+            this.groupBox2.Controls.Add(this.labelappr_name);
+            this.groupBox2.Controls.Add(this.textBoxappr_comment);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBoxappr_name);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(693, 13);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(323, 509);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "결재";
             // 
-            // label3
+            // buttonreturn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 12);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "결재 내용";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 12);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "관련 업무";
-            // 
-            // labelappr_name
-            // 
-            this.labelappr_name.AutoSize = true;
-            this.labelappr_name.Location = new System.Drawing.Point(22, 23);
-            this.labelappr_name.Name = "labelappr_name";
-            this.labelappr_name.Size = new System.Drawing.Size(57, 12);
-            this.labelappr_name.TabIndex = 12;
-            this.labelappr_name.Text = "결재 제목";
-            // 
-            // textBoxappr_work
-            // 
-            this.textBoxappr_work.Location = new System.Drawing.Point(127, 60);
-            this.textBoxappr_work.Name = "textBoxappr_work";
-            this.textBoxappr_work.Size = new System.Drawing.Size(158, 21);
-            this.textBoxappr_work.TabIndex = 21;
+            this.buttonreturn.Location = new System.Drawing.Point(184, 443);
+            this.buttonreturn.Name = "buttonreturn";
+            this.buttonreturn.Size = new System.Drawing.Size(101, 31);
+            this.buttonreturn.TabIndex = 24;
+            this.buttonreturn.Text = "결재 반려";
+            this.buttonreturn.UseVisualStyleBackColor = true;
             // 
             // textBoxreturn
             // 
@@ -487,14 +423,79 @@
             this.labelreturn.TabIndex = 22;
             this.labelreturn.Text = "반려 코멘트";
             // 
-            // buttonreturn
+            // textBoxappr_work
             // 
-            this.buttonreturn.Location = new System.Drawing.Point(184, 443);
-            this.buttonreturn.Name = "buttonreturn";
-            this.buttonreturn.Size = new System.Drawing.Size(101, 31);
-            this.buttonreturn.TabIndex = 24;
-            this.buttonreturn.Text = "결재 반려";
-            this.buttonreturn.UseVisualStyleBackColor = true;
+            this.textBoxappr_work.Location = new System.Drawing.Point(127, 60);
+            this.textBoxappr_work.Name = "textBoxappr_work";
+            this.textBoxappr_work.Size = new System.Drawing.Size(158, 21);
+            this.textBoxappr_work.TabIndex = 21;
+            // 
+            // buttonappr
+            // 
+            this.buttonappr.Location = new System.Drawing.Point(184, 346);
+            this.buttonappr.Name = "buttonappr";
+            this.buttonappr.Size = new System.Drawing.Size(101, 31);
+            this.buttonappr.TabIndex = 20;
+            this.buttonappr.Text = "결재 승인";
+            this.buttonappr.UseVisualStyleBackColor = true;
+            // 
+            // textBoxappr_text
+            // 
+            this.textBoxappr_text.Location = new System.Drawing.Point(127, 107);
+            this.textBoxappr_text.Multiline = true;
+            this.textBoxappr_text.Name = "textBoxappr_text";
+            this.textBoxappr_text.Size = new System.Drawing.Size(158, 185);
+            this.textBoxappr_text.TabIndex = 17;
+            // 
+            // labelappr_name
+            // 
+            this.labelappr_name.AutoSize = true;
+            this.labelappr_name.Location = new System.Drawing.Point(22, 23);
+            this.labelappr_name.Name = "labelappr_name";
+            this.labelappr_name.Size = new System.Drawing.Size(57, 12);
+            this.labelappr_name.TabIndex = 12;
+            this.labelappr_name.Text = "결재 제목";
+            // 
+            // textBoxappr_comment
+            // 
+            this.textBoxappr_comment.Location = new System.Drawing.Point(127, 309);
+            this.textBoxappr_comment.Name = "textBoxappr_comment";
+            this.textBoxappr_comment.Size = new System.Drawing.Size(158, 21);
+            this.textBoxappr_comment.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(22, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 12);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "관련 업무";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 12);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "결재 내용";
+            // 
+            // textBoxappr_name
+            // 
+            this.textBoxappr_name.Location = new System.Drawing.Point(127, 20);
+            this.textBoxappr_name.Name = "textBoxappr_name";
+            this.textBoxappr_name.Size = new System.Drawing.Size(158, 21);
+            this.textBoxappr_name.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 312);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 12);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "결재 코멘트";
             // 
             // FormApproval
             // 
@@ -511,14 +512,14 @@
             this.groupBoxnewAppr.ResumeLayout(false);
             this.groupBoxnewAppr.PerformLayout();
             this.groupBoxSearch.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBoxSarch_name.ResumeLayout(false);
-            this.groupBoxSarch_name.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxSearch_work.ResumeLayout(false);
             this.groupBoxSearch_work.PerformLayout();
+            this.groupBoxSarch_name.ResumeLayout(false);
+            this.groupBoxSarch_name.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

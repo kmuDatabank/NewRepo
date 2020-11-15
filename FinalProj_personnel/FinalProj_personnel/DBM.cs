@@ -124,6 +124,17 @@ namespace FinalProj_personnel
 
         }
 
+        public void newApproval(string name, string work, string text, string comment) // 신규 결제 작성
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval (Approval_name, Approval_work, Approval_text, " +
+                    "Approval_comment, Approval_rank) VALUES ('"+name+ "','"+work+ "','"+text+ "','"+comment+"', 0)", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 
 
