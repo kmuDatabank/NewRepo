@@ -40,16 +40,20 @@ namespace FinalProj_personnel
             comboBoxDepartment.Items.Add("관리부서");
 
             //사원검색
-            comboBoxDepartmentType.Items.Clear();
+            comboBoxDepartmentType.Items.Clear();          
             comboBoxDepartmentType.Items.Add("부서별");
             comboBoxDepartmentType.Items.Add("이름별");
             comboBoxDepartmentType.Items.Add("나이별");
+           
 
             //임의로 3개 생성하였음 -> 교수님 word파일참고하세요
             comboBoxDepartmentName.Items.Clear();
             comboBoxDepartmentName.Items.Add("인사부서");
             comboBoxDepartmentName.Items.Add("개발부서");
             comboBoxDepartmentName.Items.Add("관리부서");
+            comboBoxDepartmentName.SelectedIndex = 0;
+
+
 
         }
 
