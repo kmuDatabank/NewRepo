@@ -25,11 +25,11 @@ namespace FinalProj_personnel
 
             if (judge == 48)
             {
-                checkBox_autoload.Checked = true;
+                checkBox_autoload.Checked =false;
             }
             else if (judge == 49)
             {
-                checkBox_autoload.Checked = false;
+                checkBox_autoload.Checked = true;
             }
 
 

@@ -74,6 +74,20 @@ namespace FinalProj_personnel
 
             if (suc == "1")//맞으면 recent 추가하여 오토로드때 활용 
             {
+
+                using (DBM.Getinstance())//다른 계정일 경우 rectently값을 이전시킨다.
+                {
+                    String query4 = "UPDATE " + "account" + " SET recently=" + "\'" + 0 + "\'" + " WHERE recently =" + "\'" + 1 + "\'";
+                    conn.Open();
+
+                    MySqlCommand cmd = new MySqlCommand(query4, conn);
+                    cmd.ExecuteNonQuery();
+
+                }
+
+
+
+
                 using (DBM.Getinstance())
                 {
                     String query4 = "UPDATE " + "account" + " SET recently=" + "\'" + suc + "\'" + " WHERE NAME =" + "\'" + result + "\'";
@@ -92,7 +106,7 @@ namespace FinalProj_personnel
 
 
 
-        public String autoload()
+        public String autoload()//로그인 오토 로드기능
         {
 
             String tempid="";
