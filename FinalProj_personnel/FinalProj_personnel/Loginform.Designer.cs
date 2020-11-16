@@ -104,6 +104,7 @@
             this.checkBox_autoload.TabIndex = 6;
             this.checkBox_autoload.Text = "자동입력";
             this.checkBox_autoload.UseVisualStyleBackColor = true;
+            this.checkBox_autoload.CheckedChanged += new System.EventHandler(this.checkBox_autoload_CheckedChanged);
             // 
             // Loginform
             // 

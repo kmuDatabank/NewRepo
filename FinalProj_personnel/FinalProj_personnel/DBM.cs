@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -134,6 +135,39 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
         }
+
+
+
+        public int file_rd()
+        {
+            StreamReader sr = new StreamReader(new FileStream("check.dat",FileMode.Open));
+           int a= sr.Read();
+            sr.Close();
+            return a;
+
+        }
+
+
+        public void file_write(String text)
+        {
+            StreamWriter sw = new StreamWriter(new FileStream("check.dat", FileMode.OpenOrCreate));
+            sw.Write(text);
+            sw.Close();
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

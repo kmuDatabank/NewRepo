@@ -20,6 +20,22 @@ namespace FinalProj_personnel
         private void Loginform_Load(object sender, EventArgs e)//남은것은 체크가 된 정보를 어떻게 저장할지가,, 파일입출력? DB?
         {
             String check="";
+
+           int judge=DBM.GetDBMinstance().file_rd();
+
+            if (judge == 48)
+            {
+                checkBox_autoload.Checked = true;
+            }
+            else if (judge == 49)
+            {
+                checkBox_autoload.Checked = false;
+            }
+
+
+
+
+
             if (checkBox_autoload.Checked)
             {
                 check = DBM.GetDBMinstance().autoload();
@@ -58,6 +74,19 @@ namespace FinalProj_personnel
 
         }
 
+        private void checkBox_autoload_CheckedChanged(object sender, EventArgs e)//파일입출력으로 파일참조하여 오토로드 기능활성화
+        {
+            if (checkBox_autoload.Checked == true){
+                DBM.GetDBMinstance().file_write("1");
+            }
+            else if (checkBox_autoload.Checked == false)
+            {
+                DBM.GetDBMinstance().file_write("0");
+            }
 
+
+
+
+        }
     }
 }
