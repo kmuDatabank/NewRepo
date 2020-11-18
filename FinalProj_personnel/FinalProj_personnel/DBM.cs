@@ -154,7 +154,7 @@ namespace FinalProj_personnel
 
         public int file_rd()
         {
-            StreamReader sr = new StreamReader(new FileStream("check.dat",FileMode.Open));
+            StreamReader sr = new StreamReader(new FileStream("check.dat",FileMode.OpenOrCreate));
            int a= sr.Read();
             sr.Close();
             return a;
