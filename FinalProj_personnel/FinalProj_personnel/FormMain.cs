@@ -13,9 +13,16 @@ namespace FinalProj_personnel
 {
     public partial class FormMain : Form
     {
+        String name = "";
         public FormMain()
         {
             InitializeComponent();
+        }
+        public FormMain(String name1)
+        {
+            InitializeComponent();
+            this.name = name1;
+            label_name.Text = name;
         }
 
         private void buttonPersonnel_Click(object sender, EventArgs e)

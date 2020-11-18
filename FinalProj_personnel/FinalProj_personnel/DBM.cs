@@ -55,7 +55,7 @@ namespace FinalProj_personnel
                     {
                         result = tempname;
                         suc = "1";//로그인 성공 여부
-                        FormMain form = new FormMain();
+                        FormMain form = new FormMain(result);
                         form.Show();
 
                         break;
