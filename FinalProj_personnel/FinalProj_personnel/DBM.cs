@@ -139,6 +139,7 @@ namespace FinalProj_personnel
 
         }
 
+       
         public void newApproval(string name, string work, string text, string comment) // 신규 결제 작성
         {
             using (DBM.Getinstance())
@@ -175,7 +176,16 @@ namespace FinalProj_personnel
 
 
 
-
+        public void memberPersonnel(string name, string gender, string age, string position, string department, string date, string phoneNum, string address) // 사원등록
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Personnel (name, gender, age,position, department, date , phoneNum, address " +
+                    "Approval_comment, Approval_rank) VALUES ('" + name + "','" + gender + "','" + age + "','" + position + "','" + department + "','" + date + "','" + phoneNum + "','" + address + "', 0)", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
 
 

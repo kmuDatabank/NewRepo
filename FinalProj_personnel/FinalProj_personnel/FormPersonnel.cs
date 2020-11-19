@@ -86,7 +86,7 @@ namespace FinalProj_personnel
             personInfo.phoneNum = textBoxPhoneNum.Text;
             personInfo.address = textBoxAddress.Text;
 
-           
+            
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
@@ -99,6 +99,7 @@ namespace FinalProj_personnel
                
                 MessageBox.Show("등록되었습니다.");
             }
+         
         }
 
         #region 메뉴Strip부분 -> 기본급, 수당, 공제
@@ -126,6 +127,7 @@ namespace FinalProj_personnel
 
          
         #region 사원검색 부분 -> 검색, 출근부, 수정, 삭제
+        //이부분 로직 어떻게되지..? 검색 버튼은 불러오기로 하는데 정보는 어떻게 종류별로 나누지?
         private void buttonSearchDepartmentType_Click(object sender, EventArgs e) //부서별 검색
         {
             if (loadCompleted_ == false)
@@ -164,7 +166,9 @@ namespace FinalProj_personnel
 
         private void buttonChangePerson_Click(object sender, EventArgs e) //수정
         {
+          
 
+            //DBM.GetDBMinstance();
         }
         private void buttonDeletePerson_Click(object sender, EventArgs e) //삭제
         {
