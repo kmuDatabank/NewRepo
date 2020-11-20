@@ -45,6 +45,10 @@
             this.buttonChangePerson = new System.Windows.Forms.Button();
             this.comboBoxDepartmentType = new System.Windows.Forms.ComboBox();
             this.listViewDepartmentType = new System.Windows.Forms.ListView();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDepartment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonMemberSave = new System.Windows.Forms.Button();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -69,6 +73,10 @@
             this.수당ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,9 +92,9 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.buttonChangeDepartment);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Location = new System.Drawing.Point(449, 387);
+            this.groupBox5.Location = new System.Drawing.Point(403, 387);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(339, 174);
+            this.groupBox5.Size = new System.Drawing.Size(435, 174);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "부서등록";
@@ -94,22 +102,22 @@
             // comboBoxDepartmentName
             // 
             this.comboBoxDepartmentName.FormattingEnabled = true;
-            this.comboBoxDepartmentName.Location = new System.Drawing.Point(149, 38);
+            this.comboBoxDepartmentName.Location = new System.Drawing.Point(165, 39);
             this.comboBoxDepartmentName.Name = "comboBoxDepartmentName";
-            this.comboBoxDepartmentName.Size = new System.Drawing.Size(138, 26);
+            this.comboBoxDepartmentName.Size = new System.Drawing.Size(165, 26);
             this.comboBoxDepartmentName.TabIndex = 19;
             // 
             // textBoxHeadDepartment
             // 
-            this.textBoxHeadDepartment.Location = new System.Drawing.Point(149, 80);
+            this.textBoxHeadDepartment.Location = new System.Drawing.Point(165, 81);
             this.textBoxHeadDepartment.Multiline = true;
             this.textBoxHeadDepartment.Name = "textBoxHeadDepartment";
-            this.textBoxHeadDepartment.Size = new System.Drawing.Size(138, 30);
+            this.textBoxHeadDepartment.Size = new System.Drawing.Size(165, 30);
             this.textBoxHeadDepartment.TabIndex = 18;
             // 
             // buttonDeleteDepartment
             // 
-            this.buttonDeleteDepartment.Location = new System.Drawing.Point(231, 126);
+            this.buttonDeleteDepartment.Location = new System.Drawing.Point(301, 127);
             this.buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             this.buttonDeleteDepartment.Size = new System.Drawing.Size(71, 30);
             this.buttonDeleteDepartment.TabIndex = 5;
@@ -119,7 +127,7 @@
             // 
             // buttonSaveDepartment
             // 
-            this.buttonSaveDepartment.Location = new System.Drawing.Point(26, 126);
+            this.buttonSaveDepartment.Location = new System.Drawing.Point(54, 127);
             this.buttonSaveDepartment.Name = "buttonSaveDepartment";
             this.buttonSaveDepartment.Size = new System.Drawing.Size(71, 30);
             this.buttonSaveDepartment.TabIndex = 1;
@@ -130,7 +138,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(51, 82);
+            this.label10.Location = new System.Drawing.Point(51, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 18);
             this.label10.TabIndex = 17;
@@ -138,7 +146,7 @@
             // 
             // buttonChangeDepartment
             // 
-            this.buttonChangeDepartment.Location = new System.Drawing.Point(129, 126);
+            this.buttonChangeDepartment.Location = new System.Drawing.Point(185, 127);
             this.buttonChangeDepartment.Name = "buttonChangeDepartment";
             this.buttonChangeDepartment.Size = new System.Drawing.Size(71, 30);
             this.buttonChangeDepartment.TabIndex = 4;
@@ -164,16 +172,16 @@
             this.groupBox4.Controls.Add(this.buttonChangePerson);
             this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
             this.groupBox4.Controls.Add(this.listViewDepartmentType);
-            this.groupBox4.Location = new System.Drawing.Point(449, 58);
+            this.groupBox4.Location = new System.Drawing.Point(403, 58);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(339, 298);
+            this.groupBox4.Size = new System.Drawing.Size(435, 323);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "사원검색";
             // 
             // textBoxInputDepartment
             // 
-            this.textBoxInputDepartment.Location = new System.Drawing.Point(134, 38);
+            this.textBoxInputDepartment.Location = new System.Drawing.Point(155, 40);
             this.textBoxInputDepartment.Multiline = true;
             this.textBoxInputDepartment.Name = "textBoxInputDepartment";
             this.textBoxInputDepartment.Size = new System.Drawing.Size(101, 28);
@@ -181,7 +189,7 @@
             // 
             // buttonSearchDepartmentType
             // 
-            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(251, 36);
+            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(277, 40);
             this.buttonSearchDepartmentType.Name = "buttonSearchDepartmentType";
             this.buttonSearchDepartmentType.Size = new System.Drawing.Size(64, 32);
             this.buttonSearchDepartmentType.TabIndex = 22;
@@ -191,7 +199,7 @@
             // 
             // buttonTimeCard
             // 
-            this.buttonTimeCard.Location = new System.Drawing.Point(29, 249);
+            this.buttonTimeCard.Location = new System.Drawing.Point(68, 270);
             this.buttonTimeCard.Name = "buttonTimeCard";
             this.buttonTimeCard.Size = new System.Drawing.Size(71, 30);
             this.buttonTimeCard.TabIndex = 21;
@@ -201,7 +209,7 @@
             // 
             // buttonDeletePerson
             // 
-            this.buttonDeletePerson.Location = new System.Drawing.Point(231, 249);
+            this.buttonDeletePerson.Location = new System.Drawing.Point(314, 270);
             this.buttonDeletePerson.Name = "buttonDeletePerson";
             this.buttonDeletePerson.Size = new System.Drawing.Size(71, 30);
             this.buttonDeletePerson.TabIndex = 20;
@@ -211,7 +219,7 @@
             // 
             // buttonChangePerson
             // 
-            this.buttonChangePerson.Location = new System.Drawing.Point(134, 249);
+            this.buttonChangePerson.Location = new System.Drawing.Point(189, 270);
             this.buttonChangePerson.Name = "buttonChangePerson";
             this.buttonChangePerson.Size = new System.Drawing.Size(67, 30);
             this.buttonChangePerson.TabIndex = 4;
@@ -222,7 +230,7 @@
             // comboBoxDepartmentType
             // 
             this.comboBoxDepartmentType.FormattingEnabled = true;
-            this.comboBoxDepartmentType.Location = new System.Drawing.Point(26, 40);
+            this.comboBoxDepartmentType.Location = new System.Drawing.Point(29, 40);
             this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
             this.comboBoxDepartmentType.Size = new System.Drawing.Size(95, 26);
             this.comboBoxDepartmentType.TabIndex = 2;
@@ -231,12 +239,40 @@
             // 
             // listViewDepartmentType
             // 
+            this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName,
+            this.columnHeaderGender,
+            this.columnHeaderAge,
+            this.columnHeaderPosition,
+            this.columnHeaderDepartment,
+            this.columnHeaderDate,
+            this.columnHeaderPhone,
+            this.columnHeaderAddress});
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(17, 88);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(26, 94);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(300, 156);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(388, 166);
             this.listViewDepartmentType.TabIndex = 3;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
+            this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderName
+            // 
+            this.columnHeaderName.Text = "이름";
+            // 
+            // columnHeaderGender
+            // 
+            this.columnHeaderGender.Text = "성별";
+            // 
+            // columnHeaderPosition
+            // 
+            this.columnHeaderPosition.DisplayIndex = 2;
+            this.columnHeaderPosition.Text = "직급";
+            // 
+            // columnHeaderDepartment
+            // 
+            this.columnHeaderDepartment.DisplayIndex = 3;
+            this.columnHeaderDepartment.Text = "소속부서";
             // 
             // groupBox3
             // 
@@ -459,6 +495,23 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // columnHeaderAge
+            // 
+            this.columnHeaderAge.DisplayIndex = 4;
+            this.columnHeaderAge.Text = "나이";
+            // 
+            // columnHeaderDate
+            // 
+            this.columnHeaderDate.Text = "입사일";
+            // 
+            // columnHeaderPhone
+            // 
+            this.columnHeaderPhone.Text = "연락처";
+            // 
+            // columnHeaderAddress
+            // 
+            this.columnHeaderAddress.Text = "주소";
+            // 
             // FormPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -527,6 +580,14 @@
         private System.Windows.Forms.ToolStripMenuItem 수당ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 공제ToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private System.Windows.Forms.ColumnHeader columnHeaderGender;
+        private System.Windows.Forms.ColumnHeader columnHeaderPosition;
+        private System.Windows.Forms.ColumnHeader columnHeaderDepartment;
+        private System.Windows.Forms.ColumnHeader columnHeaderAge;
+        private System.Windows.Forms.ColumnHeader columnHeaderDate;
+        private System.Windows.Forms.ColumnHeader columnHeaderPhone;
+        private System.Windows.Forms.ColumnHeader columnHeaderAddress;
     }
 }
 
