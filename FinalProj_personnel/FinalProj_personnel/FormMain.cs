@@ -39,6 +39,7 @@ namespace FinalProj_personnel
         private void buttonApproval_Click(object sender, EventArgs e)
         {
             FormApproval form = new FormApproval();
+            form.setname(name);
             form.Show();
         }
 

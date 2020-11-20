@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button_logout = new System.Windows.Forms.Button();
             this.label_name = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonPersonnel
@@ -114,11 +115,21 @@
             this.label_name.TabIndex = 7;
             this.label_name.Text = "\"\"";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(131, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "\"\"";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 373);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.label2);
@@ -144,5 +155,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_logout;
         private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label label3;
     }
 }

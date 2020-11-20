@@ -82,7 +82,7 @@ namespace FinalProj_personnel
             personInfo.name = textBoxMemberName.Text;
             personInfo.gender = comboBoxMemberGender.SelectedItem.ToString();
             personInfo.age = textBoxMemberAge.Text;
-            personInfo.position = comboBoxMemberGender.SelectedItem.ToString();
+            personInfo.position = comboBoxPosition.SelectedItem.ToString();
             personInfo.department = comboBoxDepartment.SelectedItem.ToString();
             personInfo.date = textBoxDate.Text;
             personInfo.phoneNum = textBoxPhoneNum.Text;
