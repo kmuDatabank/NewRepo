@@ -15,6 +15,8 @@ namespace FinalProj_personnel
     {
         string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
         private bool loadCompleted_ = false;
+
+        bool[] place = new bool[2]; //삭제할때 필요
         public FormPersonnel()
         {
             InitializeComponent();
@@ -205,6 +207,13 @@ namespace FinalProj_personnel
         }
         private void buttonDeleteDepartment_Click(object sender, EventArgs e) //삭제
         {
+           
+            string temp = textBoxHeadDepartment.Text;
+            textBoxHeadDepartment.Text = String.Empty;
+
+            place[1] = false;
+
+            DBM.GetDBMinstance().delete(temp);
 
         }
 

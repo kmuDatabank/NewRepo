@@ -187,13 +187,26 @@ namespace FinalProj_personnel
             }
         }
 
+        public void departPersonnel(string name, string head)
+        {
+            string departmentName = "";
+            string headDepartment = "";
+           
+            using (DBM.Getinstance())//
+            {
+                String query = "Update";
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
 
 
 
+            }
 
 
 
-    }
+            }
 
 
 
