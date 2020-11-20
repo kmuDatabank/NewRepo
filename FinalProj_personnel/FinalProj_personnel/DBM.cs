@@ -244,7 +244,7 @@ namespace FinalProj_personnel
 
             using (DBM.Getinstance())//
             {
-                String query = "Update";
+                String query = "UPDATE Department SET headDepartment = ' ' ";
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -257,9 +257,9 @@ namespace FinalProj_personnel
         }
 
 
-        public void delete(String a) 
+        public void delete(String d) //인사부서의 삭제기능
         {
-            String query = "delete from Department where headDepartment=" + "\'" + a + "\'";
+            String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
            
             using (DBM.Getinstance())
             {
