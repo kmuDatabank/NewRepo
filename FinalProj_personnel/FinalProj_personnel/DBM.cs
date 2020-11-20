@@ -148,7 +148,7 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
         }
-        public void Approsearch_make(string writer, string name, string approver1, string approver2)
+        public void Approsearch_make(string writer, string name, string approver1, string approver2) // Approval_search테이블 작성
         {
             using (DBM.Getinstance())
             {
@@ -158,7 +158,50 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
         }
-
+        public int Approsearch_name_n(string name) // 결재 제목검색 갯수
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                using (DBM.Getinstance())
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Approval_search WHERE Approval_name LIKE '" + name + "%'"; //검색된 이름으로 시작하는
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        string str = string.Format("{0}", rdr["Approval_name"]); // 결재 이름 가져옴
+                        i++;
+                    }
+                    rdr.Close();
+                }
+            }
+            return i;
+        }
+        public string[] Approsearch_name(string name, int num) // 결재 제목검색
+        {
+            string[] st = new string[num];
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                using (DBM.Getinstance())
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Approval_search WHERE Approval_name LIKE '" + name+"%'";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        string str = string.Format("{0}", rdr["Approval_name"]);
+                        st[i] = str;
+                        i++;
+                    }
+                    rdr.Close();
+                }
+            }
+            return st;
+        }
 
         public int file_rd()
         {

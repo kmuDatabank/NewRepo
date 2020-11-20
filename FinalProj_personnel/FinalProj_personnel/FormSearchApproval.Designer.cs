@@ -61,7 +61,6 @@
             this.textBoxsaerch_name = new System.Windows.Forms.TextBox();
             this.labelSeach_name = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.listBox4 = new System.Windows.Forms.ListBox();
@@ -354,6 +353,7 @@
             this.buttonsearch_name.TabIndex = 15;
             this.buttonsearch_name.Text = "검색";
             this.buttonsearch_name.UseVisualStyleBackColor = true;
+            this.buttonsearch_name.Click += new System.EventHandler(this.buttonsearch_name_Click);
             // 
             // listBox1
             // 
@@ -382,25 +382,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.listBox4);
-            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(334, 317);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(310, 276);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "업무별 검색";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 20);
-            this.comboBox1.TabIndex = 12;
+            this.groupBox3.Text = "내 결재 검색";
             // 
             // button1
             // 
@@ -432,11 +423,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 23);
+            this.label5.Location = new System.Drawing.Point(135, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 12);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "관련 업무";
+            this.label5.Size = new System.Drawing.Size(97, 12);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "내 결재 검색하기";
             // 
             // FormSearchApproval
             // 
@@ -497,7 +488,6 @@
         private System.Windows.Forms.TextBox textBoxsaerch_name;
         private System.Windows.Forms.Label labelSeach_name;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListBox listBox4;
