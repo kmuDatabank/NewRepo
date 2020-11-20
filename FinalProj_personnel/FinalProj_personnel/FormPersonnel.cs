@@ -174,7 +174,12 @@ namespace FinalProj_personnel
         }
         private void buttonDeletePerson_Click(object sender, EventArgs e) //삭제
         {
+            string temp = textBoxHeadDepartment.Text;
+            textBoxHeadDepartment.Text = String.Empty;
 
+            DBM.GetDBMinstance().delete(temp);
+
+            MessageBox.Show("삭제되었습니다.");
         }
         #endregion
 
@@ -215,6 +220,7 @@ namespace FinalProj_personnel
 
             DBM.GetDBMinstance().delete(temp);
 
+            MessageBox.Show("삭제되었습니다.");
         }
 
 

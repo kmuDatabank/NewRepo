@@ -26,7 +26,7 @@ namespace FinalProj_personnel
 
         public String checkauth(String id, String pw)//계정 확인 
         {
-            
+
             String tempid = "";
             String temppw = "";
             String result = "";
@@ -107,9 +107,9 @@ namespace FinalProj_personnel
         public String autoload()//로그인 오토 로드기능
         {
 
-            String tempid="";
-            String temppw="";
-            String result="";
+            String tempid = "";
+            String temppw = "";
+            String result = "";
             using (DBM.Getinstance())
             {
                 DBM.Getinstance().Open();
@@ -120,13 +120,13 @@ namespace FinalProj_personnel
 
                 while (rdr.Read() == true)
                 {
-                    tempid=rdr["USER_ID"].ToString();
-                    temppw=rdr["USER_PW"].ToString();
+                    tempid = rdr["USER_ID"].ToString();
+                    temppw = rdr["USER_PW"].ToString();
                 }
                 rdr.Close();
 
             }
-            result = tempid + ","+ temppw;
+            result = tempid + "," + temppw;
 
             return result;
 
@@ -137,14 +137,14 @@ namespace FinalProj_personnel
 
         }
 
-       
+
         public void newApproval(string name, string work, string text, string comment) // 신규 결제 작성
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval (Approval_name, Approval_work, Approval_text, " +
-                    "Approval_comment, Approval_rank) VALUES ('"+name+ "','"+work+ "','"+text+ "','"+comment+"', 0)", conn);
+                    "Approval_comment, Approval_rank) VALUES ('" + name + "','" + work + "','" + text + "','" + comment + "', 0)", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -154,7 +154,7 @@ namespace FinalProj_personnel
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval_search (Approval_writer, Approval_name, Approval_approver1," +
-                    " Approval_approver2) VALUES ('" + writer + "','"+ name + "','"+ approver1 + "','"+ approver2 + "')", conn);
+                    " Approval_approver2) VALUES ('" + writer + "','" + name + "','" + approver1 + "','" + approver2 + "')", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -188,7 +188,7 @@ namespace FinalProj_personnel
                 using (DBM.Getinstance())
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM Approval_search WHERE Approval_name LIKE '" + name+"%'";
+                    string sql = "SELECT * FROM Approval_search WHERE Approval_name LIKE '" + name + "%'";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -205,8 +205,8 @@ namespace FinalProj_personnel
 
         public int file_rd()
         {
-            StreamReader sr = new StreamReader(new FileStream("check.dat",FileMode.OpenOrCreate));
-           int a= sr.Read();
+            StreamReader sr = new StreamReader(new FileStream("check.dat", FileMode.OpenOrCreate));
+            int a = sr.Read();
             sr.Close();
             return a;
 
@@ -241,7 +241,7 @@ namespace FinalProj_personnel
         {
             string departmentName = "";
             string headDepartment = "";
-           
+
             using (DBM.Getinstance())//
             {
                 String query = "Update";
@@ -254,27 +254,26 @@ namespace FinalProj_personnel
 
             }
 
+        }
 
+
+        public void delete(String a) 
+        {
+            String query = "delete from Department where headDepartment=" + "\'" + a + "\'";
+           
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
 
             }
+        }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }
