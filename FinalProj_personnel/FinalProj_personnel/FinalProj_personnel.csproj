@@ -99,6 +99,12 @@
     <Compile Include="FormPersonnel.Designer.cs">
       <DependentUpon>FormPersonnel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearchApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchApproval.Designer.cs">
+      <DependentUpon>FormSearchApproval.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loginform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPayViewer.resx">
       <DependentUpon>FormPayViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchApproval.resx">
+      <DependentUpon>FormSearchApproval.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>

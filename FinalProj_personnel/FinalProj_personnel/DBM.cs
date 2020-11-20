@@ -33,8 +33,6 @@ namespace FinalProj_personnel
             String tempname = "";
             String suc = "0";
 
-
-
             using (DBM.Getinstance())//
             {
                 String query = "SELECT * FROM account";
@@ -42,7 +40,6 @@ namespace FinalProj_personnel
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-
 
                 while (rdr.Read())
                 {
@@ -65,6 +62,7 @@ namespace FinalProj_personnel
                         continue;
                     }
                 }
+                rdr.Close();
 
             }
             if (result == "")
@@ -125,7 +123,7 @@ namespace FinalProj_personnel
                     tempid=rdr["USER_ID"].ToString();
                     temppw=rdr["USER_PW"].ToString();
                 }
-
+                rdr.Close();
 
             }
             result = tempid + ","+ temppw;
@@ -150,7 +148,16 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
         }
-
+        public void Approsearch_make(string writer, string name, string approver1, string approver2)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval_search (Approval_writer, Approval_name, Approval_approver1," +
+                    " Approval_approver2) VALUES ('" + writer + "','"+ name + "','"+ approver1 + "','"+ approver2 + "')", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
 
         public int file_rd()
