@@ -24,8 +24,9 @@ namespace FinalProj_personnel
             InitializeComponent();
             this.name = name1;
             label_name.Text = name;
-            //String ran = DBM.GetDBMinstance().checkrank(name1);
-            //setrank(ran);
+            String ran = DBM.GetDBMinstance().checkrank(name1);
+
+            setrank(ran);
         }
         public void setrank(String rank)
         {

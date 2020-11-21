@@ -52,8 +52,7 @@ namespace FinalProj_personnel
                     {
                         result = tempname;
                         suc = "1";//로그인 성공 여부
-                        FormMain form = new FormMain(result);
-                        form.Show();
+
 
                         break;
                     }
@@ -62,7 +61,7 @@ namespace FinalProj_personnel
                         continue;
                     }
                 }
-                rdr.Close();
+                
 
             }
             if (result == "")
@@ -72,6 +71,8 @@ namespace FinalProj_personnel
 
             if (suc == "1")//맞으면 recent 추가하여 오토로드때 활용 
             {
+                FormMain form = new FormMain(result);//분리
+                form.Show();
 
                 using (DBM.Getinstance())//다른 계정일 경우 rectently값을 이전시킨다.
                 {
@@ -142,7 +143,7 @@ namespace FinalProj_personnel
             String rank = "";
             using (DBM.Getinstance())
             {
-                conn.Open();
+                DBM.Getinstance().Open();
                 string sql = "SELECT * FROM Personnel";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
