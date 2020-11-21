@@ -55,6 +55,7 @@
             this.buttonMemberSave.TabIndex = 16;
             this.buttonMemberSave.Text = "수정";
             this.buttonMemberSave.UseVisualStyleBackColor = true;
+            this.buttonMemberSave.Click += new System.EventHandler(this.buttonMemberSave_Click);
             // 
             // textBoxAddress
             // 

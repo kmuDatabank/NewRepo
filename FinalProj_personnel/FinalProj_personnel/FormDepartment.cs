@@ -10,16 +10,23 @@ using System.Windows.Forms;
 
 namespace FinalProj_personnel
 {
-    public partial class FormChange : Form
+    public partial class FormDepartment : Form
     {
-        public FormChange()
+
+        private string text;
+        public FormDepartment()
         {
             InitializeComponent();
+            InitVariables();
         }
-
-        private void buttonMemberSave_Click(object sender, EventArgs e)
+        private void InitVariables()
         {
 
         }
+        public void SetDepartText(string text)
+        {
+            this.text = text;
+        }
+       
     }
 }

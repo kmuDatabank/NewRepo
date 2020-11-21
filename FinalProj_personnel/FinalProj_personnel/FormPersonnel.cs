@@ -132,9 +132,11 @@ namespace FinalProj_personnel
         //이부분 로직 어떻게되지..? 검색 버튼은 불러오기로 하는데 정보는 어떻게 종류별로 나누지?
         private void buttonSearchDepartmentType_Click(object sender, EventArgs e) //부서별 검색
         {
-            if (loadCompleted_ == false)
-                return;
+            FormDepartment form = new FormDepartment();
+            form.SetDepartText("부서별 검색");
+            form.Show();
 
+            /*
             PersonInfo personInfo = new PersonInfo();
             personInfo.departmentType = comboBoxDepartmentType.SelectedItem.ToString(); 
             personInfo.inputDepartment = textBoxInputDepartment.Text;
@@ -151,6 +153,9 @@ namespace FinalProj_personnel
 
                 MessageBox.Show("부서를 검색합니다.");
             }
+            */
+
+
         }
         private void comboBoxDepartmentType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
