@@ -72,9 +72,9 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderAge,
             this.columnHeaderName,
             this.columnHeaderGender,
-            this.columnHeaderAge,
             this.columnHeaderPosition,
             this.columnHeaderDepartment,
             this.columnHeaderDate,
@@ -91,33 +91,37 @@
             // columnHeaderName
             // 
             this.columnHeaderName.Text = "이름";
+            this.columnHeaderName.Width = 70;
             // 
             // columnHeaderGender
             // 
             this.columnHeaderGender.Text = "성별";
+            this.columnHeaderGender.Width = 77;
             // 
             // columnHeaderAge
             // 
-            this.columnHeaderAge.DisplayIndex = 4;
             this.columnHeaderAge.Text = "나이";
+            this.columnHeaderAge.Width = 69;
             // 
             // columnHeaderPosition
             // 
-            this.columnHeaderPosition.DisplayIndex = 2;
             this.columnHeaderPosition.Text = "직급";
+            this.columnHeaderPosition.Width = 74;
             // 
             // columnHeaderDepartment
             // 
-            this.columnHeaderDepartment.DisplayIndex = 3;
             this.columnHeaderDepartment.Text = "소속부서";
+            this.columnHeaderDepartment.Width = 100;
             // 
             // columnHeaderDate
             // 
             this.columnHeaderDate.Text = "입사일";
+            this.columnHeaderDate.Width = 84;
             // 
             // columnHeaderPhone
             // 
             this.columnHeaderPhone.Text = "연락처";
+            this.columnHeaderPhone.Width = 80;
             // 
             // columnHeaderAddress
             // 
