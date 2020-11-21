@@ -46,6 +46,7 @@
             this.labelnewappr_name = new System.Windows.Forms.Label();
             this.buttonsearchappr = new System.Windows.Forms.Button();
             this.labelapname = new System.Windows.Forms.Label();
+            this.labelaprank = new System.Windows.Forms.Label();
             this.groupBoxnewAppr.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,11 +219,21 @@
             this.labelapname.TabIndex = 4;
             this.labelapname.Text = "labelname";
             // 
+            // labelaprank
+            // 
+            this.labelaprank.AutoSize = true;
+            this.labelaprank.Location = new System.Drawing.Point(68, 48);
+            this.labelaprank.Name = "labelaprank";
+            this.labelaprank.Size = new System.Drawing.Size(56, 12);
+            this.labelaprank.TabIndex = 5;
+            this.labelaprank.Text = "labelrank";
+            // 
             // FormApproval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 608);
+            this.Controls.Add(this.labelaprank);
             this.Controls.Add(this.labelapname);
             this.Controls.Add(this.buttonsearchappr);
             this.Controls.Add(this.groupBoxnewAppr);
@@ -257,5 +268,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonsearchappr;
         private System.Windows.Forms.Label labelapname;
+        private System.Windows.Forms.Label labelaprank;
     }
 }

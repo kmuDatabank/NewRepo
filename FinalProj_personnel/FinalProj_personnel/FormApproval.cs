@@ -13,9 +13,16 @@ namespace FinalProj_personnel
     public partial class FormApproval : Form
     {
         String writer = "";
+        String rank = "";
         public void setname(String name) {
             this.writer = name;
             labelapname.Text = name;
+            setrank(DBM.GetDBMinstance().checkrank(name));
+        }
+        public void setrank(String rank)
+        {
+            this.rank = rank;
+            labelaprank.Text = rank;
         }
         public FormApproval()
         {

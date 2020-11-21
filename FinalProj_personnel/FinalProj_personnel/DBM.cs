@@ -137,6 +137,28 @@ namespace FinalProj_personnel
 
         }
 
+        public String checkrank(String name) // 이름으로 직급 검색
+        {
+            String rank = "";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Personnel";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    String str = String.Format("{0}",rdr["name"]);
+                    if (str.Equals(name))
+                    {
+                        rank = String.Format("{0}", rdr["position"]);
+                    }
+                }
+                rdr.Close();
+            }
+            return rank;
+        }
+
 
         public void newApproval(string name, string work, string text, string comment) // 신규 결제 작성
         {
