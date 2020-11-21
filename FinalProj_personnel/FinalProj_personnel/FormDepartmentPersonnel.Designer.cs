@@ -1,6 +1,6 @@
 ﻿namespace FinalProj_personnel
 {
-    partial class FormDepartment
+    partial class FormDepartmentPersonnel
     {
         /// <summary>
         /// Required designer variable.
@@ -83,18 +83,22 @@
             // 
             this.columnHeaderDepartment.DisplayIndex = 3;
             this.columnHeaderDepartment.Text = "소속부서";
+            this.columnHeaderDepartment.Width = 85;
             // 
             // columnHeaderDate
             // 
             this.columnHeaderDate.Text = "입사일";
+            this.columnHeaderDate.Width = 94;
             // 
             // columnHeaderPhone
             // 
             this.columnHeaderPhone.Text = "연락처";
+            this.columnHeaderPhone.Width = 115;
             // 
             // columnHeaderAddress
             // 
             this.columnHeaderAddress.Text = "주소";
+            this.columnHeaderAddress.Width = 74;
             // 
             // buttonTimeCard
             // 
@@ -123,7 +127,7 @@
             this.buttonDeletePerson.Text = "삭제";
             this.buttonDeletePerson.UseVisualStyleBackColor = true;
             // 
-            // FormDepartment
+            // FormDepartmentPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +136,7 @@
             this.Controls.Add(this.buttonChangePerson);
             this.Controls.Add(this.buttonTimeCard);
             this.Controls.Add(this.listViewDepartmentType);
-            this.Name = "FormDepartment";
+            this.Name = "FormDepartmentPersonnel";
             this.Text = "부서별 사원검색";
             this.ResumeLayout(false);
 

@@ -93,17 +93,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBM.cs" />
+    <Compile Include="FormAgePersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgePersonnel.Designer.cs">
+      <DependentUpon>FormAgePersonnel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChange.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormChange.Designer.cs">
       <DependentUpon>FormChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDepartment.cs">
+    <Compile Include="FormDepartmentPersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDepartment.Designer.cs">
-      <DependentUpon>FormDepartment.cs</DependentUpon>
+    <Compile Include="FormDepartmentPersonnel.Designer.cs">
+      <DependentUpon>FormDepartmentPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNamePersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNamePersonnel.Designer.cs">
+      <DependentUpon>FormNamePersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPersonnel.cs">
       <SubType>Form</SubType>
@@ -144,11 +156,17 @@
     <Compile Include="PersonInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgePersonnel.resx">
+      <DependentUpon>FormAgePersonnel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChange.resx">
       <DependentUpon>FormChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDepartment.resx">
-      <DependentUpon>FormDepartment.cs</DependentUpon>
+    <EmbeddedResource Include="FormDepartmentPersonnel.resx">
+      <DependentUpon>FormDepartmentPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNamePersonnel.resx">
+      <DependentUpon>FormNamePersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersonnel.resx">
       <DependentUpon>FormPersonnel.cs</DependentUpon>

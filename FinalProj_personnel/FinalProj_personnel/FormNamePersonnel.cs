@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace FinalProj_personnel
 {
-    public partial class FormDepartment : Form
+    public partial class FormNamePersonnel : Form
     {
-
         private string text;
-        public FormDepartment()
+        public FormNamePersonnel()
         {
             InitializeComponent();
             InitVariables();
@@ -23,10 +22,14 @@ namespace FinalProj_personnel
         {
 
         }
-        public void SetDepartText(string text)
+        public void SetNameText(string text)
         {
             this.text = text;
         }
-       
+
+        private void buttonDeletePerson_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
