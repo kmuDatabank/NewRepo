@@ -12,9 +12,15 @@ namespace FinalProj_personnel
 {
     public partial class FormTimeCardPesonnel : Form
     {
+        private string text;
         public FormTimeCardPesonnel()
         {
             InitializeComponent();
+            InitVariables();
+        }
+        private void InitVariables()
+        {
+
         }
 
         private void buttonStartThis_Click(object sender, EventArgs e)//출근시간에 타임피커호출
