@@ -36,7 +36,7 @@ namespace FinalProj_personnel
 
         private void buttonPersonnel_Click(object sender, EventArgs e) // 인사 버튼
         {
-            FormPersonnel form = new FormPersonnel();
+            FormPersonnel form = new FormPersonnel(name);
             form.Show();
         }
 

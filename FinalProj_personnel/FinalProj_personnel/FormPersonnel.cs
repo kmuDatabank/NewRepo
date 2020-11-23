@@ -16,12 +16,23 @@ namespace FinalProj_personnel
         string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
         private bool loadCompleted_ = false;
 
+        String name="";
         bool[] place = new bool[2]; //삭제할때 필요
         public FormPersonnel()
         {
             InitializeComponent();
             InitVariable();
         }
+
+        public FormPersonnel(String name)
+        {
+            InitializeComponent();
+            InitVariable();
+            this.name = name;
+        }
+
+
+
         //사원 성별
         private void InitVariable()
         {
@@ -262,8 +273,8 @@ namespace FinalProj_personnel
 
         private void buttonTimeCard_Click_1(object sender, EventArgs e)
         {
-            FormTimeCardPesonnel form = new FormTimeCardPesonnel();
-            form.SetTimeCardText("출근부 화면");
+            FormTimeCardPesonnel form = new FormTimeCardPesonnel(name);
+
             form.Show();
         }
     }
