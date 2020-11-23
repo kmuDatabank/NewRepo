@@ -39,7 +39,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.comboBoxDepartmentType = new System.Windows.Forms.ComboBox();
             this.buttonSearchDepartmentType = new System.Windows.Forms.Button();
-            this.textBoxInputDepartment = new System.Windows.Forms.TextBox();
+            this.textBoxInputSearch = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonMemberSave = new System.Windows.Forms.Button();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -155,13 +155,13 @@
             this.groupBox4.Controls.Add(this.buttonTimeCard);
             this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
             this.groupBox4.Controls.Add(this.buttonSearchDepartmentType);
-            this.groupBox4.Controls.Add(this.textBoxInputDepartment);
+            this.groupBox4.Controls.Add(this.textBoxInputSearch);
             this.groupBox4.Location = new System.Drawing.Point(403, 102);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(367, 167);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "사원검색";
+            this.groupBox4.Text = "사원검색 (수정 및 삭제)";
             // 
             // comboBoxDepartmentType
             // 
@@ -183,13 +183,13 @@
             this.buttonSearchDepartmentType.UseVisualStyleBackColor = true;
             this.buttonSearchDepartmentType.Click += new System.EventHandler(this.buttonSearchDepartmentType_Click);
             // 
-            // textBoxInputDepartment
+            // textBoxInputSearch
             // 
-            this.textBoxInputDepartment.Location = new System.Drawing.Point(154, 50);
-            this.textBoxInputDepartment.Multiline = true;
-            this.textBoxInputDepartment.Name = "textBoxInputDepartment";
-            this.textBoxInputDepartment.Size = new System.Drawing.Size(101, 28);
-            this.textBoxInputDepartment.TabIndex = 23;
+            this.textBoxInputSearch.Location = new System.Drawing.Point(154, 50);
+            this.textBoxInputSearch.Multiline = true;
+            this.textBoxInputSearch.Name = "textBoxInputSearch";
+            this.textBoxInputSearch.Size = new System.Drawing.Size(101, 28);
+            this.textBoxInputSearch.TabIndex = 23;
             // 
             // groupBox3
             // 
@@ -455,7 +455,7 @@
         private System.Windows.Forms.Button buttonChangeDepartment;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBoxInputDepartment;
+        private System.Windows.Forms.TextBox textBoxInputSearch;
         private System.Windows.Forms.Button buttonSearchDepartmentType;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBoxAddress;

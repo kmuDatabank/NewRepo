@@ -129,7 +129,6 @@ namespace FinalProj_personnel
 
          
         #region 사원검색 부분 -> 검색, 출근부, 수정, 삭제
-        //이부분 로직 어떻게되지..? 검색 버튼은 불러오기로 하는데 정보는 어떻게 종류별로 나누지?
         private void buttonSearchDepartmentType_Click(object sender, EventArgs e) //부서별 검색
         {
             if (comboBoxDepartmentType.SelectedIndex == 0) //부서별
@@ -153,9 +152,12 @@ namespace FinalProj_personnel
                 form.Show();
 
             }
-        
-          
 
+            if (textBoxInputSearch.Text == "") // 빈 텍스트 박스
+            {
+                MessageBox.Show("자세하게 입력해주세요.");
+            }
+           
 
             /*
             PersonInfo personInfo = new PersonInfo();
@@ -178,19 +180,16 @@ namespace FinalProj_personnel
 
 
         }
+      
         private void comboBoxDepartmentType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            textBoxInputDepartment.Text = comboBoxDepartmentType.SelectedItem.ToString();
+            //콤보박스 옆에 텍스트박스로 글자 집어넣기
+            //textBoxInputSearch.Text = comboBoxDepartmentType.SelectedItem.ToString();
+
 
         }
 
 
-
-
-        private void buttonTimeCard_Click(object sender, EventArgs e) //출근부
-        {
-
-        }
 
         private void buttonChangePerson_Click(object sender, EventArgs e) //수정
         {

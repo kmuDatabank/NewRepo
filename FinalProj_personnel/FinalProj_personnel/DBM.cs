@@ -279,6 +279,31 @@ namespace FinalProj_personnel
 
         }
 
+        public String personnelSearch(string text) //(소속)부서로 사원검색
+        {
+            
+            String textInputSearch = ""; //콤보박스 옆 빈텍스트 박스
+  
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                string sql = "SELECT * FROM Personnel where department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    String str = String.Format("{0}", rdr["department"]);
+                    if (str.Equals(""))
+                    {
+
+                    }
+                }
+                rdr.Close();
+                
+            }
+            return textInputSearch;
+        }
 
         public void delete(String d) //인사부서의 삭제기능
         {
