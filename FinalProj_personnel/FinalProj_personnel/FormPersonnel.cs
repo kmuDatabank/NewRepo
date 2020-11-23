@@ -146,6 +146,7 @@ namespace FinalProj_personnel
             {
                 FormDepartmentPersonnel form = new FormDepartmentPersonnel();
                 form.SetDepartText("부서별 검색");
+                form.SetComboDepartText(comboBoxDepartmentType.Text);
                 form.Show();
 
             }

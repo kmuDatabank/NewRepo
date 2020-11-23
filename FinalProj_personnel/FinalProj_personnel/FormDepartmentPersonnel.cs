@@ -13,7 +13,9 @@ namespace FinalProj_personnel
     public partial class FormDepartmentPersonnel : Form
     {
 
-        private string text;
+        string text1 ="";
+        string text2 ="";
+
         public FormDepartmentPersonnel()
         {
             InitializeComponent();
@@ -23,10 +25,19 @@ namespace FinalProj_personnel
         {
 
         }
+        public void SetComboDepartText(string text)
+        {
+            this.text1 = text;
+        }
         public void SetDepartText(string text)
         {
-            this.text = text;
+            this.text2 = text; 
         }
-       
+     
+
+        private void FormDepartmentPersonnel_Load(object sender, EventArgs e)
+        {
+            DBM.GetDBMinstance().personnelSearch();
+        }
     }
 }

@@ -123,6 +123,7 @@
             this.Controls.Add(this.buttonChangePerson);
             this.Name = "FormDepartmentPersonnel";
             this.Text = "부서별 사원검색";
+            this.Load += new System.EventHandler(this.FormDepartmentPersonnel_Load);
             this.ResumeLayout(false);
 
         }

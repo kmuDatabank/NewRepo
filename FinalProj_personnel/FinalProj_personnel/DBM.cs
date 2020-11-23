@@ -278,32 +278,37 @@ namespace FinalProj_personnel
             }
 
         }
-
-        public String personnelSearch(string text) //(소속)부서로 사원검색
+        /*
+        public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
         {
             
-            String textInputSearch = ""; //콤보박스 옆 빈텍스트 박스
-  
-            using (DBM.Getinstance())
+            String comboDepartment = text1; //콤보박스
+            String textInputSearch = text2; //텍스트박스
+
+            if(text2 == "")
             {
-                DBM.Getinstance().Open();
-                string sql = "SELECT * FROM Personnel where department";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
+                using (DBM.Getinstance())
                 {
-                    String str = String.Format("{0}", rdr["department"]);
-                    if (str.Equals(""))
-                    {
+                    DBM.Getinstance().Open();
+                    string sql = "SELECT * FROM Personnel Group by department";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
 
+                    while (rdr.Read())
+                    {
+                        String str = String.Format("{5}", rdr["department"]);
+                        if (str.Equals(""))
+                        {
+
+                        }
                     }
+                    rdr.Close();
+
                 }
-                rdr.Close();
-                
             }
-            return textInputSearch;
+
         }
+        */
 
         public void delete(String d) //인사부서의 삭제기능
         {
