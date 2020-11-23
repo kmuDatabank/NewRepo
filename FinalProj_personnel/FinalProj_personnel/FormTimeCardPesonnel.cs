@@ -16,5 +16,15 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
         }
+
+        private void buttonStartThis_Click(object sender, EventArgs e)//출근시간에 타임피커호출
+        {
+
+        }
+
+        private void buttonEndThis_Click(object sender, EventArgs e)//퇴근시간에 타임피커 호출
+        {
+
+        }
     }
 }
