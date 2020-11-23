@@ -30,7 +30,6 @@
         {
             this.buttonDeletePerson = new System.Windows.Forms.Button();
             this.buttonChangePerson = new System.Windows.Forms.Button();
-            this.buttonTimeCard = new System.Windows.Forms.Button();
             this.listViewDepartmentType = new System.Windows.Forms.ListView();
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,7 +43,7 @@
             // 
             // buttonDeletePerson
             // 
-            this.buttonDeletePerson.Location = new System.Drawing.Point(686, 256);
+            this.buttonDeletePerson.Location = new System.Drawing.Point(685, 230);
             this.buttonDeletePerson.Name = "buttonDeletePerson";
             this.buttonDeletePerson.Size = new System.Drawing.Size(87, 48);
             this.buttonDeletePerson.TabIndex = 32;
@@ -54,21 +53,12 @@
             // 
             // buttonChangePerson
             // 
-            this.buttonChangePerson.Location = new System.Drawing.Point(686, 166);
+            this.buttonChangePerson.Location = new System.Drawing.Point(685, 140);
             this.buttonChangePerson.Name = "buttonChangePerson";
             this.buttonChangePerson.Size = new System.Drawing.Size(87, 52);
             this.buttonChangePerson.TabIndex = 31;
             this.buttonChangePerson.Text = "수정";
             this.buttonChangePerson.UseVisualStyleBackColor = true;
-            // 
-            // buttonTimeCard
-            // 
-            this.buttonTimeCard.Location = new System.Drawing.Point(686, 83);
-            this.buttonTimeCard.Name = "buttonTimeCard";
-            this.buttonTimeCard.Size = new System.Drawing.Size(87, 53);
-            this.buttonTimeCard.TabIndex = 30;
-            this.buttonTimeCard.Text = "출근부";
-            this.buttonTimeCard.UseVisualStyleBackColor = true;
             // 
             // listViewDepartmentType
             // 
@@ -131,7 +121,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonDeletePerson);
             this.Controls.Add(this.buttonChangePerson);
-            this.Controls.Add(this.buttonTimeCard);
             this.Controls.Add(this.listViewDepartmentType);
             this.Name = "FormNamePersonnel";
             this.Text = "이름별 검색";
@@ -143,7 +132,6 @@
 
         private System.Windows.Forms.Button buttonDeletePerson;
         private System.Windows.Forms.Button buttonChangePerson;
-        private System.Windows.Forms.Button buttonTimeCard;
         private System.Windows.Forms.ListView listViewDepartmentType;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
         private System.Windows.Forms.ColumnHeader columnHeaderGender;

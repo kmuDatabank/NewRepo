@@ -28,32 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonTimeCard = new System.Windows.Forms.Button();
             this.buttonChangePerson = new System.Windows.Forms.Button();
             this.buttonDeletePerson = new System.Windows.Forms.Button();
             this.listViewDepartmentType = new System.Windows.Forms.ListView();
             this.columnHeaderDepartment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // buttonTimeCard
-            // 
-            this.buttonTimeCard.Location = new System.Drawing.Point(683, 84);
-            this.buttonTimeCard.Name = "buttonTimeCard";
-            this.buttonTimeCard.Size = new System.Drawing.Size(87, 53);
-            this.buttonTimeCard.TabIndex = 22;
-            this.buttonTimeCard.Text = "출근부";
-            this.buttonTimeCard.UseVisualStyleBackColor = true;
-            // 
             // buttonChangePerson
             // 
-            this.buttonChangePerson.Location = new System.Drawing.Point(683, 167);
+            this.buttonChangePerson.Location = new System.Drawing.Point(680, 134);
             this.buttonChangePerson.Name = "buttonChangePerson";
             this.buttonChangePerson.Size = new System.Drawing.Size(87, 52);
             this.buttonChangePerson.TabIndex = 23;
@@ -62,7 +52,7 @@
             // 
             // buttonDeletePerson
             // 
-            this.buttonDeletePerson.Location = new System.Drawing.Point(683, 257);
+            this.buttonDeletePerson.Location = new System.Drawing.Point(680, 224);
             this.buttonDeletePerson.Name = "buttonDeletePerson";
             this.buttonDeletePerson.Size = new System.Drawing.Size(87, 48);
             this.buttonDeletePerson.TabIndex = 24;
@@ -91,24 +81,24 @@
             // columnHeaderDepartment
             // 
             this.columnHeaderDepartment.Text = "소속부서";
+            this.columnHeaderDepartment.Width = 95;
             // 
             // columnHeaderName
             // 
             this.columnHeaderName.Text = "이름";
-            // 
-            // columnHeaderAge
-            // 
-            this.columnHeaderAge.DisplayIndex = 2;
-            this.columnHeaderAge.Text = "나이";
             // 
             // columnHeaderGender
             // 
             this.columnHeaderGender.DisplayIndex = 3;
             this.columnHeaderGender.Text = "성별";
             // 
+            // columnHeaderAge
+            // 
+            this.columnHeaderAge.DisplayIndex = 2;
+            this.columnHeaderAge.Text = "나이";
+            // 
             // columnHeaderPosition
             // 
-            this.columnHeaderPosition.DisplayIndex = 4;
             this.columnHeaderPosition.Text = "직급";
             // 
             // columnHeaderDate
@@ -131,7 +121,6 @@
             this.Controls.Add(this.listViewDepartmentType);
             this.Controls.Add(this.buttonDeletePerson);
             this.Controls.Add(this.buttonChangePerson);
-            this.Controls.Add(this.buttonTimeCard);
             this.Name = "FormDepartmentPersonnel";
             this.Text = "부서별 사원검색";
             this.ResumeLayout(false);
@@ -139,7 +128,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonTimeCard;
         private System.Windows.Forms.Button buttonChangePerson;
         private System.Windows.Forms.Button buttonDeletePerson;
         private System.Windows.Forms.ListView listViewDepartmentType;

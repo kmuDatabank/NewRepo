@@ -37,9 +37,9 @@
             this.buttonChangeDepartment = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBoxInputDepartment = new System.Windows.Forms.TextBox();
-            this.buttonSearchDepartmentType = new System.Windows.Forms.Button();
             this.comboBoxDepartmentType = new System.Windows.Forms.ComboBox();
+            this.buttonSearchDepartmentType = new System.Windows.Forms.Button();
+            this.textBoxInputDepartment = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonMemberSave = new System.Windows.Forms.Button();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -63,6 +63,7 @@
             this.기본급ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.수당ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonTimeCard = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -151,27 +152,30 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.buttonTimeCard);
             this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
             this.groupBox4.Controls.Add(this.buttonSearchDepartmentType);
             this.groupBox4.Controls.Add(this.textBoxInputDepartment);
             this.groupBox4.Location = new System.Drawing.Point(403, 102);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(367, 159);
+            this.groupBox4.Size = new System.Drawing.Size(367, 167);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "사원검색";
             // 
-            // textBoxInputDepartment
+            // comboBoxDepartmentType
             // 
-            this.textBoxInputDepartment.Location = new System.Drawing.Point(156, 77);
-            this.textBoxInputDepartment.Multiline = true;
-            this.textBoxInputDepartment.Name = "textBoxInputDepartment";
-            this.textBoxInputDepartment.Size = new System.Drawing.Size(101, 28);
-            this.textBoxInputDepartment.TabIndex = 23;
+            this.comboBoxDepartmentType.FormattingEnabled = true;
+            this.comboBoxDepartmentType.Location = new System.Drawing.Point(28, 50);
+            this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
+            this.comboBoxDepartmentType.Size = new System.Drawing.Size(95, 26);
+            this.comboBoxDepartmentType.TabIndex = 2;
+            this.comboBoxDepartmentType.Text = "부서별";
+            this.comboBoxDepartmentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartmentType_SelectedIndexChanged_1);
             // 
             // buttonSearchDepartmentType
             // 
-            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(277, 77);
+            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(275, 50);
             this.buttonSearchDepartmentType.Name = "buttonSearchDepartmentType";
             this.buttonSearchDepartmentType.Size = new System.Drawing.Size(64, 32);
             this.buttonSearchDepartmentType.TabIndex = 22;
@@ -179,15 +183,13 @@
             this.buttonSearchDepartmentType.UseVisualStyleBackColor = true;
             this.buttonSearchDepartmentType.Click += new System.EventHandler(this.buttonSearchDepartmentType_Click);
             // 
-            // comboBoxDepartmentType
+            // textBoxInputDepartment
             // 
-            this.comboBoxDepartmentType.FormattingEnabled = true;
-            this.comboBoxDepartmentType.Location = new System.Drawing.Point(30, 77);
-            this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
-            this.comboBoxDepartmentType.Size = new System.Drawing.Size(95, 26);
-            this.comboBoxDepartmentType.TabIndex = 2;
-            this.comboBoxDepartmentType.Text = "부서별";
-            this.comboBoxDepartmentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartmentType_SelectedIndexChanged_1);
+            this.textBoxInputDepartment.Location = new System.Drawing.Point(154, 50);
+            this.textBoxInputDepartment.Multiline = true;
+            this.textBoxInputDepartment.Name = "textBoxInputDepartment";
+            this.textBoxInputDepartment.Size = new System.Drawing.Size(101, 28);
+            this.textBoxInputDepartment.TabIndex = 23;
             // 
             // groupBox3
             // 
@@ -404,6 +406,15 @@
             this.공제ToolStripMenuItem.Text = "공제";
             this.공제ToolStripMenuItem.Click += new System.EventHandler(this.공제ToolStripMenuItem_Click);
             // 
+            // buttonTimeCard
+            // 
+            this.buttonTimeCard.Location = new System.Drawing.Point(143, 113);
+            this.buttonTimeCard.Name = "buttonTimeCard";
+            this.buttonTimeCard.Size = new System.Drawing.Size(84, 38);
+            this.buttonTimeCard.TabIndex = 31;
+            this.buttonTimeCard.Text = "출근부";
+            this.buttonTimeCard.UseVisualStyleBackColor = true;
+            // 
             // FormPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -467,6 +478,7 @@
         private System.Windows.Forms.ToolStripMenuItem 기본급ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 수당ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 공제ToolStripMenuItem;
+        private System.Windows.Forms.Button buttonTimeCard;
     }
 }
 
