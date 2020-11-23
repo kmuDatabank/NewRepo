@@ -12,9 +12,20 @@ namespace FinalProj_personnel
 {
     public partial class FormTimeCardPesonnel : Form
     {
+        private string text;
         public FormTimeCardPesonnel()
         {
             InitializeComponent();
+            InitVariables();
         }
+        private void InitVariables()
+        {
+
+        }
+        public void SetTimeCardText(string text)
+        {
+            this.text = text;
+        }
+       
     }
 }

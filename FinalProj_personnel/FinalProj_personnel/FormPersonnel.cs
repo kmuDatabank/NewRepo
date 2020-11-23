@@ -260,5 +260,12 @@ namespace FinalProj_personnel
         {
 
         }
+
+        private void buttonTimeCard_Click_1(object sender, EventArgs e)
+        {
+            FormTimeCardPesonnel form = new FormTimeCardPesonnel();
+            form.SetTimeCardText("출근부 화면");
+            form.Show();
+        }
     }
 }

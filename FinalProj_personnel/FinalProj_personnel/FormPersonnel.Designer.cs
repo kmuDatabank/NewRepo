@@ -414,6 +414,7 @@
             this.buttonTimeCard.TabIndex = 31;
             this.buttonTimeCard.Text = "출근부";
             this.buttonTimeCard.UseVisualStyleBackColor = true;
+            this.buttonTimeCard.Click += new System.EventHandler(this.buttonTimeCard_Click_1);
             // 
             // FormPersonnel
             // 
