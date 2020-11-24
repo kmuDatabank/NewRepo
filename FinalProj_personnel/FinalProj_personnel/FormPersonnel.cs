@@ -164,11 +164,13 @@ namespace FinalProj_personnel
                 form.Show();
 
             }
-
+           
+            /*
             if (textBoxInputSearch.Text == "") // 빈 텍스트 박스
             {
                 MessageBox.Show("자세하게 입력해주세요.");
             }
+            */
            
 
             /*
@@ -278,5 +280,7 @@ namespace FinalProj_personnel
 
             form.Show();
         }
+
+       
     }
 }
