@@ -154,6 +154,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.buttonTimeCard);
+            this.groupBox4.Controls.Add(this.textBoxInputSearch);
             this.groupBox4.Controls.Add(this.buttonSearchDepartmentType);
             this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
             this.groupBox4.Location = new System.Drawing.Point(403, 102);
@@ -175,7 +176,7 @@
             // 
             // buttonSearchDepartmentType
             // 
-            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(226, 55);
+            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(279, 55);
             this.buttonSearchDepartmentType.Name = "buttonSearchDepartmentType";
             this.buttonSearchDepartmentType.Size = new System.Drawing.Size(64, 32);
             this.buttonSearchDepartmentType.TabIndex = 22;
@@ -186,7 +187,7 @@
             // comboBoxDepartmentType
             // 
             this.comboBoxDepartmentType.FormattingEnabled = true;
-            this.comboBoxDepartmentType.Location = new System.Drawing.Point(86, 55);
+            this.comboBoxDepartmentType.Location = new System.Drawing.Point(44, 59);
             this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
             this.comboBoxDepartmentType.Size = new System.Drawing.Size(95, 26);
             this.comboBoxDepartmentType.TabIndex = 2;
@@ -195,7 +196,7 @@
             // 
             // textBoxInputSearch
             // 
-            this.textBoxInputSearch.Location = new System.Drawing.Point(710, 68);
+            this.textBoxInputSearch.Location = new System.Drawing.Point(156, 59);
             this.textBoxInputSearch.Multiline = true;
             this.textBoxInputSearch.Name = "textBoxInputSearch";
             this.textBoxInputSearch.Size = new System.Drawing.Size(101, 28);
@@ -422,7 +423,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 597);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.textBoxInputSearch);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
@@ -434,6 +434,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

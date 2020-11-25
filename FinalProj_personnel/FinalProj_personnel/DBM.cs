@@ -278,39 +278,51 @@ namespace FinalProj_personnel
             }
 
         }
-        /*
-        public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
+        //사원등록한 것 끌어오기
+        public MySqlDataReader SELECT(string text)
         {
-            
-            String comboDepartment = text1; //콤보박스
-            String textInputSearch = text2; //텍스트박스
+            string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8"; 
+            MySqlConnection conn = new MySqlConnection(strConn);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(text, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
-            if(text2 == "")
-            {
-                using (DBM.Getinstance())
-                {
-                    DBM.Getinstance().Open();
-                    string sql = "SELECT * FROM Personnel Group by department";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-
-                    while (rdr.Read())
-                    {
-                        String str = String.Format("{5}", rdr["department"]);
-                        if (str.Equals(""))
-                        {
-
-                        }
-                    }
-                    rdr.Close();
-
-                }
-            }
-
+            return rdr;
         }
-        */
+       //
+            /*
+            public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
+            {
 
-        public void delete(String d) //인사부서의 삭제기능
+                String comboDepartment = text1; //콤보박스
+                String textInputSearch = text2; //텍스트박스
+
+                if(text2 == "")
+                {
+                    using (DBM.Getinstance())
+                    {
+                        DBM.Getinstance().Open();
+                        string sql = "SELECT * FROM Personnel Group by department";
+                        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                        MySqlDataReader rdr = cmd.ExecuteReader();
+
+                        while (rdr.Read())
+                        {
+                            String str = String.Format("{5}", rdr["department"]);
+                            if (str.Equals(""))
+                            {
+
+                            }
+                        }
+                        rdr.Close();
+
+                    }
+                }
+
+            }
+            */
+
+            public void delete(String d) //인사부서의 삭제기능
         {
             String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
            
