@@ -161,13 +161,25 @@ namespace FinalProj_personnel
         }
 
 
-        public void newApproval(string name, string work, string text, string comment) // 신규 결제 작성
+        public void newApproval(string name,string writer, string work, string text, string comment) // 신규 결재 작성
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval (Approval_name, Approval_work, Approval_text, " +
-                    "Approval_comment, Approval_rank) VALUES ('" + name + "','" + work + "','" + text + "','" + comment + "', 0)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval (Approval_name,Approval_writer, Approval_work, Approval_text, " +
+                    "Approval_comment, Approval_rank) VALUES ('" + name + "','"+writer+"','" + work + "','" + text + "','" + comment + "'," +
+                    " '신규결재')", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void newApproval_rank(string name, string writer, string work, string text, string comment)//부서장의 신규 결재
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval (Approval_name,Approval_writer, Approval_work, Approval_text, " +
+                    "Approval_comment, Approval_rank) VALUES ('" + name + "','" + writer + "','" + work + "','" + text + "','" + comment + "'," +
+                    " '최종대기')", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -181,49 +193,346 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
         }
-        public int Approsearch_name_n(string name) // 결재 제목검색 갯수
+        public void Approsearch_make_rank(string writer, string name, string approver2) // Approval_search테이블 작성(부서장)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval_search (Approval_writer, Approval_name," +
+                    " Approval_approver2) VALUES ('" + writer + "','" + name + "','" + approver2 + "')", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public int MyApproval_c(string name) //내가 등록한 결재 갯수
         {
             int i = 0;
             using (DBM.Getinstance())
             {
-                using (DBM.Getinstance())
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    conn.Open();
-                    string sql = "SELECT * FROM Approval_search WHERE Approval_name LIKE '" + name + "%'"; //검색된 이름으로 시작하는
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    string str = string.Format("{0}", rdr["Approval_writer"]);
+                    if (str.Equals(name))
                     {
-                        string str = string.Format("{0}", rdr["Approval_name"]); // 결재 이름 가져옴
                         i++;
                     }
-                    rdr.Close();
                 }
+                rdr.Close();
             }
             return i;
         }
-        public string[] Approsearch_name(string name, int num) // 결재 제목검색
+        public string[,] MyApproval(string name, int n) // 내가 등록한 결재
         {
-            string[] st = new string[num];
+            string[,] str = new string[n, 2];
             int i = 0;
             using (DBM.Getinstance())
             {
-                using (DBM.Getinstance())
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    conn.Open();
-                    string sql = "SELECT * FROM Approval_search WHERE Approval_name LIKE '" + name + "%'";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    if (str1.Equals(name))
                     {
-                        string str = string.Format("{0}", rdr["Approval_name"]);
-                        st[i] = str;
+                        str[i, 0] = string.Format("{0}", rdr["Approval_name"]);
+                        str[i, 1] = string.Format("{0}", rdr["Approval_rank"]);
                         i++;
                     }
-                    rdr.Close();
                 }
+                rdr.Close();
             }
-            return st;
+            return str;
+        }
+        public int MyApproval_ing_c(string name) // 결재중 내역 갯수
+        {
+            int i = 0;
+            string state1 = "신규결재";
+            string state2 = "최종대기";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    string str2 = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str1.Equals(name) && str2.Equals(state1) || str2.Equals(state2))
+                    {
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] MyApproval_ing(string name, int num) // 결재중 내역
+        {
+            string[] str = new string[num];
+            int i = 0;
+            string state1 = "신규결재";
+            string state2 = "최종대기";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    string str2 = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str1.Equals(name) && str2.Equals(state1) || str2.Equals(state2))
+                    {
+                        str[i] = string.Format("{0}", rdr["Approval_name"]);
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return str;
+        }
+        public int MyApproval_approval_c(string name) // 결재 완료 내역 갯수
+        {
+            int i = 0;
+            string state = "결재승인";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    string str2 = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str1.Equals(name) && str2.Equals(state))
+                    {
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] MyApproval_approval(string name, int num) // 결재완료 내역
+        {
+            string[] str = new string[num];
+            int i = 0;
+            string state = "결재승인";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    string str2 = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str1.Equals(name) && str2.Equals(state))
+                    {
+                        str[i] = string.Format("{0}", rdr["Approval_name"]);
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return str;
+        }
+        public int MyApproval_return_c(string name) // 결재 완료 내역 갯수
+        {
+            int i = 0;
+            string state = "결재반려";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    string str2 = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str1.Equals(name) && str2.Equals(state))
+                    {
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] MyApproval_return(string name, int num) // 결재완료 내역
+        {
+            string[] str = new string[num];
+            int i = 0;
+            string state = "결재반려";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["Approval_writer"]);
+                    string str2 = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str1.Equals(name) && str2.Equals(state))
+                    {
+                        str[i] = string.Format("{0}", rdr["Approval_name"]);
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return str;
+        }
+        public string Approval_returncomment(string name) // 반려코멘트
+        {
+            string ret_com = "";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["Approval_name"]);
+                    if (str.Equals(name))
+                    {
+                        ret_com = string.Format("{0}", rdr["Approval_returncomment"]);
+                    }
+                }
+                rdr.Close();
+            }
+            return ret_com;
+        }
+
+        public int MyApproval_work_c(string rank) // 결재 해야할 업무 갯수
+        {
+            int i = 0;
+            string state = "";
+            if (rank.Equals("부서장"))
+            {
+                state = "신규결재";
+            }
+            if (rank.Equals("사장"))
+            {
+                state = "최종대기";
+            }
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str.Equals(state))
+                    {
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] MyApproval_work(string rank, int num) // 결재 해야할 업무 갯수
+        {
+            int i = 0;
+            string state = "";
+            if (rank.Equals("부서장"))
+            {
+                state = "신규결재";
+            }
+            if (rank.Equals("사장"))
+            {
+                state = "최종대기";
+            }
+
+            string[] app = new string[num];
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["Approval_rank"]);
+                    if (str.Equals(state))
+                    {
+                        app[i] = string.Format("{0}", rdr["Approval_name"]);
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return app;
+        }
+        public string[] Approval_info(string name)//결재 해야할 업무 선택시 정보를 가져옴
+        {
+            string[] info = new string[3];
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["Approval_name"]);
+                    if (name.Equals(str))
+                    {
+                        string str1 = string.Format("{0}", rdr["Approval_work"]);
+                        info[0] = str1;
+                        str1 = string.Format("{0}", rdr["Approval_text"]);
+                        info[1] = str1;
+                        str1 = string.Format("{0}", rdr["Approval_comment"]);
+                        info[2] = str1;
+                    }
+                }
+                rdr.Close();
+            }
+            return info;
+        }
+        public void Approval_approval(string rank, string name)
+        {
+            string result = "";
+            if (rank.Equals("부서장"))
+            {
+                result = "최종대기";
+            }
+            if (rank.Equals("사장"))
+            {
+                result = "결재승인";
+            }
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Approval SET Approval_rank = '"+result+"' " +
+                    "WHERE Approval_name = '"+name+"'", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void Approval_return(string name, string comment)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Approval SET Approval_rank = '결재반려' , Approval_returncomment = '" + comment + "'" +
+                    "WHERE Approval_name = '" + name + "'", conn);
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public int file_rd()
