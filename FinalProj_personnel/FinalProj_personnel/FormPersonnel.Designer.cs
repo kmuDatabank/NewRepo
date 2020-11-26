@@ -37,8 +37,9 @@
             this.buttonChangeDepartment = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBoxDepartmentType = new System.Windows.Forms.ComboBox();
+            this.buttonTimeCard = new System.Windows.Forms.Button();
             this.buttonSearchDepartmentType = new System.Windows.Forms.Button();
+            this.comboBoxDepartmentType = new System.Windows.Forms.ComboBox();
             this.textBoxInputSearch = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonMemberSave = new System.Windows.Forms.Button();
@@ -63,7 +64,7 @@
             this.기본급ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.수당ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonTimeCard = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -153,9 +154,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.buttonTimeCard);
-            this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
-            this.groupBox4.Controls.Add(this.buttonSearchDepartmentType);
             this.groupBox4.Controls.Add(this.textBoxInputSearch);
+            this.groupBox4.Controls.Add(this.buttonSearchDepartmentType);
+            this.groupBox4.Controls.Add(this.comboBoxDepartmentType);
             this.groupBox4.Location = new System.Drawing.Point(403, 102);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(367, 167);
@@ -163,19 +164,19 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "사원검색 (수정 및 삭제)";
             // 
-            // comboBoxDepartmentType
+            // buttonTimeCard
             // 
-            this.comboBoxDepartmentType.FormattingEnabled = true;
-            this.comboBoxDepartmentType.Location = new System.Drawing.Point(28, 50);
-            this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
-            this.comboBoxDepartmentType.Size = new System.Drawing.Size(95, 26);
-            this.comboBoxDepartmentType.TabIndex = 2;
-            this.comboBoxDepartmentType.Text = "부서별";
-            this.comboBoxDepartmentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartmentType_SelectedIndexChanged_1);
+            this.buttonTimeCard.Location = new System.Drawing.Point(143, 115);
+            this.buttonTimeCard.Name = "buttonTimeCard";
+            this.buttonTimeCard.Size = new System.Drawing.Size(84, 33);
+            this.buttonTimeCard.TabIndex = 31;
+            this.buttonTimeCard.Text = "출근부";
+            this.buttonTimeCard.UseVisualStyleBackColor = true;
+            this.buttonTimeCard.Click += new System.EventHandler(this.buttonTimeCard_Click_1);
             // 
             // buttonSearchDepartmentType
             // 
-            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(275, 50);
+            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(279, 55);
             this.buttonSearchDepartmentType.Name = "buttonSearchDepartmentType";
             this.buttonSearchDepartmentType.Size = new System.Drawing.Size(64, 32);
             this.buttonSearchDepartmentType.TabIndex = 22;
@@ -183,9 +184,19 @@
             this.buttonSearchDepartmentType.UseVisualStyleBackColor = true;
             this.buttonSearchDepartmentType.Click += new System.EventHandler(this.buttonSearchDepartmentType_Click);
             // 
+            // comboBoxDepartmentType
+            // 
+            this.comboBoxDepartmentType.FormattingEnabled = true;
+            this.comboBoxDepartmentType.Location = new System.Drawing.Point(44, 59);
+            this.comboBoxDepartmentType.Name = "comboBoxDepartmentType";
+            this.comboBoxDepartmentType.Size = new System.Drawing.Size(95, 26);
+            this.comboBoxDepartmentType.TabIndex = 2;
+            this.comboBoxDepartmentType.Text = "부서별";
+            this.comboBoxDepartmentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartmentType_SelectedIndexChanged_1);
+            // 
             // textBoxInputSearch
             // 
-            this.textBoxInputSearch.Location = new System.Drawing.Point(154, 50);
+            this.textBoxInputSearch.Location = new System.Drawing.Point(156, 59);
             this.textBoxInputSearch.Multiline = true;
             this.textBoxInputSearch.Name = "textBoxInputSearch";
             this.textBoxInputSearch.Size = new System.Drawing.Size(101, 28);
@@ -406,16 +417,6 @@
             this.공제ToolStripMenuItem.Text = "공제";
             this.공제ToolStripMenuItem.Click += new System.EventHandler(this.공제ToolStripMenuItem_Click);
             // 
-            // buttonTimeCard
-            // 
-            this.buttonTimeCard.Location = new System.Drawing.Point(143, 113);
-            this.buttonTimeCard.Name = "buttonTimeCard";
-            this.buttonTimeCard.Size = new System.Drawing.Size(84, 38);
-            this.buttonTimeCard.TabIndex = 31;
-            this.buttonTimeCard.Text = "출근부";
-            this.buttonTimeCard.UseVisualStyleBackColor = true;
-            this.buttonTimeCard.Click += new System.EventHandler(this.buttonTimeCard_Click_1);
-            // 
             // FormPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -480,6 +481,7 @@
         private System.Windows.Forms.ToolStripMenuItem 수당ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 공제ToolStripMenuItem;
         private System.Windows.Forms.Button buttonTimeCard;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

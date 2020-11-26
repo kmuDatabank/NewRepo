@@ -202,11 +202,11 @@
             // 
             // buttonsearchappr
             // 
-            this.buttonsearchappr.Location = new System.Drawing.Point(263, 24);
+            this.buttonsearchappr.Location = new System.Drawing.Point(238, 24);
             this.buttonsearchappr.Name = "buttonsearchappr";
-            this.buttonsearchappr.Size = new System.Drawing.Size(75, 23);
+            this.buttonsearchappr.Size = new System.Drawing.Size(100, 23);
             this.buttonsearchappr.TabIndex = 3;
-            this.buttonsearchappr.Text = "결재 검색";
+            this.buttonsearchappr.Text = "내 결재 리스트";
             this.buttonsearchappr.UseVisualStyleBackColor = true;
             this.buttonsearchappr.Click += new System.EventHandler(this.buttonsearchappr_Click);
             // 

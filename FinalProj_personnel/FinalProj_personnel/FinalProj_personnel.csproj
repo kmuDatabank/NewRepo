@@ -123,11 +123,11 @@
     <Compile Include="FormPersonnel.Designer.cs">
       <DependentUpon>FormPersonnel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSearchApproval.cs">
+    <Compile Include="FormApprovallist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSearchApproval.Designer.cs">
-      <DependentUpon>FormSearchApproval.cs</DependentUpon>
+    <Compile Include="FormApprovallist.Designer.cs">
+      <DependentUpon>FormApprovallist.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTimeCardPesonnel.cs">
       <SubType>Form</SubType>
@@ -186,8 +186,8 @@
     <EmbeddedResource Include="FormPayViewer.resx">
       <DependentUpon>FormPayViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSearchApproval.resx">
-      <DependentUpon>FormSearchApproval.cs</DependentUpon>
+    <EmbeddedResource Include="FormApprovallist.resx">
+      <DependentUpon>FormApprovallist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimeCardPesonnel.resx">
       <DependentUpon>FormTimeCardPesonnel.cs</DependentUpon>
