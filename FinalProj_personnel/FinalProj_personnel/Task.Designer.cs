@@ -1,6 +1,6 @@
-﻿namespace task
+﻿namespace FinalProj_personnel
 {
-    partial class 업무
+    partial class Task
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -38,8 +38,12 @@
             this.cate_save = new System.Windows.Forms.Button();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.road = new System.Windows.Forms.Button();
+            this.list = new System.Windows.Forms.DataGridView();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.taskbox = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.todaytaskinput3 = new System.Windows.Forms.TextBox();
@@ -52,6 +56,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,16 +65,16 @@
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.textBox4);
             this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Location = new System.Drawing.Point(38, 301);
+            this.groupBox4.Location = new System.Drawing.Point(278, 241);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(294, 67);
+            this.groupBox4.Size = new System.Drawing.Size(172, 114);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "업무등록";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(206, 29);
+            this.button1.Location = new System.Drawing.Point(88, 71);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 23);
             this.button1.TabIndex = 15;
@@ -78,7 +83,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(23, 31);
+            this.textBox4.Location = new System.Drawing.Point(6, 29);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(67, 21);
             this.textBox4.TabIndex = 14;
@@ -86,7 +91,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(121, 31);
+            this.button5.Location = new System.Drawing.Point(10, 71);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(63, 23);
             this.button5.TabIndex = 9;
@@ -99,7 +104,7 @@
             this.groupBox3.Controls.Add(this.cate_input);
             this.groupBox3.Controls.Add(this.cate_save);
             this.groupBox3.Controls.Add(this.comboBox9);
-            this.groupBox3.Location = new System.Drawing.Point(563, 83);
+            this.groupBox3.Location = new System.Drawing.Point(44, 231);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 189);
             this.groupBox3.TabIndex = 24;
@@ -144,15 +149,67 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.road);
+            this.groupBox2.Controls.Add(this.list);
+            this.groupBox2.Controls.Add(this.comboBox6);
+            this.groupBox2.Controls.Add(this.comboBox5);
             this.groupBox2.Controls.Add(this.comboBox8);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.taskbox);
             this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Location = new System.Drawing.Point(332, 83);
+            this.groupBox2.Location = new System.Drawing.Point(332, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 189);
+            this.groupBox2.Size = new System.Drawing.Size(436, 189);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "일일업무등록";
+            // 
+            // road
+            // 
+            this.road.Location = new System.Drawing.Point(111, 147);
+            this.road.Name = "road";
+            this.road.Size = new System.Drawing.Size(75, 23);
+            this.road.TabIndex = 28;
+            this.road.Text = "road";
+            this.road.UseVisualStyleBackColor = true;
+            this.road.Click += new System.EventHandler(this.road_Click);
+            // 
+            // list
+            // 
+            this.list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.list.Location = new System.Drawing.Point(207, 29);
+            this.list.Name = "list";
+            this.list.RowTemplate.Height = 23;
+            this.list.Size = new System.Drawing.Size(184, 141);
+            this.list.TabIndex = 27;
+            this.list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_CellContentClick);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.AutoCompleteCustomSource.AddRange(new string[] {
+            "대분류",
+            "중분류",
+            "소분류"});
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "날짜",
+            "업무"});
+            this.comboBox6.Location = new System.Drawing.Point(88, 72);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(58, 20);
+            this.comboBox6.TabIndex = 21;
+            this.comboBox6.Text = "분류";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "날짜",
+            "업무"});
+            this.comboBox5.Location = new System.Drawing.Point(17, 71);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(58, 20);
+            this.comboBox5.TabIndex = 20;
+            this.comboBox5.Text = "분류";
             // 
             // comboBox8
             // 
@@ -161,27 +218,29 @@
             "검색",
             "수정",
             "삭제"});
-            this.comboBox8.Location = new System.Drawing.Point(17, 82);
+            this.comboBox8.Location = new System.Drawing.Point(17, 109);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(140, 20);
             this.comboBox8.TabIndex = 19;
             this.comboBox8.Text = "분류";
             // 
-            // textBox3
+            // taskbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(17, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 21);
-            this.textBox3.TabIndex = 4;
+            this.taskbox.Location = new System.Drawing.Point(17, 38);
+            this.taskbox.Name = "taskbox";
+            this.taskbox.Size = new System.Drawing.Size(140, 21);
+            this.taskbox.TabIndex = 4;
+            this.taskbox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(55, 147);
+            this.button6.Location = new System.Drawing.Point(17, 147);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 10;
             this.button6.Text = "등록";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // groupBox1
             // 
@@ -192,7 +251,7 @@
             this.groupBox1.Controls.Add(this.todaytaskinput);
             this.groupBox1.Controls.Add(this.tasksave);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(38, 83);
+            this.groupBox1.Location = new System.Drawing.Point(38, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(269, 189);
             this.groupBox1.TabIndex = 23;
@@ -268,7 +327,7 @@
             this.comboBox1.Text = "분류";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // 업무
+            // Task
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -277,15 +336,15 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "업무";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Task";
+            this.Text = "task";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.list)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -304,7 +363,7 @@
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox taskbox;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -315,6 +374,11 @@
         private System.Windows.Forms.TextBox todaytaskinput3;
         private System.Windows.Forms.TextBox todaytaskinput2;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.DataGridView list;
+        private System.Windows.Forms.Button road;
     }
 }
+
 
