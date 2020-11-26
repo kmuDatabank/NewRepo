@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonDeletePerson = new System.Windows.Forms.Button();
-            this.buttonChangePerson = new System.Windows.Forms.Button();
             this.listViewDepartmentType = new System.Windows.Forms.ListView();
             this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,21 +64,13 @@
             // 
             // buttonDeletePerson
             // 
-            this.buttonDeletePerson.Location = new System.Drawing.Point(539, 49);
+            this.buttonDeletePerson.Location = new System.Drawing.Point(833, 29);
             this.buttonDeletePerson.Name = "buttonDeletePerson";
             this.buttonDeletePerson.Size = new System.Drawing.Size(86, 39);
             this.buttonDeletePerson.TabIndex = 28;
             this.buttonDeletePerson.Text = "삭제";
             this.buttonDeletePerson.UseVisualStyleBackColor = true;
-            // 
-            // buttonChangePerson
-            // 
-            this.buttonChangePerson.Location = new System.Drawing.Point(432, 49);
-            this.buttonChangePerson.Name = "buttonChangePerson";
-            this.buttonChangePerson.Size = new System.Drawing.Size(81, 36);
-            this.buttonChangePerson.TabIndex = 27;
-            this.buttonChangePerson.Text = "수정";
-            this.buttonChangePerson.UseVisualStyleBackColor = true;
+            this.buttonDeletePerson.Click += new System.EventHandler(this.buttonDeletePerson_Click);
             // 
             // listViewDepartmentType
             // 
@@ -92,13 +83,16 @@
             this.columnHeaderDate,
             this.columnHeaderPhone,
             this.columnHeaderAddress});
+            this.listViewDepartmentType.FullRowSelect = true;
+            this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(21, 121);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(21, 94);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(644, 406);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(766, 469);
             this.listViewDepartmentType.TabIndex = 25;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
+            this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
             // 
             // columnHeaderAge
             // 
@@ -142,7 +136,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 54);
+            this.label9.Location = new System.Drawing.Point(46, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 18);
             this.label9.TabIndex = 34;
@@ -150,19 +144,20 @@
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Location = new System.Drawing.Point(214, 51);
+            this.textBoxInput.Location = new System.Drawing.Point(234, 38);
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(106, 28);
+            this.textBoxInput.Size = new System.Drawing.Size(136, 28);
             this.textBoxInput.TabIndex = 33;
             // 
             // buttonDepartSearch
             // 
-            this.buttonDepartSearch.Location = new System.Drawing.Point(335, 49);
+            this.buttonDepartSearch.Location = new System.Drawing.Point(399, 38);
             this.buttonDepartSearch.Name = "buttonDepartSearch";
-            this.buttonDepartSearch.Size = new System.Drawing.Size(75, 35);
+            this.buttonDepartSearch.Size = new System.Drawing.Size(75, 30);
             this.buttonDepartSearch.TabIndex = 32;
             this.buttonDepartSearch.Text = "검색";
             this.buttonDepartSearch.UseVisualStyleBackColor = true;
+            this.buttonDepartSearch.Click += new System.EventHandler(this.buttonDepartSearch_Click);
             // 
             // groupBox3
             // 
@@ -182,9 +177,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.textBoxMemberName);
-            this.groupBox3.Location = new System.Drawing.Point(691, 49);
+            this.groupBox3.Location = new System.Drawing.Point(811, 71);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(263, 492);
+            this.groupBox3.Size = new System.Drawing.Size(243, 492);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             // 
@@ -327,13 +322,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 564);
+            this.ClientSize = new System.Drawing.Size(1089, 597);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxInput);
             this.Controls.Add(this.buttonDepartSearch);
             this.Controls.Add(this.buttonDeletePerson);
-            this.Controls.Add(this.buttonChangePerson);
             this.Controls.Add(this.listViewDepartmentType);
             this.Name = "FormAgePersonnel";
             this.Text = "나이별";
@@ -348,7 +342,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonDeletePerson;
-        private System.Windows.Forms.Button buttonChangePerson;
         private System.Windows.Forms.ListView listViewDepartmentType;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
         private System.Windows.Forms.ColumnHeader columnHeaderGender;

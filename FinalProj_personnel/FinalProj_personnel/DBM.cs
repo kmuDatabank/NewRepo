@@ -598,40 +598,96 @@ namespace FinalProj_personnel
 
             return rdr;
         }
-       //
-            /*
-            public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
+        #region 사원검색(부서별/ 이름별/ 나이별) 검색
+        public string[,] Search() 
+        {
+            string[,] a = new string[3, 8];
+            int i = 0;
+            using (DBM.Getinstance())
             {
-
-                String comboDepartment = text1; //콤보박스
-                String textInputSearch = text2; //텍스트박스
-
-                if(text2 == "")
+                conn.Open();
+                string sql = "SELECT * FROM Personnel";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    using (DBM.Getinstance())
-                    {
-                        DBM.Getinstance().Open();
-                        string sql = "SELECT * FROM Personnel Group by department";
-                        MySqlCommand cmd = new MySqlCommand(sql, conn);
-                        MySqlDataReader rdr = cmd.ExecuteReader();
-
-                        while (rdr.Read())
-                        {
-                            String str = String.Format("{5}", rdr["department"]);
-                            if (str.Equals(""))
-                            {
-
-                            }
-                        }
-                        rdr.Close();
-
-                    }
+                    a[i, 0] = string.Format("{0}", rdr["name"]);
+                    a[i, 1] = string.Format("{0}", rdr["gender"]);
+                    a[i, 2] = string.Format("{0}", rdr["age"]);
+                    a[i, 3] = string.Format("{0}", rdr["position"]);
+                    a[i, 4] = string.Format("{0}", rdr["department"]);
+                    a[i, 5] = string.Format("{0}", rdr["date"]);
+                    a[i, 6] = string.Format("{0}", rdr["phoneNum"]);
+                    a[i, 7] = string.Format("{0}", rdr["address"]);
+                    i++;
                 }
+                rdr.Close();
+            }
+            return a;
+        }
+        #endregion
+
+
+
+        #region 사원검색(부서별/ 이름별/ 나이별) 수정
+
+
+        #endregion
+
+
+
+        #region 사원검색(부서별/ 이름별/ 나이별) 삭제
+
+
+        #endregion
+
+
+        /*
+        public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
+        {
+
+            String comboDepartment = text1; //콤보박스
+            String textInputSearch = text2; //텍스트박스
+
+            if(text2 == "")
+            {
+                using (DBM.Getinstance())
+                {
+                    DBM.Getinstance().Open();
+                    string sql = "SELECT * FROM Personnel Group by department";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        String str = String.Format("{5}", rdr["department"]);
+                        if (str.Equals(""))
+                        {
+
+                        }
+                    }
+                    rdr.Close();
+
+                }
+            }
+
+        }
+        */
+
+        public void PersonnelDelete(String name) //사원삭제
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM Personnel WHERE name = '" + name + "'", conn);
+
+                cmd.ExecuteNonQuery();
 
             }
-            */
+        }
 
-            public void delete(String d) //인사부서의 삭제기능
+        public void delete(String d) //인사부서의 삭제기능
         {
             String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
            

@@ -52,7 +52,7 @@ namespace FinalProj_personnel
             comboBoxDepartment.Items.Add("개발부서");
             comboBoxDepartment.Items.Add("관리부서");
 
-            //사원검색
+            //사원검색 부분
             comboBoxDepartmentType.Items.Clear();          
             comboBoxDepartmentType.Items.Add("부서별");
             comboBoxDepartmentType.Items.Add("이름별");

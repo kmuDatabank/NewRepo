@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDepartChange = new System.Windows.Forms.Button();
-            this.buttonDepartDelete = new System.Windows.Forms.Button();
             this.buttonDepartSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,38 +56,16 @@
             this.columnHeaderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonDepartChange
-            // 
-            this.buttonDepartChange.Location = new System.Drawing.Point(446, 37);
-            this.buttonDepartChange.Name = "buttonDepartChange";
-            this.buttonDepartChange.Size = new System.Drawing.Size(79, 35);
-            this.buttonDepartChange.TabIndex = 23;
-            this.buttonDepartChange.Text = "수정";
-            this.buttonDepartChange.UseVisualStyleBackColor = true;
-            this.buttonDepartChange.Click += new System.EventHandler(this.buttonDepartChange_Click_1);
-            // 
-            // buttonDepartDelete
-            // 
-            this.buttonDepartDelete.Location = new System.Drawing.Point(561, 36);
-            this.buttonDepartDelete.Name = "buttonDepartDelete";
-            this.buttonDepartDelete.Size = new System.Drawing.Size(74, 37);
-            this.buttonDepartDelete.TabIndex = 24;
-            this.buttonDepartDelete.Text = "삭제";
-            this.buttonDepartDelete.UseVisualStyleBackColor = true;
-            this.buttonDepartDelete.Click += new System.EventHandler(this.buttonDepartDelete_Click);
-            // 
             // buttonDepartSearch
             // 
-            this.buttonDepartSearch.Location = new System.Drawing.Point(337, 37);
+            this.buttonDepartSearch.Location = new System.Drawing.Point(406, 37);
             this.buttonDepartSearch.Name = "buttonDepartSearch";
-            this.buttonDepartSearch.Size = new System.Drawing.Size(75, 35);
+            this.buttonDepartSearch.Size = new System.Drawing.Size(75, 30);
             this.buttonDepartSearch.TabIndex = 27;
             this.buttonDepartSearch.Text = "검색";
             this.buttonDepartSearch.UseVisualStyleBackColor = true;
@@ -111,11 +89,28 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.textBoxMemberName);
-            this.groupBox3.Location = new System.Drawing.Point(654, 80);
+            this.groupBox3.Location = new System.Drawing.Point(805, 80);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(263, 492);
+            this.groupBox3.Size = new System.Drawing.Size(254, 492);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
+            // 
+            // comboBoxDepartment
+            // 
+            this.comboBoxDepartment.FormattingEnabled = true;
+            this.comboBoxDepartment.Location = new System.Drawing.Point(107, 267);
+            this.comboBoxDepartment.Name = "comboBoxDepartment";
+            this.comboBoxDepartment.Size = new System.Drawing.Size(103, 26);
+            this.comboBoxDepartment.TabIndex = 32;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 267);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 18);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "소속부서:";
             // 
             // numericUpDownAge
             // 
@@ -237,9 +232,9 @@
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Location = new System.Drawing.Point(216, 39);
+            this.textBoxInput.Location = new System.Drawing.Point(238, 37);
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(106, 28);
+            this.textBoxInput.Size = new System.Drawing.Size(141, 28);
             this.textBoxInput.TabIndex = 29;
             // 
             // listViewDepartmentType
@@ -253,13 +248,16 @@
             this.columnHeaderDate,
             this.columnHeaderPhone,
             this.columnHeaderAddress});
+            this.listViewDepartmentType.FullRowSelect = true;
+            this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
             this.listViewDepartmentType.Location = new System.Drawing.Point(24, 92);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(613, 480);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(760, 480);
             this.listViewDepartmentType.TabIndex = 30;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
+            this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
             // 
             // columnHeaderName
             // 
@@ -296,27 +294,10 @@
             // 
             this.columnHeaderAddress.Text = "주소";
             // 
-            // comboBoxDepartment
-            // 
-            this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(107, 267);
-            this.comboBoxDepartment.Name = "comboBoxDepartment";
-            this.comboBoxDepartment.Size = new System.Drawing.Size(103, 26);
-            this.comboBoxDepartment.TabIndex = 32;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 267);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 18);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "소속부서:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 42);
+            this.label9.Location = new System.Drawing.Point(33, 40);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 18);
             this.label9.TabIndex = 31;
@@ -326,17 +307,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 620);
+            this.ClientSize = new System.Drawing.Size(1086, 603);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.listViewDepartmentType);
             this.Controls.Add(this.textBoxInput);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonDepartSearch);
-            this.Controls.Add(this.buttonDepartDelete);
-            this.Controls.Add(this.buttonDepartChange);
             this.Name = "FormDepartmentPersonnel";
             this.Text = "부서별 사원검색";
-          
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
@@ -346,8 +324,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonDepartChange;
-        private System.Windows.Forms.Button buttonDepartDelete;
         private System.Windows.Forms.Button buttonDepartSearch;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBoxAddress;
