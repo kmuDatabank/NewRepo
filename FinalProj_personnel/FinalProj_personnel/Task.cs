@@ -29,11 +29,11 @@ namespace FinalProj_personnel
         string strConn = "Server = 49.50.174.201;database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
         private void tasksave_Click(object sender, EventArgs e)
         {
-            string name = todaytaskinput.Text;
+            string name4 = todaytaskinput.Text;
             string name2 = todaytaskinput2.Text;
             string name3 = todaytaskinput3.Text;
 
-            todaytask sinfo = new todaytask(name);
+            todaytask sinfo = new todaytask(name4);
             todaytask sinfo1 = new todaytask(name2);
             todaytask sinfo2 = new todaytask(name3);
 
@@ -43,7 +43,7 @@ namespace FinalProj_personnel
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = "INSERT INTO task(large,medium,small) values ('" + name + "','" + name2 + "','" + name3 + "')";
+                    string query = "INSERT INTO task(large,medium,small,date,name) values ('" + name4 + "','" + name2 + "','" + name3 + "',now(),'"+name+"')";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
 
@@ -119,6 +119,7 @@ namespace FinalProj_personnel
 
             string cate = cate_input.Text;
             string num1 = cate_input.Text;
+            string nu = numbox.Text;
 
             string name3 = todaytaskinput3.Text;
 
@@ -141,7 +142,7 @@ namespace FinalProj_personnel
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = " UPDATE large_cate SET name= '" + cate + "' WHERE Num=1";
+                    string query = " UPDATE large_cate SET name= '" + cate + "' WHERE Num='"+nu+"'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                 }
@@ -174,7 +175,7 @@ namespace FinalProj_personnel
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = " UPDATE medium_cate SET name= '" + cate + "' WHERE Num=11";
+                    string query = " UPDATE medium_cate SET name= '" + cate + "' WHERE Num= '" + nu + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                 }
@@ -207,7 +208,7 @@ namespace FinalProj_personnel
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = " UPDATE samll_cate SET name= '" + cate + "' WHERE Num=11";
+                    string query = " UPDATE samll_cate SET name= '" + cate + "' WHERE Num= '" + nu + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                 }
@@ -229,13 +230,14 @@ namespace FinalProj_personnel
         {
             string todaytask = taskbox.Text;
             string num2 = taskbox.Text;
+            string nu = time.Text;
 
             if (comboBox8.SelectedIndex == 1 && comboBox5.SelectedIndex == 1)
             {
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = " UPDATE medium_cate SET name= '" + todaytask + "' WHERE Num=1";
+                    string query = " UPDATE medium_cate SET name= '" + todaytask + "' WHERE Num= '" + nu + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                 }
@@ -267,6 +269,7 @@ namespace FinalProj_personnel
 
             string todaytask = taskbox.Text;
             string dte = taskbox.Text;
+            
 
             //업무 검색
             if (comboBox8.SelectedIndex == 0 && comboBox5.SelectedIndex == 1)
@@ -308,12 +311,12 @@ namespace FinalProj_personnel
 
             //등록자기반
 
-            if (comboBox8.SelectedIndex == 0 && comboBox5.SelectedIndex == 1 && comboBox6.SelectedIndex == 1)
+            if (comboBox8.SelectedIndex == 0 && comboBox5.SelectedIndex == 1 )
             {
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query10 = " SELECT num,id,large,medium,small,start_time,finish_time,date FROM task WHERE name LIKE '" + "%" + name + "'";
+                    string query10 = " SELECT num,id,large,medium,small,start_time,finish_time,date FROM task WHERE name LIKE '"+ name + "'";
                     MySqlCommand cmd = new MySqlCommand(query10, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -327,6 +330,16 @@ namespace FinalProj_personnel
         }
 
         private void list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Task_Load(object sender, EventArgs e)
         {
 
         }
