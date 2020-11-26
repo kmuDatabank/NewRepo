@@ -43,7 +43,7 @@ namespace FinalProj_personnel
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = "INSERT INTO task(large,medium,small,date,name) values ('" + name4 + "','" + name2 + "','" + name3 + "',now(),'"+name+"')";
+                    string query = "INSERT INTO task(large,medium,small,date,name) values ('" + name4 + "','" + name2 + "','" + name3 + "',now(),'" + name + "')";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
 
@@ -142,7 +142,7 @@ namespace FinalProj_personnel
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query = " UPDATE large_cate SET name= '" + cate + "' WHERE Num='"+nu+"'";
+                    string query = " UPDATE large_cate SET name= '" + cate + "' WHERE Num='" + nu + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                 }
@@ -262,14 +262,14 @@ namespace FinalProj_personnel
 
         }
 
-        
+
 
         private void road_Click(object sender, EventArgs e)
         {
 
             string todaytask = taskbox.Text;
             string dte = taskbox.Text;
-            
+
 
             //업무 검색
             if (comboBox8.SelectedIndex == 0 && comboBox5.SelectedIndex == 1)
@@ -311,12 +311,12 @@ namespace FinalProj_personnel
 
             //등록자기반
 
-            if (comboBox8.SelectedIndex == 0 && comboBox5.SelectedIndex == 1 )
+            if (comboBox8.SelectedIndex == 0 && comboBox5.SelectedIndex == 1)
             {
                 using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
                     conn.Open();
-                    string query10 = " SELECT num,id,large,medium,small,start_time,finish_time,date FROM task WHERE name LIKE '"+ name + "'";
+                    string query10 = " SELECT num,id,large,medium,small,start_time,finish_time,date FROM task WHERE name LIKE '" + name + "'";
                     MySqlCommand cmd = new MySqlCommand(query10, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -342,6 +342,29 @@ namespace FinalProj_personnel
         private void Task_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            string time = start.Text;
+            string time2 = finish.Text;
+            string str = time;
+
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO task(start_time,finish_time) values ('" + time + "','" + time2 + "')";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+
+                    if (str.Contains(time))
+                    {
+                        MessageBox.Show("중복입니다.");
+                    }
+                }
+
+            }
         }
     }
 }

@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.finish = new System.Windows.Forms.TextBox();
+            this.update = new System.Windows.Forms.Button();
+            this.start = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numbox = new System.Windows.Forms.TextBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.cate_input = new System.Windows.Forms.TextBox();
             this.cate_save = new System.Windows.Forms.Button();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.time = new System.Windows.Forms.TextBox();
             this.road = new System.Windows.Forms.Button();
             this.list = new System.Windows.Forms.DataGridView();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -52,8 +54,6 @@
             this.todaytaskinput = new System.Windows.Forms.TextBox();
             this.tasksave = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numbox = new System.Windows.Forms.TextBox();
-            this.time = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,9 +63,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.finish);
+            this.groupBox4.Controls.Add(this.update);
+            this.groupBox4.Controls.Add(this.start);
             this.groupBox4.Location = new System.Drawing.Point(278, 241);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(172, 114);
@@ -73,31 +73,31 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "업무등록";
             // 
-            // button1
+            // finish
             // 
-            this.button1.Location = new System.Drawing.Point(88, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "종료";
-            this.button1.UseVisualStyleBackColor = true;
+            this.finish.Location = new System.Drawing.Point(88, 28);
+            this.finish.Name = "finish";
+            this.finish.Size = new System.Drawing.Size(67, 21);
+            this.finish.TabIndex = 16;
+            this.finish.Text = "종료시간";
             // 
-            // textBox4
+            // update
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(67, 21);
-            this.textBox4.TabIndex = 14;
-            this.textBox4.Text = "입력시간";
+            this.update.Location = new System.Drawing.Point(54, 71);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(63, 23);
+            this.update.TabIndex = 15;
+            this.update.Text = "등록";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
-            // button5
+            // start
             // 
-            this.button5.Location = new System.Drawing.Point(10, 71);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(63, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "시작";
-            this.button5.UseVisualStyleBackColor = true;
+            this.start.Location = new System.Drawing.Point(6, 29);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(67, 21);
+            this.start.TabIndex = 14;
+            this.start.Text = "시작시간";
             // 
             // groupBox3
             // 
@@ -112,6 +112,13 @@
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "업무마스터";
+            // 
+            // numbox
+            // 
+            this.numbox.Location = new System.Drawing.Point(100, 39);
+            this.numbox.Name = "numbox";
+            this.numbox.Size = new System.Drawing.Size(63, 21);
+            this.numbox.TabIndex = 21;
             // 
             // comboBox4
             // 
@@ -172,6 +179,13 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "일일업무등록";
+            // 
+            // time
+            // 
+            this.time.Location = new System.Drawing.Point(96, 38);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(61, 21);
+            this.time.TabIndex = 29;
             // 
             // road
             // 
@@ -322,20 +336,6 @@
             this.comboBox1.Text = "분류";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // numbox
-            // 
-            this.numbox.Location = new System.Drawing.Point(100, 39);
-            this.numbox.Name = "numbox";
-            this.numbox.Size = new System.Drawing.Size(63, 21);
-            this.numbox.TabIndex = 21;
-            // 
-            // time
-            // 
-            this.time.Location = new System.Drawing.Point(96, 38);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(61, 21);
-            this.time.TabIndex = 29;
-            // 
             // Task
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -364,9 +364,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.TextBox start;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox cate_input;
         private System.Windows.Forms.Button cate_save;
@@ -389,6 +388,7 @@
         private System.Windows.Forms.Button road;
         private System.Windows.Forms.TextBox numbox;
         private System.Windows.Forms.TextBox time;
+        private System.Windows.Forms.TextBox finish;
     }
 }
 
