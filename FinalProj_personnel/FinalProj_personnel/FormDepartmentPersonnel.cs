@@ -37,7 +37,7 @@ namespace FinalProj_personnel
 
         private void FormDepartmentPersonnel_Load(object sender, EventArgs e)
         {
-            DBM.GetDBMinstance().personnelSearch();
+            DBM.GetDBMinstance().personnelSearch(text1,text2);
         }
     }
 }

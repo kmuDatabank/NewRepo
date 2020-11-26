@@ -278,8 +278,8 @@ namespace FinalProj_personnel
             }
 
         }
-        /*
-        public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
+        
+        public void personnelSearch(string text1, string text2) //(소속)부서로 사원검색
         {
             
             String comboDepartment = text1; //콤보박스
@@ -308,7 +308,7 @@ namespace FinalProj_personnel
             }
 
         }
-        */
+        
 
         public void delete(String d) //인사부서의 삭제기능
         {
