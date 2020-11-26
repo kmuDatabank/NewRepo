@@ -52,7 +52,7 @@ namespace FinalProj_personnel
             comboBoxDepartment.Items.Add("개발부서");
             comboBoxDepartment.Items.Add("관리부서");
 
-            //사원검색
+            //사원검색 부분
             comboBoxDepartmentType.Items.Clear();          
             comboBoxDepartmentType.Items.Add("부서별");
             comboBoxDepartmentType.Items.Add("이름별");
@@ -164,11 +164,13 @@ namespace FinalProj_personnel
                 form.Show();
 
             }
-
+           
+            /*
             if (textBoxInputSearch.Text == "") // 빈 텍스트 박스
             {
                 MessageBox.Show("자세하게 입력해주세요.");
             }
+            */
            
 
             /*
@@ -278,5 +280,7 @@ namespace FinalProj_personnel
 
             form.Show();
         }
+
+       
     }
 }
