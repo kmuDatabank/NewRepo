@@ -253,17 +253,19 @@
             this.listViewDepartmentType.FullRowSelect = true;
             this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(36, 97);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(27, 97);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(760, 480);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(769, 480);
             this.listViewDepartmentType.TabIndex = 30;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
+            //this.listViewDepartmentType.SelectedIndexChanged += new System.EventHandler(this.listViewDepartmentType_SelectedIndexChanged);
             this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
             // 
             // columnHeaderName
             // 
             this.columnHeaderName.Text = "이름";
+            this.columnHeaderName.Width = 72;
             // 
             // columnHeaderGender
             // 
@@ -271,25 +273,22 @@
             // 
             // columnHeaderAge
             // 
-            this.columnHeaderAge.DisplayIndex = 4;
             this.columnHeaderAge.Text = "나이";
             this.columnHeaderAge.Width = 90;
             // 
             // columnHeaderPosition
             // 
-            this.columnHeaderPosition.DisplayIndex = 2;
             this.columnHeaderPosition.Text = "직급";
             // 
             // columnHeaderDepartment
             // 
-            this.columnHeaderDepartment.DisplayIndex = 3;
             this.columnHeaderDepartment.Text = "소속부서";
-            this.columnHeaderDepartment.Width = 156;
+            this.columnHeaderDepartment.Width = 109;
             // 
             // columnHeaderDate
             // 
             this.columnHeaderDate.Text = "입사일";
-            this.columnHeaderDate.Width = 120;
+            this.columnHeaderDate.Width = 99;
             // 
             // columnHeaderPhone
             // 

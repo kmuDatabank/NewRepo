@@ -674,7 +674,7 @@ namespace FinalProj_personnel
 
         }
         
-
+        */
         public void PersonnelDelete(String id) //사원삭제
         {
             String query = "DELETE FROM Personnel WHERE id = '" + id + "';";
