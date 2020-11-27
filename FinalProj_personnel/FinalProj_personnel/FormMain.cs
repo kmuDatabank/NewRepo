@@ -42,7 +42,8 @@ namespace FinalProj_personnel
 
         private void buttonWork_Click(object sender, EventArgs e) // 업무 버튼
         {
-
+            Task a = new Task(name);
+            a.Show();
         }
 
         private void buttonApproval_Click(object sender, EventArgs e) // 결재 버튼

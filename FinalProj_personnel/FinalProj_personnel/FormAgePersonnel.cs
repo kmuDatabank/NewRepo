@@ -91,14 +91,7 @@ namespace FinalProj_personnel
         }
 
      
-        private void buttonDeletePerson_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem lv in listViewDepartmentType.SelectedItems)
-            {
-                listViewDepartmentType.Items.Remove(lv); //일단 리스트뷰에서는 삭제됌.
-            }
-        }
-
+       
         private void listViewDepartmentType_MouseDown(object sender, MouseEventArgs e) //리스트뷰 우클릭
         {
             if (e.Button == MouseButtons.Right)

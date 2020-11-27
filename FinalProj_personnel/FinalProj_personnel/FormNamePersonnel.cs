@@ -64,10 +64,7 @@ namespace FinalProj_personnel
             this.text = text;
         }
 
-        private void buttonDeletePerson_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void buttonDepartSearch_Click(object sender, EventArgs e)
         {
