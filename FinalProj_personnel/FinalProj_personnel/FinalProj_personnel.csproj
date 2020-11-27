@@ -100,6 +100,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBM.cs" />
+    <Compile Include="FormMailMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMailMenu.Designer.cs">
+      <DependentUpon>FormMailMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReadReceived.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReadReceived.Designer.cs">
+      <DependentUpon>FormReadReceived.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReadTransmitted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReadTransmitted.Designer.cs">
+      <DependentUpon>FormReadTransmitted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReceivedMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReceivedMail.Designer.cs">
+      <DependentUpon>FormReceivedMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSendMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSendMail.Designer.cs">
+      <DependentUpon>FormSendMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransmittedMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransmittedMail.Designer.cs">
+      <DependentUpon>FormTransmittedMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Task.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,9 +160,6 @@
     <Compile Include="FormDepartmentPersonnel.Designer.cs">
       <DependentUpon>FormDepartmentPersonnel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMailMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormNamePersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,26 +178,11 @@
     <Compile Include="FormApprovallist.Designer.cs">
       <DependentUpon>FormApprovallist.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReadReceived.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReadTransmitted.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReceivedMail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSendMail.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormTimeCardPesonnel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTimeCardPesonnel.Designer.cs">
       <DependentUpon>FormTimeCardPesonnel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTransmittedMail.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loginform.cs">
       <SubType>Form</SubType>
@@ -204,6 +222,9 @@
     <EmbeddedResource Include="FormDepartmentPersonnel.resx">
       <DependentUpon>FormDepartmentPersonnel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMailMenu.resx">
+      <DependentUpon>FormMailMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNamePersonnel.resx">
       <DependentUpon>FormNamePersonnel.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,8 +243,23 @@
     <EmbeddedResource Include="FormApprovallist.resx">
       <DependentUpon>FormApprovallist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReadReceived.resx">
+      <DependentUpon>FormReadReceived.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReadTransmitted.resx">
+      <DependentUpon>FormReadTransmitted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReceivedMail.resx">
+      <DependentUpon>FormReceivedMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSendMail.resx">
+      <DependentUpon>FormSendMail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTimeCardPesonnel.resx">
       <DependentUpon>FormTimeCardPesonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransmittedMail.resx">
+      <DependentUpon>FormTransmittedMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>
