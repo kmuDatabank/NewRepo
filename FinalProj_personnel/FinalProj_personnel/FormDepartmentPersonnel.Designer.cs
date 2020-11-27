@@ -58,6 +58,7 @@
             this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
@@ -242,6 +243,7 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -259,7 +261,6 @@
             this.listViewDepartmentType.TabIndex = 30;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
-            //this.listViewDepartmentType.SelectedIndexChanged += new System.EventHandler(this.listViewDepartmentType_SelectedIndexChanged);
             this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
             // 
             // columnHeaderName
@@ -319,6 +320,10 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
             // 
+            // columnHeaderID
+            // 
+            this.columnHeaderID.Text = "id";
+            // 
             // FormDepartmentPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -371,5 +376,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColumnHeader columnHeaderID;
     }
 }

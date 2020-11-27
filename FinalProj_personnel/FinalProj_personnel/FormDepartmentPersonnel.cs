@@ -125,9 +125,9 @@ namespace FinalProj_personnel
                
                 //한줄만 삭제
                 listViewDepartmentType.Items.Remove(listViewDepartmentType.SelectedItems[0]);
-                string a = listViewDepartmentType.SelectedItems[0].SubItems[0].Text;
-               //string d = listViewDepartmentType.SelectedItems.ToString(); //선택된 열의 이름으로 삭제
-                DBM.GetDBMinstance().PersonnelDelete(a); //삭제
+                //string a = listViewDepartmentType.SelectedItems[0].SubItems[0].Text;
+               string d = listViewDepartmentType.SelectedItems.ToString(); //선택된 열의 이름으로 삭제
+                DBM.GetDBMinstance().PersonnelDelete(d); //삭제
                 MessageBox.Show ("삭제하였습니다.");
 
                 /*
