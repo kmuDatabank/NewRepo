@@ -65,9 +65,9 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderAge,
             this.columnHeaderName,
             this.columnHeaderGender,
+            this.columnHeaderAge,
             this.columnHeaderPosition,
             this.columnHeaderDepartment,
             this.columnHeaderDate,

@@ -94,17 +94,14 @@
             // 
             // columnHeaderAge
             // 
-            this.columnHeaderAge.DisplayIndex = 4;
             this.columnHeaderAge.Text = "나이";
             // 
             // columnHeaderPosition
             // 
-            this.columnHeaderPosition.DisplayIndex = 2;
             this.columnHeaderPosition.Text = "직급";
             // 
             // columnHeaderDepartment
             // 
-            this.columnHeaderDepartment.DisplayIndex = 3;
             this.columnHeaderDepartment.Text = "소속부서";
             // 
             // columnHeaderDate

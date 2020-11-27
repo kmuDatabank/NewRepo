@@ -58,6 +58,7 @@
             this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
@@ -242,6 +243,7 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -253,9 +255,9 @@
             this.listViewDepartmentType.FullRowSelect = true;
             this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(36, 97);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(27, 97);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(760, 480);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(769, 480);
             this.listViewDepartmentType.TabIndex = 30;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
@@ -264,6 +266,7 @@
             // columnHeaderName
             // 
             this.columnHeaderName.Text = "이름";
+            this.columnHeaderName.Width = 72;
             // 
             // columnHeaderGender
             // 
@@ -271,25 +274,22 @@
             // 
             // columnHeaderAge
             // 
-            this.columnHeaderAge.DisplayIndex = 4;
             this.columnHeaderAge.Text = "나이";
             this.columnHeaderAge.Width = 90;
             // 
             // columnHeaderPosition
             // 
-            this.columnHeaderPosition.DisplayIndex = 2;
             this.columnHeaderPosition.Text = "직급";
             // 
             // columnHeaderDepartment
             // 
-            this.columnHeaderDepartment.DisplayIndex = 3;
             this.columnHeaderDepartment.Text = "소속부서";
-            this.columnHeaderDepartment.Width = 156;
+            this.columnHeaderDepartment.Width = 109;
             // 
             // columnHeaderDate
             // 
             this.columnHeaderDate.Text = "입사일";
-            this.columnHeaderDate.Width = 120;
+            this.columnHeaderDate.Width = 99;
             // 
             // columnHeaderPhone
             // 
@@ -319,6 +319,10 @@
             this.label10.Size = new System.Drawing.Size(392, 16);
             this.label10.TabIndex = 40;
             this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
+            // 
+            // columnHeaderID
+            // 
+            this.columnHeaderID.Text = "id";
             // 
             // FormDepartmentPersonnel
             // 
@@ -372,5 +376,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColumnHeader columnHeaderID;
     }
 }

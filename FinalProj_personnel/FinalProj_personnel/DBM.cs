@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data.MySqlClient.Authentication;
 
-
 namespace FinalProj_personnel
 {
     class DBM
@@ -674,7 +673,7 @@ namespace FinalProj_personnel
 
         }
         
-
+        */
         public void PersonnelDelete(String id) //사원삭제
         {
             String query = "DELETE FROM Personnel WHERE id = '" + id + "';";
@@ -705,6 +704,7 @@ namespace FinalProj_personnel
 
             }
         }
+        
 
 
     }
