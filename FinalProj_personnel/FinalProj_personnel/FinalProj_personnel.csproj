@@ -99,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBM.cs" />
+    <Compile Include="formtaskofmod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formtaskofmod.Designer.cs">
+      <DependentUpon>formtaskofmod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Task.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormApprovallist.resx">
       <DependentUpon>FormApprovallist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formtaskofmod.resx">
+      <DependentUpon>formtaskofmod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimeCardPesonnel.resx">
       <DependentUpon>FormTimeCardPesonnel.cs</DependentUpon>

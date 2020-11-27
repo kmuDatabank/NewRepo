@@ -672,7 +672,7 @@ namespace FinalProj_personnel
             }
 
         }
-        
+        */
 
         public void PersonnelDelete(String name) //사원삭제
         {
@@ -701,6 +701,7 @@ namespace FinalProj_personnel
 
             }
         }
+        
 
 
     }
