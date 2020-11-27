@@ -58,6 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMemberName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonFixComplete = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +67,7 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -144,6 +147,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonFixComplete);
             this.groupBox3.Controls.Add(this.comboBoxDepartment);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.numericUpDownAge);
@@ -163,7 +167,7 @@
             this.groupBox3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox3.Location = new System.Drawing.Point(776, 73);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(231, 499);
+            this.groupBox3.Size = new System.Drawing.Size(231, 524);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "(수정 list)";
@@ -313,6 +317,19 @@
             this.label10.TabIndex = 39;
             this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
             // 
+            // columnHeaderID
+            // 
+            this.columnHeaderID.Text = "id";
+            // 
+            // buttonFixComplete
+            // 
+            this.buttonFixComplete.Location = new System.Drawing.Point(68, 479);
+            this.buttonFixComplete.Name = "buttonFixComplete";
+            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
+            this.buttonFixComplete.TabIndex = 33;
+            this.buttonFixComplete.Text = "수정완료";
+            this.buttonFixComplete.UseVisualStyleBackColor = true;
+            // 
             // FormNamePersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -365,5 +382,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMemberName;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColumnHeader columnHeaderID;
+        private System.Windows.Forms.Button buttonFixComplete;
     }
 }

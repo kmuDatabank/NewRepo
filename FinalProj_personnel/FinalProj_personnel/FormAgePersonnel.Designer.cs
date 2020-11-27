@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.listViewDepartmentType = new System.Windows.Forms.ListView();
-            this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDepartment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,6 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMemberName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonFixComplete = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +67,7 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -76,18 +79,13 @@
             this.listViewDepartmentType.FullRowSelect = true;
             this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(21, 94);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(21, 86);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(766, 469);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(766, 477);
             this.listViewDepartmentType.TabIndex = 25;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
             this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
-            // 
-            // columnHeaderAge
-            // 
-            this.columnHeaderAge.Text = "나이";
-            this.columnHeaderAge.Width = 69;
             // 
             // columnHeaderName
             // 
@@ -98,6 +96,11 @@
             // 
             this.columnHeaderGender.Text = "성별";
             this.columnHeaderGender.Width = 77;
+            // 
+            // columnHeaderAge
+            // 
+            this.columnHeaderAge.Text = "나이";
+            this.columnHeaderAge.Width = 69;
             // 
             // columnHeaderPosition
             // 
@@ -151,6 +154,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonFixComplete);
             this.groupBox3.Controls.Add(this.comboBoxDepartment);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.numericUpDownAge);
@@ -167,9 +171,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.textBoxMemberName);
-            this.groupBox3.Location = new System.Drawing.Point(811, 71);
+            this.groupBox3.Location = new System.Drawing.Point(811, 65);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(243, 492);
+            this.groupBox3.Size = new System.Drawing.Size(243, 520);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "(수정 list)";
@@ -319,6 +323,19 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
             // 
+            // columnHeaderID
+            // 
+            this.columnHeaderID.Text = "id";
+            // 
+            // buttonFixComplete
+            // 
+            this.buttonFixComplete.Location = new System.Drawing.Point(72, 475);
+            this.buttonFixComplete.Name = "buttonFixComplete";
+            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
+            this.buttonFixComplete.TabIndex = 34;
+            this.buttonFixComplete.Text = "수정완료";
+            this.buttonFixComplete.UseVisualStyleBackColor = true;
+            // 
             // FormAgePersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -371,5 +388,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMemberName;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColumnHeader columnHeaderID;
+        private System.Windows.Forms.Button buttonFixComplete;
     }
 }
