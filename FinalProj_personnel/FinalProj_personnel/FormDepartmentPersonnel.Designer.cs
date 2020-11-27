@@ -57,13 +57,15 @@
             this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDepartSearch
             // 
-            this.buttonDepartSearch.Location = new System.Drawing.Point(406, 37);
+            this.buttonDepartSearch.Location = new System.Drawing.Point(462, 37);
             this.buttonDepartSearch.Name = "buttonDepartSearch";
             this.buttonDepartSearch.Size = new System.Drawing.Size(75, 30);
             this.buttonDepartSearch.TabIndex = 27;
@@ -94,6 +96,7 @@
             this.groupBox3.Size = new System.Drawing.Size(254, 492);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "(수정 list)";
             // 
             // comboBoxDepartment
             // 
@@ -232,7 +235,7 @@
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Location = new System.Drawing.Point(238, 37);
+            this.textBoxInput.Location = new System.Drawing.Point(281, 37);
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(141, 28);
             this.textBoxInput.TabIndex = 29;
@@ -240,6 +243,7 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -251,9 +255,9 @@
             this.listViewDepartmentType.FullRowSelect = true;
             this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(24, 92);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(27, 97);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(760, 480);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(769, 480);
             this.listViewDepartmentType.TabIndex = 30;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
@@ -262,6 +266,7 @@
             // columnHeaderName
             // 
             this.columnHeaderName.Text = "이름";
+            this.columnHeaderName.Width = 72;
             // 
             // columnHeaderGender
             // 
@@ -269,45 +274,62 @@
             // 
             // columnHeaderAge
             // 
-            this.columnHeaderAge.DisplayIndex = 4;
             this.columnHeaderAge.Text = "나이";
+            this.columnHeaderAge.Width = 90;
             // 
             // columnHeaderPosition
             // 
-            this.columnHeaderPosition.DisplayIndex = 2;
             this.columnHeaderPosition.Text = "직급";
             // 
             // columnHeaderDepartment
             // 
-            this.columnHeaderDepartment.DisplayIndex = 3;
             this.columnHeaderDepartment.Text = "소속부서";
+            this.columnHeaderDepartment.Width = 109;
             // 
             // columnHeaderDate
             // 
             this.columnHeaderDate.Text = "입사일";
+            this.columnHeaderDate.Width = 99;
             // 
             // columnHeaderPhone
             // 
             this.columnHeaderPhone.Text = "연락처";
+            this.columnHeaderPhone.Width = 104;
             // 
             // columnHeaderAddress
             // 
             this.columnHeaderAddress.Text = "주소";
+            this.columnHeaderAddress.Width = 226;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(33, 40);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(182, 18);
+            this.label9.Size = new System.Drawing.Size(224, 18);
             this.label9.TabIndex = 31;
-            this.label9.Text = "이름으로 검색하시오:";
+            this.label9.Text = "이름으로 사원 검색하시오:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("돋움체", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Location = new System.Drawing.Point(202, 580);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(392, 16);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
+            // 
+            // columnHeaderID
+            // 
+            this.columnHeaderID.Text = "id";
             // 
             // FormDepartmentPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 603);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.listViewDepartmentType);
             this.Controls.Add(this.textBoxInput);
@@ -353,5 +375,7 @@
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColumnHeader columnHeaderID;
     }
 }

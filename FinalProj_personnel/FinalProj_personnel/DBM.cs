@@ -672,15 +672,18 @@ namespace FinalProj_personnel
             }
 
         }
+        
         */
-
-        public void PersonnelDelete(String name) //사원삭제
+        public void PersonnelDelete(String id) //사원삭제
         {
+            String query = "DELETE FROM Personnel WHERE id = '" + id + "';";
             using (DBM.Getinstance())
             {
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("DELETE FROM Personnel WHERE name = '" + name + "'", conn);
+
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 cmd.ExecuteNonQuery();
 
