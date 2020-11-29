@@ -19,7 +19,8 @@ namespace FinalProj_personnel
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormReadReceived form = new FormReadReceived();
+            form.Show();
         }
     }
 }

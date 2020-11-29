@@ -19,7 +19,8 @@ namespace FinalProj_personnel
 
         private void ButtonOpenMail_Click(object sender, EventArgs e)
         {
-
+            FormReadTransmitted form = new FormReadTransmitted();
+            form.Show();
         }
     }
 }

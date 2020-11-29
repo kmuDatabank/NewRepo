@@ -77,6 +77,7 @@
             this.buttonMail.TabIndex = 3;
             this.buttonMail.Text = "쪽지";
             this.buttonMail.UseVisualStyleBackColor = true;
+            this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
             // 
             // label1
             // 
