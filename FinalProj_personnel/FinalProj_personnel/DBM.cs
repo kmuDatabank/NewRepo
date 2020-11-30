@@ -597,7 +597,7 @@ namespace FinalProj_personnel
 
             return rdr;
         }
-        #region 사원검색(부서별/ 이름별/ 나이별) 검색
+        // 사원검색(부서별/ 이름별/ 나이별) 검색
         public string[,] Search()
         {
             string[,] a = new string[13, 8];
@@ -624,9 +624,6 @@ namespace FinalProj_personnel
             }
             return a;
         }
-    }
-    }
-        #endregion
 
         //사원 수정기능
         public void personnel_change(String backupname, string name, string gender, string position, string department, string date, string phoneNum, string address, string age)
@@ -705,19 +702,6 @@ namespace FinalProj_personnel
 
         }
         
-
-        public void PersonnelDelete(String name) //사원삭제
-        {
-            using (DBM.Getinstance())
-            {
-                conn.Open();
-
-                MySqlCommand cmd = new MySqlCommand("DELETE FROM Personnel WHERE name = '" + name + "'", conn);
-
-                cmd.ExecuteNonQuery();
-
-            }
-        }
         */
 
 
