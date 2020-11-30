@@ -42,7 +42,7 @@ namespace FinalProj_personnel
             string[,] aa = new string[13, 8];
             aa = DBM.GetDBMinstance().Search();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i <13; i++)
             {
                 if (aa[i, 0] == null)
                 {
