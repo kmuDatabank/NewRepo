@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ButtonOpenMail = new System.Windows.Forms.Button();
-            this.ListView = new System.Windows.Forms.ListView();
+            this.ListViewTransmitted = new System.Windows.Forms.ListView();
             this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,20 +46,20 @@
             this.ButtonOpenMail.UseVisualStyleBackColor = true;
             this.ButtonOpenMail.Click += new System.EventHandler(this.ButtonOpenMail_Click);
             // 
-            // ListView
+            // ListViewTransmitted
             // 
-            this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListViewTransmitted.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Name,
             this.Title,
             this.Content,
             this.Date});
-            this.ListView.HideSelection = false;
-            this.ListView.Location = new System.Drawing.Point(12, 12);
-            this.ListView.Name = "ListView";
-            this.ListView.Size = new System.Drawing.Size(714, 410);
-            this.ListView.TabIndex = 2;
-            this.ListView.UseCompatibleStateImageBehavior = false;
-            this.ListView.View = System.Windows.Forms.View.Details;
+            this.ListViewTransmitted.HideSelection = false;
+            this.ListViewTransmitted.Location = new System.Drawing.Point(12, 12);
+            this.ListViewTransmitted.Name = "ListViewTransmitted";
+            this.ListViewTransmitted.Size = new System.Drawing.Size(714, 410);
+            this.ListViewTransmitted.TabIndex = 2;
+            this.ListViewTransmitted.UseCompatibleStateImageBehavior = false;
+            this.ListViewTransmitted.View = System.Windows.Forms.View.Details;
             // 
             // Name
             // 
@@ -90,9 +90,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 434);
             this.Controls.Add(this.ButtonOpenMail);
-            this.Controls.Add(this.ListView);
-           
-            this.Text = "FormTransmittedMail";
+            this.Controls.Add(this.ListViewTransmitted);
+            //this.Name = "FormTransmittedMail";
             this.ResumeLayout(false);
 
         }
@@ -100,10 +99,10 @@
         #endregion
 
         private System.Windows.Forms.Button ButtonOpenMail;
-        private System.Windows.Forms.ListView ListView;
         private System.Windows.Forms.ColumnHeader Name;
         private System.Windows.Forms.ColumnHeader Title;
         private System.Windows.Forms.ColumnHeader Content;
         private System.Windows.Forms.ColumnHeader Date;
+        public System.Windows.Forms.ListView ListViewTransmitted;
     }
 }

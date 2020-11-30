@@ -57,5 +57,11 @@ namespace FinalProj_personnel
         {
             this.Close();
         }
+
+        private void buttonMail_Click(object sender, EventArgs e)
+        {
+            FormMailMenu form = new FormMailMenu(name);
+            form.Show();
+        }
     }
 }

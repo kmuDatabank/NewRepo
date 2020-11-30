@@ -582,8 +582,6 @@ namespace FinalProj_personnel
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-
-
             }
 
         }
@@ -705,10 +703,24 @@ namespace FinalProj_personnel
         
         */
 
+                cmd.ExecuteNonQuery();
 
+            }
+        }
 
+        public void delete(String d) //인사부서의 삭제기능
+        {
+            String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
+           
+            using (DBM.Getinstance())
+            {
+                conn.Open();
 
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
+
+            }
+        }
     }
-
-
 }

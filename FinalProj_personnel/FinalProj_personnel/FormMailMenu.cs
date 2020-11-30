@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace FinalProj_personnel
 {
+
     public partial class FormMailMenu : Form
     {
+        string name = "";
         public FormMailMenu()
         {
             InitializeComponent();
         }
+
+        public FormMailMenu(string name)
+        {
+            InitializeComponent();
+            this.name = name;
+        }
+
 
         private void ButtonSendMail_Click(object sender, EventArgs e)
         {

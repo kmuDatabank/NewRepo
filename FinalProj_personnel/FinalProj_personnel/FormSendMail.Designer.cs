@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.LabelTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TextBoxTitle = new System.Windows.Forms.TextBox();
+            this.TextBoxMessage = new System.Windows.Forms.TextBox();
             this.ComboBoxTo = new System.Windows.Forms.ComboBox();
             this.LabelReceiver = new System.Windows.Forms.Label();
             this.ButtonSendMail = new System.Windows.Forms.Button();
@@ -45,20 +45,20 @@
             this.LabelTitle.TabIndex = 0;
             this.LabelTitle.Text = "제목";
             // 
-            // textBox1
+            // TextBoxTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 21);
-            this.textBox1.TabIndex = 1;
+            this.TextBoxTitle.Location = new System.Drawing.Point(60, 43);
+            this.TextBoxTitle.Name = "TextBoxTitle";
+            this.TextBoxTitle.Size = new System.Drawing.Size(277, 21);
+            this.TextBoxTitle.TabIndex = 1;
             // 
-            // textBox2
+            // TextBoxMessage
             // 
-            this.textBox2.Location = new System.Drawing.Point(27, 70);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(310, 329);
-            this.textBox2.TabIndex = 2;
+            this.TextBoxMessage.Location = new System.Drawing.Point(27, 70);
+            this.TextBoxMessage.Multiline = true;
+            this.TextBoxMessage.Name = "TextBoxMessage";
+            this.TextBoxMessage.Size = new System.Drawing.Size(310, 329);
+            this.TextBoxMessage.TabIndex = 2;
             // 
             // ComboBoxTo
             // 
@@ -95,8 +95,8 @@
             this.Controls.Add(this.ButtonSendMail);
             this.Controls.Add(this.LabelReceiver);
             this.Controls.Add(this.ComboBoxTo);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextBoxMessage);
+            this.Controls.Add(this.TextBoxTitle);
             this.Controls.Add(this.LabelTitle);
             this.Name = "FormSendMail";
             this.Text = "FormSendMail";
@@ -108,8 +108,8 @@
         #endregion
 
         private System.Windows.Forms.Label LabelTitle;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TextBoxTitle;
+        private System.Windows.Forms.TextBox TextBoxMessage;
         private System.Windows.Forms.ComboBox ComboBoxTo;
         private System.Windows.Forms.Label LabelReceiver;
         private System.Windows.Forms.Button ButtonSendMail;
