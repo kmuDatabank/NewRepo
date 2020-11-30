@@ -125,6 +125,20 @@ namespace FinalProj_personnel
 
             todaytask sinfo4 = new todaytask(num1);
 
+           /* //리스트뷰
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                string query10 = " SELECT num,name FROM medium_cate WHERE name LIKE '" + "%" + todaytask + "'";
+                MySqlCommand cmd = new MySqlCommand(query10, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+                dt.Load(rdr);
+
+                list.DataSource = dt;
+                rdr.Close();
+            }*/
 
             if (comboBox4.SelectedIndex == 0 && comboBox9.SelectedIndex == 0)
             {
@@ -144,7 +158,14 @@ namespace FinalProj_personnel
                     conn.Open();
                     string query = " UPDATE large_cate SET name= '" + cate + "' WHERE Num='" + nu + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+
+                    list.DataSource = dt;
+                    rdr.Close();
+
                 }
             }
 
@@ -364,6 +385,103 @@ namespace FinalProj_personnel
                     }
                 }
 
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string num1 = cate_input.Text;
+
+            if (comboBox4.SelectedIndex == 0 && comboBox9.SelectedIndex == 2)
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query3 = " DELETE large_cate WHERE num = '" + num1 + "' ";
+                    MySqlCommand cmd = new MySqlCommand(query3, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+
+            if (comboBox4.SelectedIndex == 1 && comboBox9.SelectedIndex == 2)
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query3 = " DELETE medium_cate WHERE num = '" + num1 + "' ";
+                    MySqlCommand cmd = new MySqlCommand(query3, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            if (comboBox4.SelectedIndex == 2 && comboBox9.SelectedIndex == 2)
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query3 = " DELETE small_cate WHERE num = '" + num1 + "' ";
+                    MySqlCommand cmd = new MySqlCommand(query3, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string cate = cate_input.Text;
+            string nu = numbox.Text;
+
+            if (comboBox4.SelectedIndex == 0)
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query = " UPDATE large_table SET  ";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+
+                    list2.DataSource = dt;
+                    rdr.Close();
+
+                }
+            }
+
+            if (comboBox4.SelectedIndex == 1)
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query = " SELECT * from medium_cate";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+
+                    list2.DataSource = dt;
+                    rdr.Close();
+                }
+            }
+
+            if (comboBox4.SelectedIndex == 2 && comboBox9.SelectedIndex == 1)
+            {
+                using (MySqlConnection conn = new MySqlConnection(strConn))
+                {
+                    conn.Open();
+                    string query = " SELECT * from small_cate";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+
+                    list2.DataSource = dt;
+                    rdr.Close();
+                }
             }
         }
     }
