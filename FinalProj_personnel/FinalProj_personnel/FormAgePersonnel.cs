@@ -21,6 +21,14 @@ namespace FinalProj_personnel
             InitializeComponent();
             InitVariables();
         }
+        public FormAgePersonnel(String text1,String text2)
+        {
+
+            InitializeComponent();
+            InitVariables();
+            this.text1 = text1;
+            this.text2 = text2;
+        }
 
         public void SetAgeText(string text)
         {
@@ -72,27 +80,64 @@ namespace FinalProj_personnel
                 listViewDepartmentType.Items.Add(item);
             }
 
+            textBoxInput.Text = text2;
+
+
+
+
+
         }
 
         private void buttonDepartSearch_Click(object sender, EventArgs e) //사원검색
         {
             string text = textBoxInput.Text;
+            String[,] save = new String[13, 8];
+            int k = 0;
+
             foreach (ListViewItem lvi in listViewDepartmentType.Items)
             {
-                if (text == lvi.SubItems[0].Text)
+                if (text == lvi.SubItems[2].Text)//검색조건 일치시
                 {
-                    textBoxMemberName.Text = lvi.SubItems[0].Text;//이름으로 검색                   
-                    comboBoxMemberGender.Text = lvi.SubItems[1].Text; //성별
-                    numericUpDownAge.Value = decimal.Parse(lvi.SubItems[2].Text); //나이
-                    comboBoxPosition.Text = lvi.SubItems[3].Text; //직급
-                    comboBoxDepartment.Text = lvi.SubItems[4].Text; //소속부서
-                    textBoxDate.Text = lvi.SubItems[5].Text;//입사일
-                    textBoxPhoneNum.Text = lvi.SubItems[6].Text;//연락처
-                    textBoxAddress.Text = lvi.SubItems[7].Text;//주소
-                    return;
+
+                    save[k, 0] = lvi.SubItems[0].Text;//이름으로 검색                   
+                    save[k, 1] = lvi.SubItems[1].Text; //성별
+                    save[k, 2] = decimal.Parse(lvi.SubItems[2].Text).ToString(); ; //나이
+                    save[k, 3] = lvi.SubItems[3].Text; //직급
+                    save[k, 4] = lvi.SubItems[4].Text; //소속부서
+                    save[k, 5] = lvi.SubItems[5].Text;//입사일
+                    save[k, 6] = lvi.SubItems[6].Text;//연락처
+                    save[k, 7] = lvi.SubItems[7].Text;//주소
+                    k++;
+
                 }
+
+
             }
-            MessageBox.Show("이름으로 검색하여주세요.");
+
+            listViewDepartmentType.Items.Clear();
+
+            for (int i = 0; i < 13; i++)
+            {
+                if (save[i, 0] == null)
+                {
+                    break;
+                }
+                ListViewItem item = new ListViewItem();
+                for (int j = 0; j < 8; j++)
+                {
+                    if (j == 0)
+                    {
+                        item.Text = save[i, j];
+                    }
+                    else
+                    {
+                        item.SubItems.Add(save[i, j]);
+                    }
+                }
+                listViewDepartmentType.Items.Add(item);
+            }
+
+
         }
 
      
@@ -181,6 +226,8 @@ namespace FinalProj_personnel
 
             MessageBox.Show("수정되었습니다.");
         }
+
+
     }
  }
 

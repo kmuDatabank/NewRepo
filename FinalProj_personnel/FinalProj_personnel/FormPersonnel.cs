@@ -168,14 +168,14 @@ namespace FinalProj_personnel
             }
             if (comboBoxDepartmentType.SelectedIndex == 1) //나이별
             {
-                FormNamePersonnel form = new FormNamePersonnel();
+                FormNamePersonnel form = new FormNamePersonnel(text1,text2);
                 form.SetNameText("나이별 검색");
                 form.Show();
 
             }
             if (comboBoxDepartmentType.SelectedIndex == 2) //이름별
             {
-                FormAgePersonnel form = new FormAgePersonnel();
+                FormAgePersonnel form = new FormAgePersonnel(text1,text2);
                 form.SetAgeText("이름별 검색");
                 form.Show();
 
