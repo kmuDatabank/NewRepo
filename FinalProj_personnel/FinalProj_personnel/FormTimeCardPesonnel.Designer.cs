@@ -42,6 +42,7 @@
             this.textBoxEndTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonEndMemory = new System.Windows.Forms.Button();
+            this.radioButton_holiday = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGotoWork)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -204,11 +205,23 @@
             this.buttonEndMemory.UseVisualStyleBackColor = true;
             this.buttonEndMemory.Click += new System.EventHandler(this.buttonEndMemory_Click);
             // 
+            // radioButton_holiday
+            // 
+            this.radioButton_holiday.AutoSize = true;
+            this.radioButton_holiday.Location = new System.Drawing.Point(21, 325);
+            this.radioButton_holiday.Name = "radioButton_holiday";
+            this.radioButton_holiday.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_holiday.TabIndex = 5;
+            this.radioButton_holiday.TabStop = true;
+            this.radioButton_holiday.Text = "휴일여부";
+            this.radioButton_holiday.UseVisualStyleBackColor = true;
+            // 
             // FormTimeCardPesonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 353);
+            this.Controls.Add(this.radioButton_holiday);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -222,6 +235,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -241,5 +255,6 @@
         private System.Windows.Forms.TextBox textBoxEndTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonEndMemory;
+        private System.Windows.Forms.RadioButton radioButton_holiday;
     }
 }

@@ -82,7 +82,10 @@ namespace FinalProj_personnel
 
             checkholi = checkSDholi(day);//요일판단
             checknight = checkSDnight(time);//시간판단
-
+            if (radioButton_holiday.Checked)
+            {
+                checkholi = "1";
+            }
 
 
             using (DBM.Getinstance())
