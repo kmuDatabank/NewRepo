@@ -14,6 +14,11 @@ namespace FinalProj_personnel
     {
         public string name = "홍길동";
         public string rank = "부서장";
+        // 결재 로그
+        // 결재 승인, 반려
+
+        // 부서장이 결재 작성할경우 결재자 1이 없어짐
+        // 결재 생성시간 ==> 결재자 1
         public void Setinfo(string user, string user_rank)
         {
             this.name = user;
@@ -21,6 +26,13 @@ namespace FinalProj_personnel
         }
         public FormApprovallist()
         {
+            InitializeComponent();
+            InitVariables();
+        }
+        public FormApprovallist(string u_name, string u_rank)
+        {
+            this.name = u_name;
+            this.rank = u_rank;
             InitializeComponent();
             InitVariables();
         }

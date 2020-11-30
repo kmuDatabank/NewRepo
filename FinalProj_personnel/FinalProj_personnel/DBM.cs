@@ -582,8 +582,6 @@ namespace FinalProj_personnel
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-
-
             }
 
         }
@@ -704,10 +702,5 @@ namespace FinalProj_personnel
 
             }
         }
-        
-
-
     }
-
-
 }

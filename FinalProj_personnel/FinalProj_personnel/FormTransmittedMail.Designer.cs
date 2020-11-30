@@ -91,8 +91,7 @@
             this.ClientSize = new System.Drawing.Size(838, 434);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewTransmitted);
-            this.Name = "FormTransmittedMail";
-            this.Text = "FormTransmittedMail";
+            //this.Name = "FormTransmittedMail";
             this.ResumeLayout(false);
 
         }
@@ -100,10 +99,10 @@
         #endregion
 
         private System.Windows.Forms.Button ButtonOpenMail;
-        private System.Windows.Forms.ListView ListViewTransmitted;
         private System.Windows.Forms.ColumnHeader Name;
         private System.Windows.Forms.ColumnHeader Title;
         private System.Windows.Forms.ColumnHeader Content;
         private System.Windows.Forms.ColumnHeader Date;
+        public System.Windows.Forms.ListView ListViewTransmitted;
     }
 }

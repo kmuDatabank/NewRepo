@@ -50,7 +50,10 @@ namespace FinalProj_personnel
             }
             if (MessageBox.Show("정말로 전송하시겠습니까?", "쪽지 전송 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                mail.ListViewTransmitted.Items.Add(ComboBoxTo.SelectedItem, TextBoxTitle.Text, TextBoxMessage.Text, DateTime.Now);
+             //   mail.ListViewTransmitted.Items.Add(ComboBoxTo.SelectedItem, TextBoxTitle.Text, TextBoxMessage.Text, DateTime.Now);
+                
+             // a, b, c, d;
+             // form(a,b,c,d);
                 MessageBox.Show("전송 완료");
             }
             else
