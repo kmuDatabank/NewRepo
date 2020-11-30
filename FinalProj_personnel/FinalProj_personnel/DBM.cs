@@ -555,8 +555,7 @@ namespace FinalProj_personnel
 
         }
 
-
-
+        #region 인사파트 DBM
 
         public void memberPersonnel(string name, string gender, string age, string position, string department, string date, string phoneNum, string address) // 사원등록
         {
@@ -569,6 +568,7 @@ namespace FinalProj_personnel
             }
         }
 
+        //이거는 쓸모없어서 지워야할듯.
         public void departPersonnel(string name, string head)
         {
             string departmentName = "";
@@ -598,7 +598,7 @@ namespace FinalProj_personnel
 
             return rdr;
         }
-        #region 사원검색(부서별/ 이름별/ 나이별) 검색
+       // 사원검색(부서별/ 이름별/ 나이별) 검색
         public string[,] Search() 
         {
             string[,] a = new string[3, 8];
@@ -625,22 +625,52 @@ namespace FinalProj_personnel
             }
             return a;
         }
-        #endregion
+  
+        //사원 수정기능
+        public void personnel_change(String backupname, string name, string gender, string position, string department, string date, string phoneNum, string address, string age)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET name =" + "\"" + name + "\"" + "," + "gender=" + "\"" + gender + "\"" + "," + "position=" + "\"" + position + "\"" + "," + "department=" + "\"" + department + "\"" +
+                   "," + " date=" + "\"" + date + "\"" + "," + " phoneNum=" + "\"" + phoneNum + "\"" + "," + "address=" + "\"" + address + "\"" + "," + "age= " + "\"" + age + "\"" + "WHERE name=" + "\"" + backupname + "\"", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+      
+        public void PersonnelDelete(String name) //사원삭제
+        {
+            String query = "DELETE FROM Personnel WHERE name = '" + name + "';";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
 
 
 
-        #region 사원검색(부서별/ 이름별/ 나이별) 수정
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
+                cmd.ExecuteNonQuery();
 
-        #endregion
+            }
+        }
 
+        public void delete(String d) //인사부서의 삭제기능
+        {
+            String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
 
+            using (DBM.Getinstance())
+            {
+                conn.Open();
 
-        #region 사원검색(부서별/ 이름별/ 나이별) 삭제
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
+                cmd.ExecuteNonQuery();
 
-        #endregion
+            }
+        }
 
+        #endregion 
 
         /*
         public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
@@ -674,37 +704,8 @@ namespace FinalProj_personnel
         }
         
         */
-        public void PersonnelDelete(String id) //사원삭제
-        {
-            String query = "DELETE FROM Personnel WHERE id = '" + id + "';";
-            using (DBM.Getinstance())
-            {
-                conn.Open();
 
 
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                cmd.ExecuteNonQuery();
-
-            }
-        }
-
-        public void delete(String d) //인사부서의 삭제기능
-        {
-            String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
-           
-            using (DBM.Getinstance())
-            {
-                conn.Open();
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                cmd.ExecuteNonQuery();
-
-            }
-        }
-        
 
 
     }

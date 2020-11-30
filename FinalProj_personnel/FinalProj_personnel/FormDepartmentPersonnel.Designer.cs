@@ -30,6 +30,7 @@
         {
             this.buttonDepartSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonFixComplete = new System.Windows.Forms.Button();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
@@ -48,7 +49,6 @@
             this.textBoxMemberName = new System.Windows.Forms.TextBox();
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.listViewDepartmentType = new System.Windows.Forms.ListView();
-            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,14 +59,13 @@
             this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.buttonFixComplete = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDepartSearch
             // 
-            this.buttonDepartSearch.Location = new System.Drawing.Point(462, 37);
+            this.buttonDepartSearch.Location = new System.Drawing.Point(215, 34);
             this.buttonDepartSearch.Name = "buttonDepartSearch";
             this.buttonDepartSearch.Size = new System.Drawing.Size(75, 30);
             this.buttonDepartSearch.TabIndex = 27;
@@ -99,6 +98,16 @@
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "(수정 list)";
+            // 
+            // buttonFixComplete
+            // 
+            this.buttonFixComplete.Location = new System.Drawing.Point(80, 485);
+            this.buttonFixComplete.Name = "buttonFixComplete";
+            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
+            this.buttonFixComplete.TabIndex = 34;
+            this.buttonFixComplete.Text = "수정완료";
+            this.buttonFixComplete.UseVisualStyleBackColor = true;
+            this.buttonFixComplete.Click += new System.EventHandler(this.buttonFixComplete_Click);
             // 
             // comboBoxDepartment
             // 
@@ -237,7 +246,7 @@
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Location = new System.Drawing.Point(281, 37);
+            this.textBoxInput.Location = new System.Drawing.Point(41, 34);
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(141, 28);
             this.textBoxInput.TabIndex = 29;
@@ -245,7 +254,6 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -263,11 +271,8 @@
             this.listViewDepartmentType.TabIndex = 30;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
+            this.listViewDepartmentType.Click += new System.EventHandler(this.listViewDepartmentType_Click);
             this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
-            // 
-            // columnHeaderID
-            // 
-            this.columnHeaderID.Text = "id";
             // 
             // columnHeaderName
             // 
@@ -310,11 +315,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 40);
+            this.label9.Font = new System.Drawing.Font("돋움", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(312, 40);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(224, 18);
+            this.label9.Size = new System.Drawing.Size(195, 16);
             this.label9.TabIndex = 31;
-            this.label9.Text = "이름으로 사원 검색하시오:";
+            this.label9.Text = "(이름으로 본인 바로 검색)";
             // 
             // label10
             // 
@@ -322,18 +328,9 @@
             this.label10.Font = new System.Drawing.Font("돋움체", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(202, 580);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(392, 16);
+            this.label10.Size = new System.Drawing.Size(328, 16);
             this.label10.TabIndex = 40;
-            this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
-            // 
-            // buttonFixComplete
-            // 
-            this.buttonFixComplete.Location = new System.Drawing.Point(80, 485);
-            this.buttonFixComplete.Name = "buttonFixComplete";
-            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
-            this.buttonFixComplete.TabIndex = 34;
-            this.buttonFixComplete.Text = "수정완료";
-            this.buttonFixComplete.UseVisualStyleBackColor = true;
+            this.label10.Text = "(삭제를 원하시면 우클릭으로 선택하세요.)";
             // 
             // FormDepartmentPersonnel
             // 
@@ -387,7 +384,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ColumnHeader columnHeaderID;
         private System.Windows.Forms.Button buttonFixComplete;
     }
 }

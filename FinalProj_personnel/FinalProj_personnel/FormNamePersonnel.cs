@@ -12,6 +12,7 @@ namespace FinalProj_personnel
 {
     public partial class FormNamePersonnel : Form
     {
+        string backupname = ""; //사원 수정시 이름으로 받아올때 필요한 변수
         private string text;
         public FormNamePersonnel()
         {
@@ -66,7 +67,7 @@ namespace FinalProj_personnel
 
       
 
-        private void buttonDepartSearch_Click(object sender, EventArgs e)
+        private void buttonDepartSearch_Click(object sender, EventArgs e) //사원검색
         {
             string text = textBoxInput.Text;
             foreach (ListViewItem lvi in listViewDepartmentType.Items)
@@ -94,7 +95,6 @@ namespace FinalProj_personnel
                 EventHandler eh = new EventHandler(MenuClick);
                 MenuItem[] ami =
                 {
-                    new MenuItem("수정", eh),
                     new MenuItem("삭제", eh)
                 };
                 ContextMenu = new System.Windows.Forms.ContextMenu(ami);
@@ -105,14 +105,71 @@ namespace FinalProj_personnel
         {
             MenuItem mi = (MenuItem)obj;
             String str = mi.Text;
-            if (str == "수정")
-                MessageBox.Show("수정을 선택하였습니다.");
 
             if (str == "삭제")
-                MessageBox.Show("삭제를 선택하였습니다.");
+            {
+                //한줄만 삭제        
+                int alpha = listViewDepartmentType.FocusedItem.Index;
+                string d = listViewDepartmentType.SelectedItems[alpha].SubItems[0].Text; //선택된 열의 이름으로 삭제
+
+                DBM.GetDBMinstance().PersonnelDelete(d); //삭제
+                listViewDepartmentType.Items.Remove(listViewDepartmentType.SelectedItems[0]);
+                MessageBox.Show(d + "삭제하였습니다.");
+
+            }
 
         }
 
-       
+        //리스트뷰에서 사원 클릭시 옆에 텍스트박스로 정보 띄우기
+        private void listViewDepartmentType_Click(object sender, EventArgs e)
+        {
+            if (listViewDepartmentType.SelectedIndices.Count > 0)
+            {
+                textBoxMemberName.Text = listViewDepartmentType.SelectedItems[0].SubItems[0].Text;
+                comboBoxMemberGender.Text = listViewDepartmentType.SelectedItems[0].SubItems[1].Text;
+                numericUpDownAge.Text = listViewDepartmentType.SelectedItems[0].SubItems[2].Text;
+                comboBoxPosition.Text = listViewDepartmentType.SelectedItems[0].SubItems[3].Text;
+                comboBoxDepartment.Text = listViewDepartmentType.SelectedItems[0].SubItems[4].Text;
+                textBoxDate.Text = listViewDepartmentType.SelectedItems[0].SubItems[5].Text;
+                textBoxPhoneNum.Text = listViewDepartmentType.SelectedItems[0].SubItems[6].Text;
+                textBoxAddress.Text = listViewDepartmentType.SelectedItems[0].SubItems[7].Text;
+
+                backupname = listViewDepartmentType.SelectedItems[0].SubItems[0].Text;
+            }
+        }
+
+        //사원 수정완료 버튼
+        private void buttonFixComplete_Click(object sender, EventArgs e)
+        {
+            bool selected = listViewDepartmentType.SelectedItems.Count > 0;
+            if (selected == false)
+            {
+                throw new ApplicationException(
+                         "선택 항목이 없는데 수정 요청하였습니다.");
+            }
+            ListViewItem lvi = listViewDepartmentType.SelectedItems[0];
+            string name = textBoxMemberName.Text;
+            string gender = comboBoxMemberGender.Text;
+            decimal age = numericUpDownAge.Value;
+            string position = comboBoxPosition.Text;
+            string department = comboBoxDepartment.Text;
+            string date = textBoxDate.Text;
+            string phoneNum = textBoxPhoneNum.Text;
+            string address = textBoxAddress.Text;
+
+            lvi.SubItems[0].Text = name;
+            lvi.SubItems[1].Text = gender.ToString();
+            lvi.SubItems[2].Text = age.ToString();
+            lvi.SubItems[3].Text = position.ToString();
+            lvi.SubItems[4].Text = department.ToString();
+            lvi.SubItems[5].Text = date;
+            lvi.SubItems[6].Text = phoneNum;
+            lvi.SubItems[7].Text = address;
+            
+            string age1 = numericUpDownAge.Value.ToString();
+
+            DBM.GetDBMinstance().personnel_change(backupname, name, gender, position, department, date, phoneNum, address, age1);
+            MessageBox.Show("수정되었습니다.");
+        }
     }
-}
+ }

@@ -41,6 +41,7 @@
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.buttonDepartSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonFixComplete = new System.Windows.Forms.Button();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
@@ -58,8 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMemberName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.columnHeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonFixComplete = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +66,6 @@
             // listViewDepartmentType
             // 
             this.listViewDepartmentType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderID,
             this.columnHeaderName,
             this.columnHeaderGender,
             this.columnHeaderAge,
@@ -85,6 +83,7 @@
             this.listViewDepartmentType.TabIndex = 25;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
+            this.listViewDepartmentType.Click += new System.EventHandler(this.listViewDepartmentType_Click);
             this.listViewDepartmentType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewDepartmentType_MouseDown);
             // 
             // columnHeaderName
@@ -129,22 +128,23 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(46, 41);
+            this.label9.Font = new System.Drawing.Font("돋움", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(318, 44);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(224, 18);
+            this.label9.Size = new System.Drawing.Size(195, 16);
             this.label9.TabIndex = 34;
-            this.label9.Text = "이름으로 사원 검색하시오:";
+            this.label9.Text = "(이름으로 본인 바로 검색)";
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Location = new System.Drawing.Point(285, 38);
+            this.textBoxInput.Location = new System.Drawing.Point(44, 34);
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(136, 28);
             this.textBoxInput.TabIndex = 33;
             // 
             // buttonDepartSearch
             // 
-            this.buttonDepartSearch.Location = new System.Drawing.Point(465, 38);
+            this.buttonDepartSearch.Location = new System.Drawing.Point(215, 34);
             this.buttonDepartSearch.Name = "buttonDepartSearch";
             this.buttonDepartSearch.Size = new System.Drawing.Size(75, 30);
             this.buttonDepartSearch.TabIndex = 32;
@@ -177,6 +177,16 @@
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "(수정 list)";
+            // 
+            // buttonFixComplete
+            // 
+            this.buttonFixComplete.Location = new System.Drawing.Point(72, 475);
+            this.buttonFixComplete.Name = "buttonFixComplete";
+            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
+            this.buttonFixComplete.TabIndex = 34;
+            this.buttonFixComplete.Text = "수정완료";
+            this.buttonFixComplete.UseVisualStyleBackColor = true;
+            this.buttonFixComplete.Click += new System.EventHandler(this.buttonFixComplete_Click);
             // 
             // comboBoxDepartment
             // 
@@ -319,22 +329,9 @@
             this.label10.Font = new System.Drawing.Font("돋움체", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(198, 572);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(392, 16);
+            this.label10.Size = new System.Drawing.Size(328, 16);
             this.label10.TabIndex = 40;
-            this.label10.Text = "(수정 및 삭제를 원하시면 우클릭으로 선택하세요.)";
-            // 
-            // columnHeaderID
-            // 
-            this.columnHeaderID.Text = "id";
-            // 
-            // buttonFixComplete
-            // 
-            this.buttonFixComplete.Location = new System.Drawing.Point(72, 475);
-            this.buttonFixComplete.Name = "buttonFixComplete";
-            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
-            this.buttonFixComplete.TabIndex = 34;
-            this.buttonFixComplete.Text = "수정완료";
-            this.buttonFixComplete.UseVisualStyleBackColor = true;
+            this.label10.Text = "(삭제를 원하시면 우클릭으로 선택하세요.)";
             // 
             // FormAgePersonnel
             // 
@@ -388,7 +385,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMemberName;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ColumnHeader columnHeaderID;
         private System.Windows.Forms.Button buttonFixComplete;
     }
 }

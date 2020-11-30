@@ -138,17 +138,33 @@ namespace FinalProj_personnel
         }
         #endregion
 
-         
+
+        //사원 검색부분에서 콤보박스랑 텍스트박스 변수
+        String text1 = ""; //콤보박스
+        String text2 = ""; //빈박스 
+
         #region 사원검색 부분 -> 검색, 출근부, 수정, 삭제
         private void buttonSearchDepartmentType_Click(object sender, EventArgs e) //부서별 검색
         {
             if (comboBoxDepartmentType.SelectedIndex == 0) //부서별
             {
-                FormDepartmentPersonnel form = new FormDepartmentPersonnel();
+                FormDepartmentPersonnel form = new FormDepartmentPersonnel(text1, text2);
                 form.SetDepartText("부서별 검색");
                 form.SetComboDepartText(comboBoxDepartmentType.Text);
                 form.Show();
-
+                /*
+                string text = textBoxInputSearch.Text;
+                foreach (ListViewItem lvi in listViewDepartmentType.Items)
+                {
+                    if (text == lvi.SubItems[4].Text)
+                    {
+                      
+                        comboBoxDepartment.Text = lvi.SubItems[4].Text; //소속부서
+                        
+                        return;
+                    }
+                }
+                */
             }
             if (comboBoxDepartmentType.SelectedIndex == 1) //나이별
             {
