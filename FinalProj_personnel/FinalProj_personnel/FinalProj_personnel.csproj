@@ -100,52 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBM.cs" />
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <Compile Include="tasksearcher.cs">
+    <Compile Include="FormApprovallog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tasksearcher.Designer.cs">
-      <DependentUpon>tasksearcher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mastertask.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mastertask.Designer.cs">
-      <DependentUpon>mastertask.cs</DependentUpon>
+    <Compile Include="FormApprovallog.Designer.cs">
+      <DependentUpon>FormApprovallog.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMailMenu.cs">
       <SubType>Form</SubType>
@@ -262,6 +221,9 @@
     <Compile Include="todaytask.cs" />
     <EmbeddedResource Include="FormAgePersonnel.resx">
       <DependentUpon>FormAgePersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormApprovallog.resx">
+      <DependentUpon>FormApprovallog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChange.resx">
       <DependentUpon>FormChange.cs</DependentUpon>

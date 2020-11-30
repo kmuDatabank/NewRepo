@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data.MySqlClient.Authentication;
+using System.Data;
 
 namespace FinalProj_personnel
 {
@@ -160,6 +161,70 @@ namespace FinalProj_personnel
             return rank;
         }
 
+        public void newApproval_log(string name, string writer, string now) // 새로운 결재 생성시 로그
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval_log (Approval_name, Approval_writer, Approval_date_pre) " +
+                    "VALUES ('"+name+ "','"+writer+ "','"+now+"')", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void newApproval_log_rank(string name, string writer, string now)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval_log (Approval_name, Approval_writer, Approval_date_pre, Approval_date_mid) " +
+                    "VALUES ('" + name + "','" + writer + "','" + now + "','"+now+"')", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void Approval_approval_log(string name, string now) // 부서장이 결재 승인시 로그
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Approval_log SET Approval_date_mid = '"+now+"' " +
+                    "WHERE Approval_name = '"+name+"'", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void Approval_approval_log_rank(string name, string now) // 사장이 최종 결재 승인시 로그
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Approval_log SET Approval_date_appr = '" + now + "' " +
+                    "WHERE Approval_name = '" + name + "'", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void Approval_return_log(string name, string now) // 결재 반려시 로그
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Approval_log SET Approval_date_ret = '" + now + "' " +
+                    "WHERE Approval_name = '" + name + "'", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public DataTable Approval_log()
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Approval_log";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(rdr);
+                rdr.Close();
+                return dt;
+            }
+        }
 
         public void newApproval(string name, string writer, string work, string text, string comment) // 신규 결재 작성
         {
