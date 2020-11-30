@@ -119,10 +119,10 @@ namespace FinalProj_personnel
             {
                 //한줄만 삭제        
                 int alpha = listViewDepartmentType.FocusedItem.Index;
-                string d = listViewDepartmentType.SelectedItems[alpha].SubItems[i].Text; //선택된 열의 이름으로 삭제
+                string d = listViewDepartmentType.Items[alpha].SubItems[i].Text; //선택된 열의 이름으로 삭제
 
                 DBM.GetDBMinstance().PersonnelDelete(d); //삭제
-                listViewDepartmentType.Items.Remove(listViewDepartmentType.SelectedItems[i]);
+                listViewDepartmentType.Items.Remove(listViewDepartmentType.Items[alpha]);
                 MessageBox.Show(d + " 님을 삭제하였습니다.");
 
             }
