@@ -599,7 +599,7 @@ namespace FinalProj_personnel
         }
         // 사원검색(부서별/ 이름별/ 나이별) 검색
         public string[,] Search()
-        {         
+        {
             string[,] a = new string[13, 8];
             int i = 0;
             using (DBM.Getinstance())
