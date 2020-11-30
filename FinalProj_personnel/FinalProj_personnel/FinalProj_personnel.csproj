@@ -142,6 +142,12 @@
     <Compile Include="FormTransmittedMail.Designer.cs">
       <DependentUpon>FormTransmittedMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="mastertask.cs" >
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mastertask.Designer.cs">
+      <DependentUpon>mastertask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Task.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="taskcate.cs" />
+    <Compile Include="tasksearcher.cs" >
+      <SubType>Form</SubType>
+    </Compile> 
+    
+    <Compile Include="tasksearcher.Designer.cs">
+      <DependentUpon>tasksearcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="todaytask.cs" />
     <EmbeddedResource Include="FormAgePersonnel.resx">
       <DependentUpon>FormAgePersonnel.cs</DependentUpon>
