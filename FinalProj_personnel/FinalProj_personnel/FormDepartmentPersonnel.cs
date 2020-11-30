@@ -134,12 +134,16 @@ namespace FinalProj_personnel
             if (str == "삭제")
             {
                 //한줄만 삭제        
-                int index = listViewDepartmentType.FocusedItem.Index;
-                string d = listViewDepartmentType.SelectedItems[0].SubItems[index].Text; //선택된 열의 이름으로 삭제
+                int index = listViewDepartmentType.FocusedItem.Index;//열 좌표
+                string d = listViewDepartmentType.Items[index].SubItems[0].Text; //선택된 열의 이름으로 삭제
 
                 DBM.GetDBMinstance().PersonnelDelete(d); //삭제
-                listViewDepartmentType.Items.Remove(listViewDepartmentType.SelectedItems[d]);
+                //listViewDepartmentType.Items.Remove(listViewDepartmentType.SelectedItems[index]);
+                //listViewDepartmentType.Items.Remove(listViewDepartmentType.Items[index]);
                 MessageBox.Show(d + "삭제하였습니다.");
+                
+
+
 
                 /*          
                 //선택한 Line 다중 삭제
