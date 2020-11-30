@@ -92,8 +92,8 @@ namespace FinalProj_personnel
 
         private void buttonsearchappr_Click(object sender, EventArgs e)
         {
-            FormApprovallist form = new FormApprovallist();
-            form.Setinfo(writer, rank);
+            FormApprovallist form = new FormApprovallist(writer, rank);
+            //form.Setinfo(writer, rank);
             form.Show();
         }
     }

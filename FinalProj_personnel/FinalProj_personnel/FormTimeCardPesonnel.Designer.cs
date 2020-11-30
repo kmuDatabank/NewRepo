@@ -42,6 +42,7 @@
             this.textBoxEndTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonEndMemory = new System.Windows.Forms.Button();
+            this.radioButton_holiday = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGotoWork)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.radioButton_holiday);
             this.groupBox2.Controls.Add(this.buttonStartThis);
             this.groupBox2.Controls.Add(this.textBoxStartTime);
             this.groupBox2.Controls.Add(this.label1);
@@ -122,7 +124,7 @@
             // 
             // buttonStartThis
             // 
-            this.buttonStartThis.Location = new System.Drawing.Point(69, 87);
+            this.buttonStartThis.Location = new System.Drawing.Point(10, 85);
             this.buttonStartThis.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStartThis.Name = "buttonStartThis";
             this.buttonStartThis.Size = new System.Drawing.Size(119, 23);
@@ -166,7 +168,7 @@
             // 
             // buttonEndThis
             // 
-            this.buttonEndThis.Location = new System.Drawing.Point(69, 93);
+            this.buttonEndThis.Location = new System.Drawing.Point(4, 99);
             this.buttonEndThis.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEndThis.Name = "buttonEndThis";
             this.buttonEndThis.Size = new System.Drawing.Size(119, 23);
@@ -203,6 +205,17 @@
             this.buttonEndMemory.Text = "기록";
             this.buttonEndMemory.UseVisualStyleBackColor = true;
             this.buttonEndMemory.Click += new System.EventHandler(this.buttonEndMemory_Click);
+            // 
+            // radioButton_holiday
+            // 
+            this.radioButton_holiday.AutoSize = true;
+            this.radioButton_holiday.Location = new System.Drawing.Point(155, 88);
+            this.radioButton_holiday.Name = "radioButton_holiday";
+            this.radioButton_holiday.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_holiday.TabIndex = 5;
+            this.radioButton_holiday.TabStop = true;
+            this.radioButton_holiday.Text = "휴일여부";
+            this.radioButton_holiday.UseVisualStyleBackColor = true;
             // 
             // FormTimeCardPesonnel
             // 
@@ -241,5 +254,6 @@
         private System.Windows.Forms.TextBox textBoxEndTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonEndMemory;
+        private System.Windows.Forms.RadioButton radioButton_holiday;
     }
 }
