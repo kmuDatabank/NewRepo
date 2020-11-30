@@ -108,6 +108,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.radioButton_holiday);
             this.groupBox2.Controls.Add(this.buttonStartThis);
             this.groupBox2.Controls.Add(this.textBoxStartTime);
             this.groupBox2.Controls.Add(this.label1);
@@ -123,7 +124,7 @@
             // 
             // buttonStartThis
             // 
-            this.buttonStartThis.Location = new System.Drawing.Point(69, 87);
+            this.buttonStartThis.Location = new System.Drawing.Point(10, 85);
             this.buttonStartThis.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStartThis.Name = "buttonStartThis";
             this.buttonStartThis.Size = new System.Drawing.Size(119, 23);
@@ -167,7 +168,7 @@
             // 
             // buttonEndThis
             // 
-            this.buttonEndThis.Location = new System.Drawing.Point(69, 93);
+            this.buttonEndThis.Location = new System.Drawing.Point(4, 99);
             this.buttonEndThis.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEndThis.Name = "buttonEndThis";
             this.buttonEndThis.Size = new System.Drawing.Size(119, 23);
@@ -208,7 +209,7 @@
             // radioButton_holiday
             // 
             this.radioButton_holiday.AutoSize = true;
-            this.radioButton_holiday.Location = new System.Drawing.Point(21, 325);
+            this.radioButton_holiday.Location = new System.Drawing.Point(155, 88);
             this.radioButton_holiday.Name = "radioButton_holiday";
             this.radioButton_holiday.Size = new System.Drawing.Size(71, 16);
             this.radioButton_holiday.TabIndex = 5;
@@ -221,7 +222,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 353);
-            this.Controls.Add(this.radioButton_holiday);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -235,7 +235,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

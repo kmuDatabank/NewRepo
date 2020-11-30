@@ -23,6 +23,18 @@ namespace FinalProj_personnel
             InitializeComponent();
             InitVariables();
         }
+
+        public FormDepartmentPersonnel(String text1,String text2)
+        {
+            InitializeComponent();
+            InitVariables();
+            this.text1 = text1;
+            this.text2 = text2;
+        }
+
+
+
+
         public void SetComboDepartText(string text) //콤보박스
         {
             this.text1 = text;
@@ -123,7 +135,7 @@ namespace FinalProj_personnel
             {
                 //한줄만 삭제        
                 int index = listViewDepartmentType.FocusedItem.Index;
-                string d = listViewDepartmentType.SelectedItems[index].SubItems[index].Text; //선택된 열의 이름으로 삭제
+                string d = listViewDepartmentType.SelectedItems[0].SubItems[index].Text; //선택된 열의 이름으로 삭제
 
                 DBM.GetDBMinstance().PersonnelDelete(d); //삭제
                 listViewDepartmentType.Items.Remove(listViewDepartmentType.SelectedItems[d]);

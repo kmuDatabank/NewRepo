@@ -61,7 +61,7 @@ namespace FinalProj_personnel
                         continue;
                     }
                 }
-                
+
 
             }
             if (result == "")
@@ -149,7 +149,7 @@ namespace FinalProj_personnel
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    String str = String.Format("{0}",rdr["name"]);
+                    String str = String.Format("{0}", rdr["name"]);
                     if (str.Equals(name))
                     {
                         rank = String.Format("{0}", rdr["position"]);
@@ -161,13 +161,13 @@ namespace FinalProj_personnel
         }
 
 
-        public void newApproval(string name,string writer, string work, string text, string comment) // 신규 결재 작성
+        public void newApproval(string name, string writer, string work, string text, string comment) // 신규 결재 작성
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO Approval (Approval_name,Approval_writer, Approval_work, Approval_text, " +
-                    "Approval_comment, Approval_rank) VALUES ('" + name + "','"+writer+"','" + work + "','" + text + "','" + comment + "'," +
+                    "Approval_comment, Approval_rank) VALUES ('" + name + "','" + writer + "','" + work + "','" + text + "','" + comment + "'," +
                     " '신규결재')", conn);
                 cmd.ExecuteNonQuery();
             }
@@ -519,8 +519,8 @@ namespace FinalProj_personnel
             using (DBM.Getinstance())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Approval SET Approval_rank = '"+result+"' " +
-                    "WHERE Approval_name = '"+name+"'", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Approval SET Approval_rank = '" + result + "' " +
+                    "WHERE Approval_name = '" + name + "'", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -555,6 +555,7 @@ namespace FinalProj_personnel
 
         }
 
+
         #region 인사파트 DBM
 
         public void memberPersonnel(string name, string gender, string age, string position, string department, string date, string phoneNum, string address) // 사원등록
@@ -588,7 +589,7 @@ namespace FinalProj_personnel
         //사원등록한 것 끌어오기
         public MySqlDataReader SELECT(string text)
         {
-            string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8"; 
+            string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(text, conn);
@@ -596,8 +597,8 @@ namespace FinalProj_personnel
 
             return rdr;
         }
-       // 사원검색(부서별/ 이름별/ 나이별) 검색
-        public string[,] Search() 
+        // 사원검색(부서별/ 이름별/ 나이별) 검색
+        public string[,] Search()
         {
             string[,] a = new string[3, 8];
             int i = 0;
@@ -623,7 +624,7 @@ namespace FinalProj_personnel
             }
             return a;
         }
-  
+
         //사원 수정기능
         public void personnel_change(String backupname, string name, string gender, string position, string department, string date, string phoneNum, string address, string age)
         {
@@ -636,7 +637,7 @@ namespace FinalProj_personnel
             }
         }
 
-      
+
         public void PersonnelDelete(String name) //사원삭제
         {
             String query = "DELETE FROM Personnel WHERE name = '" + name + "';";
@@ -668,7 +669,7 @@ namespace FinalProj_personnel
             }
         }
 
-        #endregion 
+        #endregion
 
         /*
         public String personnelSearch(string text1, string text2) //(소속)부서로 사원검색
@@ -703,24 +704,11 @@ namespace FinalProj_personnel
         
         */
 
-                cmd.ExecuteNonQuery();
 
-            }
-        }
 
-        public void delete(String d) //인사부서의 삭제기능
-        {
-            String query = "delete from Department where headDepartment=" + "\'" + d + "\'";
-           
-            using (DBM.Getinstance())
-            {
-                conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                cmd.ExecuteNonQuery();
 
-            }
-        }
+
     }
 }
