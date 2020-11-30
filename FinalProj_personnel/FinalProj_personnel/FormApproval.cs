@@ -49,7 +49,7 @@ namespace FinalProj_personnel
 
         private void buttonnewappr_Click(object sender, EventArgs e)
         {
-
+            string now = DateTime.Now.ToString();
             if(textBoxnewappr_name.Text == "") // 제목 빈칸
             {
                 MessageBox.Show("결재 제목을 작성해 주세요");
@@ -81,11 +81,13 @@ namespace FinalProj_personnel
                 {
                     DBM.GetDBMinstance().newApproval_rank(name, writer, work, text, comment);
                     DBM.GetDBMinstance().Approsearch_make_rank(writer, name, approver2);
+                    DBM.GetDBMinstance().newApproval_log_rank(name, writer, now);
                 }
                 else // 아닐 경우
                 {
                     DBM.GetDBMinstance().newApproval(name,writer, work, text, comment);
                     DBM.GetDBMinstance().Approsearch_make(writer, name, approver1, approver2);
+                    DBM.GetDBMinstance().newApproval_log(name, writer, now);
                 }
             }
         }
@@ -93,7 +95,6 @@ namespace FinalProj_personnel
         private void buttonsearchappr_Click(object sender, EventArgs e)
         {
             FormApprovallist form = new FormApprovallist(writer, rank);
-            //form.Setinfo(writer, rank);
             form.Show();
         }
     }

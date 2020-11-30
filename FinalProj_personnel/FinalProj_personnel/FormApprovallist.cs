@@ -112,10 +112,19 @@ namespace FinalProj_personnel
         }
         private void buttonappr_Click(object sender, EventArgs e) // 승인버튼 클릭시
         {
+            string now = DateTime.Now.ToString();
             if (rank.Equals("부서장") || rank.Equals("사장"))
             {
                 string name = labelname.Text;
                 DBM.GetDBMinstance().Approval_approval(rank,name);
+                if (rank.Equals("부서장"))
+                {
+                    DBM.GetDBMinstance().Approval_approval_log(name, now);
+                }
+                else
+                {
+                    DBM.GetDBMinstance().Approval_approval_log_rank(name, now);
+                }
             }
             else
             {
@@ -125,16 +134,24 @@ namespace FinalProj_personnel
 
         private void buttonreturn_Click(object sender, EventArgs e) // 반려버튼 클릭시
         {
+            string now = DateTime.Now.ToString();
             if (rank.Equals("부서장") || rank.Equals("사장"))
             {
                 string name = labelname.Text;
                 string comment = textBoxreturn.Text;
                 DBM.GetDBMinstance().Approval_return(name, comment);
+                DBM.GetDBMinstance().Approval_return_log(name, now);
             }
             else
             {
                 MessageBox.Show("권한이 없습니다.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormApprovallog form = new FormApprovallog();
+            form.Show();
         }
     }
 }

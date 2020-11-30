@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelcomment = new System.Windows.Forms.Label();
+            this.textBoxapptext = new System.Windows.Forms.TextBox();
+            this.labelwork = new System.Windows.Forms.Label();
+            this.labelname = new System.Windows.Forms.Label();
             this.buttonreturn = new System.Windows.Forms.Button();
             this.textBoxreturn = new System.Windows.Forms.TextBox();
             this.labelreturn = new System.Windows.Forms.Label();
@@ -51,10 +55,7 @@
             this.listViewMyappr = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.labelname = new System.Windows.Forms.Label();
-            this.labelwork = new System.Windows.Forms.Label();
-            this.textBoxapptext = new System.Windows.Forms.TextBox();
-            this.labelcomment = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +84,38 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "결재";
+            // 
+            // labelcomment
+            // 
+            this.labelcomment.AutoSize = true;
+            this.labelcomment.Location = new System.Drawing.Point(156, 312);
+            this.labelcomment.Name = "labelcomment";
+            this.labelcomment.Size = new System.Drawing.Size(0, 12);
+            this.labelcomment.TabIndex = 27;
+            // 
+            // textBoxapptext
+            // 
+            this.textBoxapptext.Location = new System.Drawing.Point(127, 101);
+            this.textBoxapptext.Multiline = true;
+            this.textBoxapptext.Name = "textBoxapptext";
+            this.textBoxapptext.Size = new System.Drawing.Size(158, 179);
+            this.textBoxapptext.TabIndex = 26;
+            // 
+            // labelwork
+            // 
+            this.labelwork.AutoSize = true;
+            this.labelwork.Location = new System.Drawing.Point(156, 63);
+            this.labelwork.Name = "labelwork";
+            this.labelwork.Size = new System.Drawing.Size(0, 12);
+            this.labelwork.TabIndex = 25;
+            // 
+            // labelname
+            // 
+            this.labelname.AutoSize = true;
+            this.labelname.Location = new System.Drawing.Point(156, 23);
+            this.labelname.Name = "labelname";
+            this.labelname.Size = new System.Drawing.Size(0, 12);
+            this.labelname.TabIndex = 18;
             // 
             // buttonreturn
             // 
@@ -291,43 +324,22 @@
             this.columnHeader2.Text = "진행 단계";
             this.columnHeader2.Width = 115;
             // 
-            // labelname
+            // button1
             // 
-            this.labelname.AutoSize = true;
-            this.labelname.Location = new System.Drawing.Point(156, 23);
-            this.labelname.Name = "labelname";
-            this.labelname.Size = new System.Drawing.Size(0, 12);
-            this.labelname.TabIndex = 18;
-            // 
-            // labelwork
-            // 
-            this.labelwork.AutoSize = true;
-            this.labelwork.Location = new System.Drawing.Point(156, 63);
-            this.labelwork.Name = "labelwork";
-            this.labelwork.Size = new System.Drawing.Size(0, 12);
-            this.labelwork.TabIndex = 25;
-            // 
-            // textBoxapptext
-            // 
-            this.textBoxapptext.Location = new System.Drawing.Point(127, 101);
-            this.textBoxapptext.Multiline = true;
-            this.textBoxapptext.Name = "textBoxapptext";
-            this.textBoxapptext.Size = new System.Drawing.Size(158, 179);
-            this.textBoxapptext.TabIndex = 26;
-            // 
-            // labelcomment
-            // 
-            this.labelcomment.AutoSize = true;
-            this.labelcomment.Location = new System.Drawing.Point(156, 312);
-            this.labelcomment.Name = "labelcomment";
-            this.labelcomment.Size = new System.Drawing.Size(0, 12);
-            this.labelcomment.TabIndex = 27;
+            this.button1.Location = new System.Drawing.Point(875, 560);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 31);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "결재 로그 확인";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormApprovallist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 640);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxSearch);
             this.Name = "FormApprovallist";
@@ -373,5 +385,6 @@
         private System.Windows.Forms.Label labelwork;
         private System.Windows.Forms.Label labelname;
         private System.Windows.Forms.Label labelcomment;
+        private System.Windows.Forms.Button button1;
     }
 }
