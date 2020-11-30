@@ -63,11 +63,19 @@ namespace FinalProj_personnel
             comboBoxDepartment.Items.Add("관리부서");
 
 
-            string[,] aa = new string[3, 8];
+            string[,] aa = new string[13, 8];
             aa = DBM.GetDBMinstance().Search();
 
-            for (int i = 0; i < 3; i++)
+
+
+
+
+            for (int i = 0; i < 13; i++)
             {
+                if (aa[i,0] == null)
+                {
+                    break;
+                }
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 8; j++)
                 {
