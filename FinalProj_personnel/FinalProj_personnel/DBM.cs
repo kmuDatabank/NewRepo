@@ -163,7 +163,7 @@ namespace FinalProj_personnel
 
         public string[,] departinfo()
         {
-            string[,] a = new string[3, 2];
+            string[,] a = new string[13, 2]; //나중에 3명으로 고치기 
             int i = 0;
             using (DBM.Getinstance())
             {
@@ -749,6 +749,16 @@ namespace FinalProj_personnel
             return a;
         }
      
+        //부서 등록부분 - 업데이트
+        public void department_enroll(string departmentName, string headDepartment)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Department SET headDepartment =" + "\"" + headDepartment + "\"" + "WHERE departmentName=" + "\"" + departmentName + "\"", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         //사원 수정기능
         public void personnel_change(String backupname, string name, string gender, string position, string department, string date, string phoneNum, string address, string age)
