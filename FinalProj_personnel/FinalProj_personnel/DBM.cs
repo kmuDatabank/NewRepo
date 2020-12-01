@@ -30,8 +30,8 @@ namespace FinalProj_personnel
 
             String tempid = "";
             String temppw = "";
-            String result = "";
-            String tempname = "";
+            int result = 0;
+            int tempname = 0;
             String suc = "0";
 
             using (DBM.Getinstance())//
@@ -46,7 +46,7 @@ namespace FinalProj_personnel
                 {
                     tempid = (String)rdr["USER_ID"];
                     temppw = (String)rdr["USER_PW"];
-                    tempname = (String)rdr["name"];
+                    tempname = (int)rdr["P_ID"];
 
 
                     if (tempid == id && pw == temppw)//계정 맞음 
@@ -65,14 +65,14 @@ namespace FinalProj_personnel
 
 
             }
-            if (result == "")
+            if (result == null)
             {
                 MessageBox.Show("where is your ID?");
             }
 
             if (suc == "1")//맞으면 recent 추가하여 오토로드때 활용 
             {
-                FormMain form = new FormMain(result);//분리
+                FormMain form = new FormMain(result.ToString());//분리
                 form.Show();
 
                 using (DBM.Getinstance())//다른 계정일 경우 rectently값을 이전시킨다.
@@ -90,7 +90,7 @@ namespace FinalProj_personnel
 
                 using (DBM.Getinstance())
                 {
-                    String query4 = "UPDATE " + "account" + " SET recently=" + "\'" + suc + "\'" + " WHERE NAME =" + "\'" + result + "\'";
+                    String query4 = "UPDATE " + "account" + " SET recently=" + "\'" + suc + "\'" + " WHERE P_ID =" + "\'" + result + "\'";
                     conn.Open();
 
                     MySqlCommand cmd = new MySqlCommand(query4, conn);
@@ -100,7 +100,7 @@ namespace FinalProj_personnel
             }
 
 
-            return result;
+            return result.ToString();
         }//end of checkauth
 
 
