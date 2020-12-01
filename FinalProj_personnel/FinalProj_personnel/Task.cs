@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using task;
+using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient.Authentication;
 
 namespace FinalProj_personnel
 {
@@ -19,11 +21,12 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
             this.name = name;
+            label_stable.Text = name;
 
 
         }
 
-        private void master_Click(object sender, EventArgs e)
+        private void master_Click(object sender, EventArgs e)//업무마스터 클릭
         {
             mastertask mt = new mastertask(name);
             mt.Show();

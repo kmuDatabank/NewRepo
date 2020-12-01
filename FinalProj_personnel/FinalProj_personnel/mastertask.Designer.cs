@@ -35,21 +35,22 @@
             this.button_addTask = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button_del_large = new System.Windows.Forms.Button();
             this.listView_large = new System.Windows.Forms.ListView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox_modbefore = new System.Windows.Forms.ComboBox();
-            this.comboBox_modafter = new System.Windows.Forms.ComboBox();
-            this.textBox_modbefore = new System.Windows.Forms.TextBox();
-            this.textBox_modafter = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button_del = new System.Windows.Forms.Button();
-            this.button_mod = new System.Windows.Forms.Button();
-            this.large_category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.middle_category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.small_category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView_middle = new System.Windows.Forms.ListView();
+            this.listView_small = new System.Windows.Forms.ListView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button_del_middle = new System.Windows.Forms.Button();
+            this.button_del_small = new System.Windows.Forms.Button();
+            this.button_modL = new System.Windows.Forms.Button();
+            this.context = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button_modM = new System.Windows.Forms.Button();
+            this.button_mods = new System.Windows.Forms.Button();
+            this.button_rf = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -65,9 +66,9 @@
             // 
             this.comboBox_add1.FormattingEnabled = true;
             this.comboBox_add1.Items.AddRange(new object[] {
-            "대분류",
-            "중분류",
-            "소분류"});
+            "large_cate",
+            "middle_cate",
+            "small_cate"});
             this.comboBox_add1.Location = new System.Drawing.Point(85, 43);
             this.comboBox_add1.Name = "comboBox_add1";
             this.comboBox_add1.Size = new System.Drawing.Size(121, 20);
@@ -109,7 +110,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(669, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 229);
+            this.groupBox1.Size = new System.Drawing.Size(326, 288);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "업무등록";
@@ -119,149 +120,172 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(59, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 6;
-            this.label3.Text = "분류목록";
+            this.label3.Text = "대분류목록";
+            // 
+            // button_del_large
+            // 
+            this.button_del_large.Location = new System.Drawing.Point(27, 487);
+            this.button_del_large.Name = "button_del_large";
+            this.button_del_large.Size = new System.Drawing.Size(160, 48);
+            this.button_del_large.TabIndex = 13;
+            this.button_del_large.Text = "선택된대분류제거";
+            this.button_del_large.UseVisualStyleBackColor = true;
+            this.button_del_large.Click += new System.EventHandler(this.button_del_Click);
             // 
             // listView_large
             // 
             this.listView_large.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.large_category,
-            this.middle_category,
-            this.small_category});
+            this.context});
             this.listView_large.HideSelection = false;
-            this.listView_large.Location = new System.Drawing.Point(12, 81);
+            this.listView_large.Location = new System.Drawing.Point(27, 78);
             this.listView_large.Name = "listView_large";
-            this.listView_large.Size = new System.Drawing.Size(577, 447);
-            this.listView_large.TabIndex = 9;
+            this.listView_large.Size = new System.Drawing.Size(160, 403);
+            this.listView_large.TabIndex = 14;
             this.listView_large.UseCompatibleStateImageBehavior = false;
             this.listView_large.View = System.Windows.Forms.View.Details;
             // 
-            // groupBox2
+            // listView_middle
             // 
-            this.groupBox2.Controls.Add(this.button_mod);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox_modafter);
-            this.groupBox2.Controls.Add(this.textBox_modbefore);
-            this.groupBox2.Controls.Add(this.comboBox_modafter);
-            this.groupBox2.Controls.Add(this.comboBox_modbefore);
-            this.groupBox2.Location = new System.Drawing.Point(677, 295);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 215);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "선택수정,";
+            this.listView_middle.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView_middle.HideSelection = false;
+            this.listView_middle.Location = new System.Drawing.Point(216, 78);
+            this.listView_middle.Name = "listView_middle";
+            this.listView_middle.Size = new System.Drawing.Size(160, 400);
+            this.listView_middle.TabIndex = 15;
+            this.listView_middle.UseCompatibleStateImageBehavior = false;
+            this.listView_middle.View = System.Windows.Forms.View.Details;
             // 
-            // comboBox_modbefore
+            // listView_small
             // 
-            this.comboBox_modbefore.FormattingEnabled = true;
-            this.comboBox_modbefore.Items.AddRange(new object[] {
-            "대분류",
-            "중분류",
-            "소분류"});
-            this.comboBox_modbefore.Location = new System.Drawing.Point(6, 50);
-            this.comboBox_modbefore.Name = "comboBox_modbefore";
-            this.comboBox_modbefore.Size = new System.Drawing.Size(99, 20);
-            this.comboBox_modbefore.TabIndex = 2;
+            this.listView_small.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.listView_small.HideSelection = false;
+            this.listView_small.Location = new System.Drawing.Point(426, 78);
+            this.listView_small.Name = "listView_small";
+            this.listView_small.Size = new System.Drawing.Size(160, 400);
+            this.listView_small.TabIndex = 16;
+            this.listView_small.UseCompatibleStateImageBehavior = false;
+            this.listView_small.View = System.Windows.Forms.View.Details;
             // 
-            // comboBox_modafter
+            // label4
             // 
-            this.comboBox_modafter.FormattingEnabled = true;
-            this.comboBox_modafter.Items.AddRange(new object[] {
-            "대분류",
-            "중분류",
-            "소분류"});
-            this.comboBox_modafter.Location = new System.Drawing.Point(145, 50);
-            this.comboBox_modafter.Name = "comboBox_modafter";
-            this.comboBox_modafter.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_modafter.TabIndex = 3;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(264, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "중분류목록";
             // 
-            // textBox_modbefore
+            // label5
             // 
-            this.textBox_modbefore.Location = new System.Drawing.Point(6, 97);
-            this.textBox_modbefore.Multiline = true;
-            this.textBox_modbefore.Name = "textBox_modbefore";
-            this.textBox_modbefore.Size = new System.Drawing.Size(99, 28);
-            this.textBox_modbefore.TabIndex = 4;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(477, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "소분류목록";
             // 
-            // textBox_modafter
+            // button_del_middle
             // 
-            this.textBox_modafter.Location = new System.Drawing.Point(145, 97);
-            this.textBox_modafter.Multiline = true;
-            this.textBox_modafter.Name = "textBox_modafter";
-            this.textBox_modafter.Size = new System.Drawing.Size(121, 28);
-            this.textBox_modafter.TabIndex = 5;
+            this.button_del_middle.Location = new System.Drawing.Point(216, 487);
+            this.button_del_middle.Name = "button_del_middle";
+            this.button_del_middle.Size = new System.Drawing.Size(160, 48);
+            this.button_del_middle.TabIndex = 19;
+            this.button_del_middle.Text = "선택된중분류제거";
+            this.button_del_middle.UseVisualStyleBackColor = true;
+            this.button_del_middle.Click += new System.EventHandler(this.button_del_middle_Click);
             // 
-            // label6
+            // button_del_small
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "변경전";
+            this.button_del_small.Location = new System.Drawing.Point(426, 487);
+            this.button_del_small.Name = "button_del_small";
+            this.button_del_small.Size = new System.Drawing.Size(160, 48);
+            this.button_del_small.TabIndex = 20;
+            this.button_del_small.Text = "선택된소분류제거";
+            this.button_del_small.UseVisualStyleBackColor = true;
+            this.button_del_small.Click += new System.EventHandler(this.button_del_small_Click);
             // 
-            // label7
+            // button_modL
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(167, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "변경뒤";
+            this.button_modL.Location = new System.Drawing.Point(41, 550);
+            this.button_modL.Name = "button_modL";
+            this.button_modL.Size = new System.Drawing.Size(119, 48);
+            this.button_modL.TabIndex = 21;
+            this.button_modL.Text = "대분류수정";
+            this.button_modL.UseVisualStyleBackColor = true;
+            this.button_modL.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button_del
+            // context
             // 
-            this.button_del.Location = new System.Drawing.Point(29, 545);
-            this.button_del.Name = "button_del";
-            this.button_del.Size = new System.Drawing.Size(119, 48);
-            this.button_del.TabIndex = 13;
-            this.button_del.Text = "선택된분류제거";
-            this.button_del.UseVisualStyleBackColor = true;
-            this.button_del.Click += new System.EventHandler(this.button_del_Click);
+            this.context.Text = "대분류";
+            this.context.Width = 135;
             // 
-            // button_mod
+            // columnHeader1
             // 
-            this.button_mod.Location = new System.Drawing.Point(90, 175);
-            this.button_mod.Name = "button_mod";
-            this.button_mod.Size = new System.Drawing.Size(75, 23);
-            this.button_mod.TabIndex = 14;
-            this.button_mod.Text = "수정하기";
-            this.button_mod.UseVisualStyleBackColor = true;
-            this.button_mod.Click += new System.EventHandler(this.button_mod_Click);
+            this.columnHeader1.Text = "중분류";
+            this.columnHeader1.Width = 128;
             // 
-            // large_category
+            // columnHeader2
             // 
-            this.large_category.Text = "대분류";
-            this.large_category.Width = 136;
+            this.columnHeader2.Text = "소분류";
+            this.columnHeader2.Width = 132;
             // 
-            // middle_category
+            // button_modM
             // 
-            this.middle_category.Text = "중분류";
-            this.middle_category.Width = 151;
+            this.button_modM.Location = new System.Drawing.Point(241, 550);
+            this.button_modM.Name = "button_modM";
+            this.button_modM.Size = new System.Drawing.Size(119, 48);
+            this.button_modM.TabIndex = 22;
+            this.button_modM.Text = "중분류수정";
+            this.button_modM.UseVisualStyleBackColor = true;
+            this.button_modM.Click += new System.EventHandler(this.button_modM_Click);
             // 
-            // small_category
+            // button_mods
             // 
-            this.small_category.Text = "소분류";
-            this.small_category.Width = 156;
+            this.button_mods.Location = new System.Drawing.Point(441, 550);
+            this.button_mods.Name = "button_mods";
+            this.button_mods.Size = new System.Drawing.Size(119, 48);
+            this.button_mods.TabIndex = 23;
+            this.button_mods.Text = "소분류수정";
+            this.button_mods.UseVisualStyleBackColor = true;
+            this.button_mods.Click += new System.EventHandler(this.button_mods_Click);
+            // 
+            // button_rf
+            // 
+            this.button_rf.Location = new System.Drawing.Point(655, 376);
+            this.button_rf.Name = "button_rf";
+            this.button_rf.Size = new System.Drawing.Size(160, 48);
+            this.button_rf.TabIndex = 24;
+            this.button_rf.Text = "새로고침\r\n";
+            this.button_rf.UseVisualStyleBackColor = true;
+            this.button_rf.Click += new System.EventHandler(this.button_rf_Click);
             // 
             // mastertask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 629);
-            this.Controls.Add(this.button_del);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button_rf);
+            this.Controls.Add(this.button_mods);
+            this.Controls.Add(this.button_modM);
+            this.Controls.Add(this.button_modL);
+            this.Controls.Add(this.button_del_small);
+            this.Controls.Add(this.button_del_middle);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.listView_small);
+            this.Controls.Add(this.listView_middle);
             this.Controls.Add(this.listView_large);
+            this.Controls.Add(this.button_del_large);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "mastertask";
             this.Text = "업무마스터";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,18 +300,20 @@
         private System.Windows.Forms.Button button_addTask;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_del_large;
         private System.Windows.Forms.ListView listView_large;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox_modbefore;
-        private System.Windows.Forms.TextBox textBox_modafter;
-        private System.Windows.Forms.TextBox textBox_modbefore;
-        private System.Windows.Forms.ComboBox comboBox_modafter;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button_del;
-        private System.Windows.Forms.Button button_mod;
-        private System.Windows.Forms.ColumnHeader large_category;
-        private System.Windows.Forms.ColumnHeader middle_category;
-        private System.Windows.Forms.ColumnHeader small_category;
+        private System.Windows.Forms.ListView listView_middle;
+        private System.Windows.Forms.ListView listView_small;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button_del_middle;
+        private System.Windows.Forms.Button button_del_small;
+        private System.Windows.Forms.Button button_modL;
+        private System.Windows.Forms.ColumnHeader context;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button button_modM;
+        private System.Windows.Forms.Button button_mods;
+        private System.Windows.Forms.Button button_rf;
     }
 }
