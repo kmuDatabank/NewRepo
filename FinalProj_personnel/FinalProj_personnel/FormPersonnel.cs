@@ -242,7 +242,33 @@ namespace FinalProj_personnel
 
         #region 부서등록 부분 -> 등록, 수정, 삭제
         private void buttonSaveDepartment_Click(object sender, EventArgs e) //등록
-        {
+        {         
+            String[,] save = new String[13, 8];
+            int k = 0;
+
+            listViewShow.Items.Clear();
+
+            for (int i = 0; i < 13; i++)
+            {
+                if (save[i, 0] == null)
+                {
+                    break;
+                }
+                ListViewItem item = new ListViewItem();
+                for (int j = 0; j < 8; j++)
+                {
+                    if (j == 0)
+                    {
+                        item.Text = save[i, j];
+                    }
+                    else
+                    {
+                        item.SubItems.Add(save[i, j]);
+                    }
+                }
+                listViewShow.Items.Add(item);
+            }
+
             PersonInfo personInfo = new PersonInfo();
             personInfo.departmentName = comboBoxDepartmentName.SelectedItem.ToString();
             personInfo.headDepartment = textBoxHeadDepartment.Text;
@@ -273,9 +299,21 @@ namespace FinalProj_personnel
 
             place[1] = false;
 
-            DBM.GetDBMinstance().delete(temp);
+            
+            int index = listViewShow.FocusedItem.Index;//열 좌표
+            string d = listViewShow.Items[index].SubItems[0].Text; //선택된 열의 이름으로 삭제
+
+            listViewShow.Items.Remove(listViewShow.Items[index]);
+
+            DBM.GetDBMinstance().PersonnelDelete(d); //삭제
+
+            //DBM.GetDBMinstance().delete(temp);
 
             MessageBox.Show("삭제되었습니다.");
+            
+
+
+
         }
 
 

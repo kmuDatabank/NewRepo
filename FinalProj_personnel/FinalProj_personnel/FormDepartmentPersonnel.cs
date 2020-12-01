@@ -122,8 +122,6 @@ namespace FinalProj_personnel
 
                 }
 
-
-
             }
 
             listViewDepartmentType.Items.Clear();
@@ -148,22 +146,8 @@ namespace FinalProj_personnel
                 }
                 listViewDepartmentType.Items.Add(item);
             }
-            
-
-
-        
-
-
-
-
-
-
-
 
         }
-
-
-
 
 
         private void listViewDepartmentType_MouseDown(object sender, MouseEventArgs e) //리스트뷰에서 우클릭
@@ -197,8 +181,6 @@ namespace FinalProj_personnel
                 listViewDepartmentType.Items.Remove(listViewDepartmentType.Items[index]);
                 MessageBox.Show(d + "삭제하였습니다.");
                 
-
-
 
                 /*          
                 //선택한 Line 다중 삭제

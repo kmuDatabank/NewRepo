@@ -36,13 +36,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonFinalWage = new System.Windows.Forms.Button();
             this.listViewMoney = new System.Windows.Forms.ListView();
+            this.columnHeaderName1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderBasePay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewAllowance = new System.Windows.Forms.ListView();
             this.listViewDeduction = new System.Windows.Forms.ListView();
             this.listViewFinalWage = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.columnHeaderName1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderBasePay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderName3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDeduction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderName4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderTotalPay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // buttonMoney
@@ -117,6 +121,7 @@
             this.listViewMoney.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName1,
             this.columnHeaderBasePay});
+            this.listViewMoney.GridLines = true;
             this.listViewMoney.HideSelection = false;
             this.listViewMoney.Location = new System.Drawing.Point(30, 117);
             this.listViewMoney.Name = "listViewMoney";
@@ -124,6 +129,16 @@
             this.listViewMoney.TabIndex = 13;
             this.listViewMoney.UseCompatibleStateImageBehavior = false;
             this.listViewMoney.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderName1
+            // 
+            this.columnHeaderName1.Text = "이름";
+            this.columnHeaderName1.Width = 94;
+            // 
+            // columnHeaderBasePay
+            // 
+            this.columnHeaderBasePay.Text = "기본급";
+            this.columnHeaderBasePay.Width = 113;
             // 
             // listViewAllowance
             // 
@@ -136,21 +151,31 @@
             // 
             // listViewDeduction
             // 
+            this.listViewDeduction.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName3,
+            this.columnHeaderDeduction});
+            this.listViewDeduction.GridLines = true;
             this.listViewDeduction.HideSelection = false;
             this.listViewDeduction.Location = new System.Drawing.Point(569, 117);
             this.listViewDeduction.Name = "listViewDeduction";
             this.listViewDeduction.Size = new System.Drawing.Size(211, 392);
             this.listViewDeduction.TabIndex = 15;
             this.listViewDeduction.UseCompatibleStateImageBehavior = false;
+            this.listViewDeduction.View = System.Windows.Forms.View.Details;
             // 
             // listViewFinalWage
             // 
+            this.listViewFinalWage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName4,
+            this.columnHeaderTotalPay});
+            this.listViewFinalWage.GridLines = true;
             this.listViewFinalWage.HideSelection = false;
             this.listViewFinalWage.Location = new System.Drawing.Point(839, 117);
             this.listViewFinalWage.Name = "listViewFinalWage";
             this.listViewFinalWage.Size = new System.Drawing.Size(211, 392);
             this.listViewFinalWage.TabIndex = 16;
             this.listViewFinalWage.UseCompatibleStateImageBehavior = false;
+            this.listViewFinalWage.View = System.Windows.Forms.View.Details;
             // 
             // textBox1
             // 
@@ -169,15 +194,25 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "수당입력:";
             // 
-            // columnHeaderName1
+            // columnHeaderName3
             // 
-            this.columnHeaderName1.Text = "이름";
-            this.columnHeaderName1.Width = 85;
+            this.columnHeaderName3.Text = "이름";
+            this.columnHeaderName3.Width = 98;
             // 
-            // columnHeaderBasePay
+            // columnHeaderDeduction
             // 
-            this.columnHeaderBasePay.Text = "기본급";
-            this.columnHeaderBasePay.Width = 79;
+            this.columnHeaderDeduction.Text = "공제";
+            this.columnHeaderDeduction.Width = 108;
+            // 
+            // columnHeaderName4
+            // 
+            this.columnHeaderName4.Text = "이름";
+            this.columnHeaderName4.Width = 96;
+            // 
+            // columnHeaderTotalPay
+            // 
+            this.columnHeaderTotalPay.Text = "최종임금";
+            this.columnHeaderTotalPay.Width = 99;
             // 
             // FormPayViewer
             // 
@@ -220,5 +255,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader columnHeaderName1;
         private System.Windows.Forms.ColumnHeader columnHeaderBasePay;
+        private System.Windows.Forms.ColumnHeader columnHeaderName3;
+        private System.Windows.Forms.ColumnHeader columnHeaderDeduction;
+        private System.Windows.Forms.ColumnHeader columnHeaderName4;
+        private System.Windows.Forms.ColumnHeader columnHeaderTotalPay;
     }
 }

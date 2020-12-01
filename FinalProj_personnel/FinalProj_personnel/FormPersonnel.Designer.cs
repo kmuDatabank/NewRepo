@@ -64,8 +64,10 @@
             this.수당ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.공제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewShow = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.columnHeaderDepartment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,7 +77,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.listView1);
+            this.groupBox5.Controls.Add(this.listViewShow);
             this.groupBox5.Controls.Add(this.comboBoxDepartmentName);
             this.groupBox5.Controls.Add(this.textBoxHeadDepartment);
             this.groupBox5.Controls.Add(this.buttonDeleteDepartment);
@@ -85,7 +87,7 @@
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Location = new System.Drawing.Point(403, 296);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(491, 200);
+            this.groupBox5.Size = new System.Drawing.Size(496, 200);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "부서등록";
@@ -177,7 +179,7 @@
             // 
             // buttonSearchDepartmentType
             // 
-            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(158, 69);
+            this.buttonSearchDepartmentType.Location = new System.Drawing.Point(156, 65);
             this.buttonSearchDepartmentType.Name = "buttonSearchDepartmentType";
             this.buttonSearchDepartmentType.Size = new System.Drawing.Size(64, 32);
             this.buttonSearchDepartmentType.TabIndex = 22;
@@ -411,14 +413,18 @@
             this.공제ToolStripMenuItem.Text = "공제";
             this.공제ToolStripMenuItem.Click += new System.EventHandler(this.공제ToolStripMenuItem_Click);
             // 
-            // listView1
+            // listViewShow
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(10, 33);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(223, 145);
-            this.listView1.TabIndex = 20;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewShow.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderDepartment,
+            this.columnHeaderHeader});
+            this.listViewShow.HideSelection = false;
+            this.listViewShow.Location = new System.Drawing.Point(10, 33);
+            this.listViewShow.Name = "listViewShow";
+            this.listViewShow.Size = new System.Drawing.Size(223, 145);
+            this.listViewShow.TabIndex = 20;
+            this.listViewShow.UseCompatibleStateImageBehavior = false;
+            this.listViewShow.View = System.Windows.Forms.View.Details;
             // 
             // groupBox1
             // 
@@ -429,6 +435,16 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "사원출근부";
+            // 
+            // columnHeaderDepartment
+            // 
+            this.columnHeaderDepartment.Text = "부서명";
+            this.columnHeaderDepartment.Width = 98;
+            // 
+            // columnHeaderHeader
+            // 
+            this.columnHeaderHeader.Text = "부서장";
+            this.columnHeaderHeader.Width = 107;
             // 
             // FormPersonnel
             // 
@@ -495,8 +511,10 @@
         private System.Windows.Forms.ToolStripMenuItem 공제ToolStripMenuItem;
         private System.Windows.Forms.Button buttonTimeCard;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewShow;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ColumnHeader columnHeaderDepartment;
+        private System.Windows.Forms.ColumnHeader columnHeaderHeader;
     }
 }
 
