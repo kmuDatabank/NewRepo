@@ -242,33 +242,7 @@ namespace FinalProj_personnel
 
         #region 부서등록 부분 -> 등록, 수정, 삭제
         private void buttonSaveDepartment_Click(object sender, EventArgs e) //등록
-        {         
-            String[,] save = new String[13, 8];
-            int k = 0;
-
-            listViewShow.Items.Clear();
-
-            for (int i = 0; i < 13; i++)
-            {
-                if (save[i, 0] == null)
-                {
-                    break;
-                }
-                ListViewItem item = new ListViewItem();
-                for (int j = 0; j < 8; j++)
-                {
-                    if (j == 0)
-                    {
-                        item.Text = save[i, j];
-                    }
-                    else
-                    {
-                        item.SubItems.Add(save[i, j]);
-                    }
-                }
-                listViewShow.Items.Add(item);
-            }
-
+        {
             PersonInfo personInfo = new PersonInfo();
             personInfo.departmentName = comboBoxDepartmentName.SelectedItem.ToString();
             personInfo.headDepartment = textBoxHeadDepartment.Text;
@@ -285,6 +259,54 @@ namespace FinalProj_personnel
                 MessageBox.Show("부서장 등록되었습니다.");
             }
 
+            //부서테이블 끌어오기
+            string[,] save = new string[13, 2];
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+               
+                
+                int ii = 0;
+
+                while (rdr.Read())
+                {
+                    save[ii, 0] = string.Format("{0}", rdr["departmentName"]);
+                    save[ii, 1] = string.Format("{0}", rdr["headDepartment"]);
+                }
+                rdr.Close();
+            }
+          
+
+          
+            int k = 0;
+
+            listViewShow.Items.Clear();
+
+            for (int i = 0; i < 13; i++)
+            {
+                if (save[i, 0] == null)
+                {
+                    break;
+                }
+                ListViewItem item = new ListViewItem();
+                for (int j = 0; j < 2; j++)
+                {
+                    if (j == 0)
+                    {
+                        item.Text = save[i, j];
+                    }
+                    else
+                    {
+                        item.SubItems.Add(save[i, j]);
+                    }
+                }
+                listViewShow.Items.Add(item);
+            }
+
+           
 
         }
         private void buttonChangeDepartment_Click(object sender, EventArgs e) //수정

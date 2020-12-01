@@ -662,6 +662,9 @@ namespace FinalProj_personnel
 
             return rdr;
         }
+
+
+
         // 사원검색(부서별/ 이름별/ 나이별) 검색
         public string[,] Search()
         {
@@ -689,6 +692,7 @@ namespace FinalProj_personnel
             }
             return a;
         }
+     
 
         //사원 수정기능
         public void personnel_change(String backupname, string name, string gender, string position, string department, string date, string phoneNum, string address, string age)
@@ -768,9 +772,6 @@ namespace FinalProj_personnel
         }
         
         */
-
-
-
 
 
 
