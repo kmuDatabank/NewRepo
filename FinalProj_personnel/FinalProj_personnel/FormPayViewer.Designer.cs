@@ -39,6 +39,10 @@
             this.listViewAllowance = new System.Windows.Forms.ListView();
             this.listViewDeduction = new System.Windows.Forms.ListView();
             this.listViewFinalWage = new System.Windows.Forms.ListView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.columnHeaderName1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderBasePay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // buttonMoney
@@ -47,7 +51,7 @@
             this.buttonMoney.Name = "buttonMoney";
             this.buttonMoney.Size = new System.Drawing.Size(143, 58);
             this.buttonMoney.TabIndex = 6;
-            this.buttonMoney.Text = "기본금";
+            this.buttonMoney.Text = "기본급";
             this.buttonMoney.UseVisualStyleBackColor = true;
             this.buttonMoney.Click += new System.EventHandler(this.buttonMoney_Click);
             // 
@@ -110,12 +114,16 @@
             // 
             // listViewMoney
             // 
+            this.listViewMoney.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName1,
+            this.columnHeaderBasePay});
             this.listViewMoney.HideSelection = false;
             this.listViewMoney.Location = new System.Drawing.Point(30, 117);
             this.listViewMoney.Name = "listViewMoney";
             this.listViewMoney.Size = new System.Drawing.Size(211, 392);
             this.listViewMoney.TabIndex = 13;
             this.listViewMoney.UseCompatibleStateImageBehavior = false;
+            this.listViewMoney.View = System.Windows.Forms.View.Details;
             // 
             // listViewAllowance
             // 
@@ -144,11 +152,40 @@
             this.listViewFinalWage.TabIndex = 16;
             this.listViewFinalWage.UseCompatibleStateImageBehavior = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(385, 523);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 28);
+            this.textBox1.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(302, 527);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "수당입력:";
+            // 
+            // columnHeaderName1
+            // 
+            this.columnHeaderName1.Text = "이름";
+            this.columnHeaderName1.Width = 85;
+            // 
+            // columnHeaderBasePay
+            // 
+            this.columnHeaderBasePay.Text = "기본급";
+            this.columnHeaderBasePay.Width = 79;
+            // 
             // FormPayViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 563);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listViewFinalWage);
             this.Controls.Add(this.listViewDeduction);
             this.Controls.Add(this.listViewAllowance);
@@ -179,5 +216,9 @@
         private System.Windows.Forms.ListView listViewAllowance;
         private System.Windows.Forms.ListView listViewDeduction;
         private System.Windows.Forms.ListView listViewFinalWage;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader columnHeaderName1;
+        private System.Windows.Forms.ColumnHeader columnHeaderBasePay;
     }
 }
