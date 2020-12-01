@@ -17,23 +17,34 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
             InitVariables();
+            dateTimePicker1.CustomFormat = "yyyy년MM월";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
         }
         private void InitVariables()
         {
             ListViewItem item = new ListViewItem();
-            item.Text = "홍길동";
-            item.SubItems.Add("150000");
-            listViewMoney.Items.Add(item);
         }
         public void SetPayText(string text)
         {
             this.text = text;
         }
 
-        //기본금
+        //기본급
         private void buttonMoney_Click(object sender, EventArgs e)
         {
-
+            int per_n = DBM.GetDBMinstance().personnel_n();
+            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
+            for (int i = 0; i < per_n; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = per_info[i];
+                DateTime dt = dateTimePicker1.Value;
+                string str1 = Convert.ToString(dt.Year);
+                string str2 = Convert.ToString(dt.Month);
+                string str = str1 + "-" + str2 + "-";
+                // 검색할 월 검색
+                listViewMoney.Items.Add(item);
+            }
         }
 
         //수당
