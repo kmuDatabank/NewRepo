@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient.Authentication;
 
 namespace FinalProj_personnel
 {
@@ -23,9 +24,11 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
             this.name = name1;
-            label_name.Text = name;
-            String ran = DBM.GetDBMinstance().checkrank(name1);
 
+
+            this.name=named(name);
+            label_name.Text = name;
+            String ran = DBM.GetDBMinstance().checkrank(name);
             setrank(ran);
         }
         public void setrank(String rank)
@@ -33,6 +36,32 @@ namespace FinalProj_personnel
             this.rank = rank;
             label_rank.Text = rank;
         }
+
+        public String named(String P_ID)
+        {
+
+            String result = "";
+
+            using (DBM.Getinstance())
+            {
+                String query = "SELECT * FROM Personnel WHERE ID= "+"\""+P_ID+"\"";
+                DBM.Getinstance().Open();
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    result = rdr["name"].ToString();
+
+                }
+
+            }
+
+
+                return result;
+        }
+
+
+
 
         private void buttonPersonnel_Click(object sender, EventArgs e) // 인사 버튼
         {
