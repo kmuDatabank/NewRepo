@@ -53,11 +53,11 @@ namespace FinalProj_personnel
             comboBoxDepartment.Items.Add("관리부서");
 
             //사원검색 부분
-            comboBoxDepartmentType.Items.Clear();          
+            comboBoxDepartmentType.Items.Clear();
             comboBoxDepartmentType.Items.Add("부서별");
             comboBoxDepartmentType.Items.Add("이름별");
             comboBoxDepartmentType.Items.Add("나이별");
-           
+
 
             //임의로 3개 생성하였음 -> 교수님 word파일참고하세요
             comboBoxDepartmentName.Items.Clear();
@@ -66,7 +66,33 @@ namespace FinalProj_personnel
             comboBoxDepartmentName.Items.Add("관리부서");
             comboBoxDepartmentName.SelectedIndex = 0;
 
+            //부서등록 부서장
+            comboBoxheadDepartment.Items.Clear();
+            int per_n = DBM.GetDBMinstance().personnel_n();
+            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
+            
+            for(int i = 0; i < per_n; i++)
+            {
+                comboBoxheadDepartment.Items.Add(per_info[i]);
+            }
 
+            string[,] a = DBM.GetDBMinstance().departinfo();
+            for (int i = 0; i < 3; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                for (int j = 0; j < 2; j++)
+                {
+                    if(j == 0)
+                    {
+                        item.Text = a[i, j];
+                    }
+                    else
+                    {
+                        item.SubItems.Add(a[i, j]);
+                    }
+                }
+                listViewShow.Items.Add(item);
+            }
 
         }
 
@@ -229,10 +255,10 @@ namespace FinalProj_personnel
         }
         private void buttonDeletePerson_Click(object sender, EventArgs e) //삭제
         {
-            string temp = textBoxHeadDepartment.Text;
-            textBoxHeadDepartment.Text = String.Empty;
+        //    string temp = textBoxHeadDepartment.Text;
+         //   textBoxHeadDepartment.Text = String.Empty;
 
-            DBM.GetDBMinstance().delete(temp);
+         //   DBM.GetDBMinstance().delete(temp);
 
             MessageBox.Show("삭제되었습니다.");
         }
@@ -245,7 +271,7 @@ namespace FinalProj_personnel
         {
             PersonInfo personInfo = new PersonInfo();
             personInfo.departmentName = comboBoxDepartmentName.SelectedItem.ToString();
-            personInfo.headDepartment = textBoxHeadDepartment.Text;
+         //   personInfo.headDepartment = textBoxHeadDepartment.Text;
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
@@ -316,8 +342,8 @@ namespace FinalProj_personnel
         private void buttonDeleteDepartment_Click(object sender, EventArgs e) //삭제
         {
            
-            string temp = textBoxHeadDepartment.Text;
-            textBoxHeadDepartment.Text = String.Empty;
+         //   string temp = textBoxHeadDepartment.Text;
+          //  textBoxHeadDepartment.Text = String.Empty;
 
             place[1] = false;
 

@@ -20,7 +20,10 @@ namespace FinalProj_personnel
         }
         private void InitVariables()
         {
-
+            ListViewItem item = new ListViewItem();
+            item.Text = "홍길동";
+            item.SubItems.Add("150000");
+            listViewMoney.Items.Add(item);
         }
         public void SetPayText(string text)
         {

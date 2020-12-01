@@ -161,6 +161,62 @@ namespace FinalProj_personnel
             return rank;
         }
 
+        public string[,] departinfo()
+        {
+            string[,] a = new string[3, 2];
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    a[i, 0] = string.Format("{0}", rdr["departmentName"]);
+                    a[i, 1] = string.Format("{0}", rdr["headDepartment"]);
+                    i++;
+                }
+                rdr.Close();
+            }
+            return a;
+        }
+        public int personnel_n()
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Personnel";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    i++;
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] personnelinfo(int n)
+        {
+            int i = 0;
+            string[] a = new string[n];
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Personnel";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    a[i] = string.Format("{0}", rdr["name"]);
+                    i++;
+                }
+                rdr.Close();
+            }
+            return a;
+        }
         public void newApproval_log(string name, string writer, string now) // 새로운 결재 생성시 로그
         {
             using (DBM.Getinstance())
