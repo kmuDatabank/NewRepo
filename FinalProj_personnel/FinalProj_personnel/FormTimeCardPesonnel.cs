@@ -99,10 +99,23 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
 
+            string intime = DBM.GetDBMinstance().checkintime(name, time);
+            string intime_t = intime[14].ToString() + intime[15].ToString();
+            string outtime_t = time[14].ToString() + time[15].ToString();
+            int intime1 = Convert.ToInt32(intime_t);
+            int outtime1 = Convert.ToInt32(outtime_t);
+            int normal = outtime1 - intime1;
 
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
 
+                String query = "UPDATE GoTowork SET normalwork = '"+normal+"' WHERE name = '"+name+"' AND outtime = '"+time+"'";
 
-
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+                cmd.ExecuteNonQuery();
+            }
+           
         }
 
         private void buttonGotoWorkShow_Click(object sender, EventArgs e)//출근부 보기 버튼

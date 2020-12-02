@@ -160,7 +160,53 @@ namespace FinalProj_personnel
             }
             return rank;
         }
-
+        public int pay_normal(string name, string month)//월별 기본급을 가져옴
+        {
+            int nor = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM GoTowork WHERE intime LIKE '"+month+"%'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["name"]);
+                    if (str.Equals(name))
+                    {
+                        string str1 = string.Format("{0}", rdr["normalwork"]);
+                        nor += Convert.ToInt32(str1);
+                    }
+                }
+                rdr.Close();
+            }
+            return nor;
+        }
+        public string checkintime(string name, string outtime)//출근시간 가져오는 함수
+        {
+            string a = "";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM GoTowork";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["name"]);
+                    if (str.Equals(name))
+                    {
+                        string str1 = string.Format("{0}", rdr["outtime"]);
+                        if (str1.Equals(outtime))
+                        {
+                            a = string.Format("{0}", rdr["intime"]);
+                        }
+                    }
+                }
+                rdr.Close();
+            }
+            return a;
+        }
         public string[,] departinfo()
         {
             string[,] a = new string[13, 2]; //나중에 3명으로 고치기 

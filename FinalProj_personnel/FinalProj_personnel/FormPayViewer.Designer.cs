@@ -53,7 +53,7 @@
             // buttonMoney
             // 
             this.buttonMoney.Location = new System.Drawing.Point(43, 70);
-            this.buttonMoney.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMoney.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMoney.Name = "buttonMoney";
             this.buttonMoney.Size = new System.Drawing.Size(100, 39);
             this.buttonMoney.TabIndex = 6;
@@ -74,7 +74,7 @@
             // buttonAllowance
             // 
             this.buttonAllowance.Location = new System.Drawing.Point(231, 70);
-            this.buttonAllowance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAllowance.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAllowance.Name = "buttonAllowance";
             this.buttonAllowance.Size = new System.Drawing.Size(100, 39);
             this.buttonAllowance.TabIndex = 8;
@@ -95,7 +95,7 @@
             // buttonDeduction
             // 
             this.buttonDeduction.Location = new System.Drawing.Point(418, 70);
-            this.buttonDeduction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeduction.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeduction.Name = "buttonDeduction";
             this.buttonDeduction.Size = new System.Drawing.Size(100, 39);
             this.buttonDeduction.TabIndex = 10;
@@ -116,7 +116,7 @@
             // buttonFinalWage
             // 
             this.buttonFinalWage.Location = new System.Drawing.Point(611, 70);
-            this.buttonFinalWage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFinalWage.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFinalWage.Name = "buttonFinalWage";
             this.buttonFinalWage.Size = new System.Drawing.Size(100, 39);
             this.buttonFinalWage.TabIndex = 12;
@@ -132,7 +132,7 @@
             this.listViewMoney.GridLines = true;
             this.listViewMoney.HideSelection = false;
             this.listViewMoney.Location = new System.Drawing.Point(22, 132);
-            this.listViewMoney.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewMoney.Margin = new System.Windows.Forms.Padding(2);
             this.listViewMoney.Name = "listViewMoney";
             this.listViewMoney.Size = new System.Drawing.Size(149, 263);
             this.listViewMoney.TabIndex = 13;
@@ -142,7 +142,6 @@
             // columnHeaderName1
             // 
             this.columnHeaderName1.Text = "이름";
-            this.columnHeaderName1.Width = 94;
             // 
             // columnHeaderBasePay
             // 
@@ -153,7 +152,7 @@
             // 
             this.listViewAllowance.HideSelection = false;
             this.listViewAllowance.Location = new System.Drawing.Point(211, 132);
-            this.listViewAllowance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewAllowance.Margin = new System.Windows.Forms.Padding(2);
             this.listViewAllowance.Name = "listViewAllowance";
             this.listViewAllowance.Size = new System.Drawing.Size(149, 263);
             this.listViewAllowance.TabIndex = 14;
@@ -167,7 +166,7 @@
             this.listViewDeduction.GridLines = true;
             this.listViewDeduction.HideSelection = false;
             this.listViewDeduction.Location = new System.Drawing.Point(399, 132);
-            this.listViewDeduction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewDeduction.Margin = new System.Windows.Forms.Padding(2);
             this.listViewDeduction.Name = "listViewDeduction";
             this.listViewDeduction.Size = new System.Drawing.Size(149, 263);
             this.listViewDeduction.TabIndex = 15;
@@ -177,7 +176,6 @@
             // columnHeaderName3
             // 
             this.columnHeaderName3.Text = "이름";
-            this.columnHeaderName3.Width = 98;
             // 
             // columnHeaderDeduction
             // 
@@ -192,7 +190,7 @@
             this.listViewFinalWage.GridLines = true;
             this.listViewFinalWage.HideSelection = false;
             this.listViewFinalWage.Location = new System.Drawing.Point(588, 132);
-            this.listViewFinalWage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewFinalWage.Margin = new System.Windows.Forms.Padding(2);
             this.listViewFinalWage.Name = "listViewFinalWage";
             this.listViewFinalWage.Size = new System.Drawing.Size(149, 263);
             this.listViewFinalWage.TabIndex = 16;
@@ -202,7 +200,6 @@
             // columnHeaderName4
             // 
             this.columnHeaderName4.Text = "이름";
-            this.columnHeaderName4.Width = 96;
             // 
             // columnHeaderTotalPay
             // 
@@ -212,7 +209,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(270, 403);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(83, 21);
             this.textBox1.TabIndex = 17;
@@ -254,7 +251,7 @@
             this.Controls.Add(this.buttonAllowance);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonMoney);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPayViewer";
             this.Text = "급여보기";
             this.ResumeLayout(false);

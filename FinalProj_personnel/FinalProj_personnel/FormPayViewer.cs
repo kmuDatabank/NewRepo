@@ -32,6 +32,7 @@ namespace FinalProj_personnel
         //기본급
         private void buttonMoney_Click(object sender, EventArgs e)
         {
+            listViewMoney.Items.Clear();
             int per_n = DBM.GetDBMinstance().personnel_n();
             string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
             for (int i = 0; i < per_n; i++)
@@ -42,7 +43,9 @@ namespace FinalProj_personnel
                 string str1 = Convert.ToString(dt.Year);
                 string str2 = Convert.ToString(dt.Month);
                 string str = str1 + "-" + str2 + "-";
-                // 검색할 월 검색
+                //이름 , 월 로 검색-> 출근부에서 기본급 전부 더함
+                int nor = (DBM.GetDBMinstance().pay_normal(per_info[i], str))*10000;
+                item.SubItems.Add(Convert.ToString(nor));
                 listViewMoney.Items.Add(item);
             }
         }
