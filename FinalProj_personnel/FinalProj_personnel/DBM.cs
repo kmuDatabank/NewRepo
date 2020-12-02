@@ -182,6 +182,35 @@ namespace FinalProj_personnel
             }
             return nor;
         }
+        public int pay_plus(string name, string month)
+        {
+            int plus = 0;
+            string ho = "1";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM GoTowork WHERE intime LIKE '" + month + "%'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["name"]);
+                    if (str.Equals(name))
+                    {
+                        string str1 = string.Format("{0}", rdr["holidaywork"]);
+                        if (str1.Equals(ho))
+                        {
+                            string str2 = string.Format("{0}", rdr["normalwork"]);
+                            plus += Convert.ToInt32(str2);
+                        }
+                        string str3 = string.Format("{0}", rdr["nightwork"]);
+                        plus += Convert.ToInt32(str3);
+                    }
+                }
+                rdr.Close();
+            }
+            return plus;
+        }
         public string checkintime(string name, string outtime)//출근시간 가져오는 함수
         {
             string a = "";

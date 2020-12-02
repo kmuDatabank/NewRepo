@@ -53,7 +53,21 @@ namespace FinalProj_personnel
         //수당
         private void buttonAllowance_Click(object sender, EventArgs e)
         {
-
+            int per_n = DBM.GetDBMinstance().personnel_n();
+            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
+            for (int i = 0; i < per_n; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = per_info[i];
+                DateTime dt = dateTimePicker1.Value;
+                string str1 = Convert.ToString(dt.Year);
+                string str2 = Convert.ToString(dt.Month);
+                string str = str1 + "-" + str2 + "-";
+                //이름 , 월 로 검색-> 출근부에서 기본급 전부 더함
+                int plus = (DBM.GetDBMinstance().pay_plus(per_info[i], str))*5000;
+                item.SubItems.Add(Convert.ToString(plus));
+                listViewAllowance.Items.Add(item);
+            }
         }
 
         //공제

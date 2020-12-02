@@ -48,6 +48,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // buttonMoney
@@ -150,6 +152,9 @@
             // 
             // listViewAllowance
             // 
+            this.listViewAllowance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
             this.listViewAllowance.HideSelection = false;
             this.listViewAllowance.Location = new System.Drawing.Point(211, 132);
             this.listViewAllowance.Margin = new System.Windows.Forms.Padding(2);
@@ -157,6 +162,7 @@
             this.listViewAllowance.Size = new System.Drawing.Size(149, 263);
             this.listViewAllowance.TabIndex = 14;
             this.listViewAllowance.UseCompatibleStateImageBehavior = false;
+            this.listViewAllowance.View = System.Windows.Forms.View.Details;
             // 
             // listViewDeduction
             // 
@@ -232,6 +238,15 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(93, 21);
             this.dateTimePicker1.TabIndex = 19;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "이름";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "수당";
+            this.columnHeader2.Width = 113;
+            // 
             // FormPayViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -280,5 +295,7 @@
         private System.Windows.Forms.ColumnHeader columnHeaderName4;
         private System.Windows.Forms.ColumnHeader columnHeaderTotalPay;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
