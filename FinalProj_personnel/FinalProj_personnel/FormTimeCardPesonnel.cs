@@ -93,7 +93,7 @@ namespace FinalProj_personnel
                 DBM.Getinstance().Open();
 
                 String query = "UPDATE GoTowork SET outtime= " + "\"" + time + "\"," + "holidaywork= " + "\"" + checkholi + "\"," +
-                    "nightwork=" + "\"" + checknight + "\"" + "WHERE name="+"\""+name+"\""+ "AND "+"outtime= 0";
+                    "nightwork=" + "\"" + checknight + "\"" + "WHERE name="+"\""+name+"\""+ "AND "+"outtime= "+"\""+0+"\"";
 
                 MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
                 cmd.ExecuteNonQuery();
@@ -148,6 +148,7 @@ namespace FinalProj_personnel
             String a = time;
             String result = "0";
             String temp = a[14].ToString() + a[15].ToString();
+            String temp2 = a[8].ToString() + a[9].ToString();//날짜받아와서 변경되었으면 조정
 
             int ct = Convert.ToInt32(temp);
             if (ct > 20 )
