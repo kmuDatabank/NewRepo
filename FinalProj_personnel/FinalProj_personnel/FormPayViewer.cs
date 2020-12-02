@@ -88,13 +88,22 @@ namespace FinalProj_personnel
                 int plus = (DBM.GetDBMinstance().pay_plus(per_info[i], str)) * 5000;
                 int pay = nor + plus;
                 int a = 0; // 연금 보험료 9%
-                a = pay * 9 / 100;
+                //a = pay * 9 / 100;
+                a = (pay * 45 / 1000) * 2;
+                a = a / 10;
+                a = a * 10;
                 int b = 0; // 고용 보험료 1.85%
                 b = pay * 185 / 10000;
+                b = b / 10;
+                b = b * 10;
                 int c = 0; // 국민건강보험(건강보험) 6.67%
                 c = pay * 667 / 10000;
+                c = c / 10;
+                c = c * 10;
                 int d = 0; // 국민겅강보험 (장기요양보험) 건강보험의 10.25%
                 d = c * 1025 / 10000;
+                d = d / 10;
+                d = d * 10;
                 int deduction = a + b + c + d;
                 item.SubItems.Add(Convert.ToString(deduction));
                 listViewDeduction.Items.Add(item);
@@ -119,13 +128,22 @@ namespace FinalProj_personnel
                 int plus = (DBM.GetDBMinstance().pay_plus(per_info[i], str)) * 5000;
                 int pay = nor + plus;
                 int a = 0; // 연금 보험료 9%
-                a = pay * 9 / 100;
+                //a = pay * 9 / 100;
+                a = (pay * 45 / 1000) * 2;
+                a = a / 10;
+                a = a * 10;
                 int b = 0; // 고용 보험료 1.85%
                 b = pay * 185 / 10000;
+                b = b / 10;
+                b = b * 10;
                 int c = 0; // 국민건강보험(건강보험) 6.67%
                 c = pay * 667 / 10000;
+                c = c / 10;
+                c = c * 10;
                 int d = 0; // 국민겅강보험 (장기요양보험) 건강보험의 10.25%
                 d = c * 1025 / 10000;
+                d = d / 10;
+                d = d * 10;
                 int deduction = a + b + c + d;
                 int wage = pay - deduction;
                 item.SubItems.Add(Convert.ToString(wage));
