@@ -82,7 +82,6 @@
             this.ButtonOpenMail.TabIndex = 1;
             this.ButtonOpenMail.Text = "확인";
             this.ButtonOpenMail.UseVisualStyleBackColor = true;
-            this.ButtonOpenMail.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormReceivedMail
             // 
@@ -91,8 +90,6 @@
             this.ClientSize = new System.Drawing.Size(838, 434);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewReceived);
-      //      this.Name = "FormReceivedMail";
-    //        this.Text = "FormReceivedMail";
             this.ResumeLayout(false);
 
         }
