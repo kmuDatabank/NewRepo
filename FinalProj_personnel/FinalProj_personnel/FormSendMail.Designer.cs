@@ -108,10 +108,10 @@
         #endregion
 
         private System.Windows.Forms.Label LabelTitle;
-        private System.Windows.Forms.TextBox TextBoxTitle;
-        private System.Windows.Forms.TextBox TextBoxMessage;
-        private System.Windows.Forms.ComboBox ComboBoxTo;
         private System.Windows.Forms.Label LabelReceiver;
         private System.Windows.Forms.Button ButtonSendMail;
+        public System.Windows.Forms.TextBox TextBoxTitle;
+        public System.Windows.Forms.TextBox TextBoxMessage;
+        public System.Windows.Forms.ComboBox ComboBoxTo;
     }
 }

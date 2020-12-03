@@ -101,9 +101,9 @@
         #endregion
 
         private System.Windows.Forms.Label LabelWho;
-        private System.Windows.Forms.TextBox TextBoxContent;
-        private System.Windows.Forms.TextBox TextBoxTitle;
         private System.Windows.Forms.Label LabelTitle;
-        private System.Windows.Forms.TextBox TextBoxWho;
+        public System.Windows.Forms.TextBox TextBoxContent;
+        public System.Windows.Forms.TextBox TextBoxTitle;
+        public System.Windows.Forms.TextBox TextBoxWho;
     }
 }
