@@ -152,6 +152,62 @@ namespace FinalProj_personnel
             }
             return rank;
         }
+        public int fir_allowance_n(string name, string month) // 수당 수정
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM GoTowork WHERE date LIKE '" + month + "%'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string na = string.Format("{0}", rdr["name"]);
+                    if (name.Equals(na))
+                    {
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[,] fir_allowance(string name, string month, int num) // 수당 수정
+        {
+            string[,] str = new string[num, 3];
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM GoTowork WHERE date LIKE '" + month + "%'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string na = string.Format("{0}", rdr["name"]);
+                    if (name.Equals(na))
+                    {
+                        str[i, 0] = string.Format("{0}", rdr["date"]);
+                        str[i, 1] = string.Format("{0}", rdr["holidaywork"]);
+                        str[i, 2] = string.Format("{0}", rdr["nightwork"]);
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return str;
+        }
+        public void update_allowance(string date, string holiday, string night) // 수당수정
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE GoTowork SET holidaywork = '"+holiday+"' ,nightwork = '"+night+"'" +
+                    " WHERE date = '"+date+"'", conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
         public int pay_normal(string name, string month)//월별 기본급을 가져옴
         {
             int nor = 0;
@@ -174,7 +230,7 @@ namespace FinalProj_personnel
             }
             return nor;
         }
-        public int pay_plus(string name, string month)
+        public int pay_plus(string name, string month) // 추가수당계산
         {
             int plus = 0;
             string ho = "1";

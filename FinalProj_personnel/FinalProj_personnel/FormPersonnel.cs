@@ -205,16 +205,17 @@ namespace FinalProj_personnel
             ListViewItem lvi = new ListViewItem(strs);
             lvi.Text = departmentName;                    
             listViewShow.Items.Add(lvi);
-            /*
+            
          //중복제거
+            /*
             List<string> arrdata = new List<string>();
             for(int i=0; i< strs.Length; i++)
             {
                 if (arrdata.Contains(strs[i]))continue;
                 arrdata.Add(strs[i].ToString());
              MessageBox.Show("중복된 부서입니다.");              
-            }         
-            */
+            } */        
+            
            
             DBM.GetDBMinstance().department_enroll(departmentName,headDepartment); 
 
