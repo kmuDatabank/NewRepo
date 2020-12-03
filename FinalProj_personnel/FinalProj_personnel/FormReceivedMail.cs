@@ -28,7 +28,7 @@ namespace FinalProj_personnel
             this.name = name;
             mail = form;
 
-            string strqry = "select * from databank.RMails where not WHO=" + name;
+            string strqry = "select * from databank.RMails where TO=" + name;
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
@@ -51,7 +51,7 @@ namespace FinalProj_personnel
                 }
                 else
                 {
-                    MessageBox.Show("데이터가 없습니다");
+                    
                 }
             }
 
