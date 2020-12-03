@@ -59,13 +59,14 @@ namespace FinalProj_personnel
             comboBoxDepartmentType.Items.Add("이름별");
             comboBoxDepartmentType.Items.Add("나이별");
 
-
-            //임의로 3개 생성하였음 -> 교수님 word파일참고하세요
+            /*
+            //임의로 3개 생성하였음
             comboBoxDepartmentName.Items.Clear();
             comboBoxDepartmentName.Items.Add("인사부서");
             comboBoxDepartmentName.Items.Add("개발부서");
             comboBoxDepartmentName.Items.Add("관리부서");
             comboBoxDepartmentName.SelectedIndex = 0;
+            */
 
             //부서등록 부서장
             comboBoxheadDepartment.Items.Clear();
@@ -110,12 +111,6 @@ namespace FinalProj_personnel
 
         private void buttonMemberSave_Click(object sender, EventArgs e)
         {
-
-            /*
-            if (loadCompleted_ == false)
-                return;
-            */
-
             PersonInfo personInfo = new PersonInfo();
             personInfo.name = textBoxMemberName.Text;
             personInfo.gender = comboBoxMemberGender.SelectedItem.ToString();
@@ -170,7 +165,7 @@ namespace FinalProj_personnel
         String text1 = ""; //콤보박스
         String text2 = ""; //빈박스 
 
-        #region 사원검색 부분 -> 검색, 출근부, 수정, 삭제
+       //사원검색 부분
         private void buttonSearchDepartmentType_Click(object sender, EventArgs e) //부서별 검색
         {
             if (comboBoxDepartmentType.SelectedIndex == 0) //부서별
@@ -179,19 +174,7 @@ namespace FinalProj_personnel
                 form.SetDepartText("부서별 검색");
                 form.SetComboDepartText(comboBoxDepartmentType.Text);
                 form.Show();
-                /*
-                string text = textBoxInputSearch.Text;
-                foreach (ListViewItem lvi in listViewDepartmentType.Items)
-                {
-                    if (text == lvi.SubItems[4].Text)
-                    {
-                      
-                        comboBoxDepartment.Text = lvi.SubItems[4].Text; //소속부서
-                        
-                        return;
-                    }
-                }
-                */
+               
             }
             if (comboBoxDepartmentType.SelectedIndex == 1) //나이별
             {
@@ -205,90 +188,56 @@ namespace FinalProj_personnel
                 FormAgePersonnel form = new FormAgePersonnel(text1,text2);
                 form.SetAgeText("이름별 검색");
                 form.Show();
-
-            }
-           
-            /*
-            if (textBoxInputSearch.Text == "") // 빈 텍스트 박스
-            {
-                MessageBox.Show("자세하게 입력해주세요.");
-            }
-            */
-           
-
-            /*
-            PersonInfo personInfo = new PersonInfo();
-            personInfo.departmentType = comboBoxDepartmentType.SelectedItem.ToString(); 
-            personInfo.inputDepartment = textBoxInputDepartment.Text;
-          
-
-            using (MySqlConnection conn = new MySqlConnection(strConn))
-            {
-                conn.Open();
-
-                string query = "INSERT INTO Personnel(departmentType, inputDepartment) VALUES('" + personInfo.departmentType + "' , " + personInfo.inputDepartment + "');";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("부서를 검색합니다.");
-            }
-            */
-
-
-        }
-      
-        private void comboBoxDepartmentType_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            //콤보박스 옆에 텍스트박스로 글자 집어넣기
-            //textBoxInputSearch.Text = comboBoxDepartmentType.SelectedItem.ToString();
-
-
+            }                 
         }
 
-
-
-        private void buttonChangePerson_Click(object sender, EventArgs e) //수정
-        {
-          
-
-            //DBM.GetDBMinstance();
-        }
-        private void buttonDeletePerson_Click(object sender, EventArgs e) //삭제
-        {
-        //    string temp = textBoxHeadDepartment.Text;
-         //   textBoxHeadDepartment.Text = String.Empty;
-
-         //   DBM.GetDBMinstance().delete(temp);
-
-            MessageBox.Show("삭제되었습니다.");
-        }
-        #endregion
 
 
 
         #region 부서등록 부분 -> 등록, 수정, 삭제
+      
         private void buttonSaveDepartment_Click(object sender, EventArgs e) //등록
         {
-          
+            string departmentName = textBoxDepartmentName.Text;
+            string headDepartment = comboBoxheadDepartment.SelectedItem.ToString();          
+           
+            string[] strs = new string[] { departmentName, headDepartment.ToString() };               
+            ListViewItem lvi = new ListViewItem(strs);
+            lvi.Text = departmentName;                    
+            listViewShow.Items.Add(lvi);
+            /*
+         //중복제거
+            List<string> arrdata = new List<string>();
+            for(int i=0; i< strs.Length; i++)
+            {
+                if (arrdata.Contains(strs[i]))continue;
+                arrdata.Add(strs[i].ToString());
+             MessageBox.Show("중복된 부서입니다.");              
+            }         
+            */
+           
+            DBM.GetDBMinstance().department_enroll(departmentName,headDepartment); 
 
         }
+      
         private void buttonChangeDepartment_Click(object sender, EventArgs e) //수정
         {
             PersonInfo personInfo = new PersonInfo();
-            personInfo.departmentName = comboBoxDepartmentName.SelectedItem.ToString();
+            personInfo.departmentName= textBoxDepartmentName.Text;
+            //personInfo.departmentName = comboBoxDepartmentName.SelectedItem.ToString();
             //   personInfo.headDepartment = textBoxHeadDepartment.Text;
 
-            string departmentName = comboBoxDepartmentName.SelectedItem.ToString();
+            //string departmentName = comboBoxDepartmentName.SelectedItem.ToString();
+            string departmentName = textBoxDepartmentName.Text;
             string headDepartment = comboBoxheadDepartment.SelectedItem.ToString();
 
             //부서등록에서 업데이트문
-            DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
+            DBM.GetDBMinstance().department_change(departmentName, headDepartment);
             MessageBox.Show("부서장 수정되었습니다.");
 
             listViewShow.Items.Clear();
             string[,] a = DBM.GetDBMinstance().departinfo();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 2; j++)
@@ -309,9 +258,11 @@ namespace FinalProj_personnel
         }
         private void buttonDeleteDepartment_Click(object sender, EventArgs e) //삭제
         {
-           
-         //   string temp = textBoxHeadDepartment.Text;
-          //  textBoxHeadDepartment.Text = String.Empty;
+
+            string departmentName = textBoxDepartmentName.Text;
+            string headDepartment = comboBoxheadDepartment.SelectedItem.ToString();
+            //   string temp = textBoxHeadDepartment.Text;
+            //  textBoxHeadDepartment.Text = String.Empty;
 
             place[1] = false;
 
@@ -321,22 +272,13 @@ namespace FinalProj_personnel
 
             listViewShow.Items.Remove(listViewShow.Items[index]);
 
-            DBM.GetDBMinstance().PersonnelDelete(d); //삭제
+            //DBM.GetDBMinstance().PersonnelDelete(name); //이건 왜 있는거
 
-            //DBM.GetDBMinstance().delete(temp);
+            DBM.GetDBMinstance().department_delete(headDepartment);
 
             MessageBox.Show("삭제되었습니다.");
-            
-
-
-
+   
         }
-
-
-
-
-
-
         #endregion
 
         private void FormPersonnel_Load(object sender, EventArgs e)
@@ -344,6 +286,7 @@ namespace FinalProj_personnel
 
         }
 
+        //출근부 버튼 클릭시
         private void buttonTimeCard_Click_1(object sender, EventArgs e)
         {
             FormTimeCardPesonnel form = new FormTimeCardPesonnel(name);
