@@ -207,10 +207,31 @@ namespace FinalProj_personnel
            
             string[] strs = new string[] { departmentName, headDepartment.ToString() };         
             ListViewItem lvi = new ListViewItem(strs);
-            lvi.Text = departmentName;                    
-            listViewShow.Items.Add(lvi);
-            
-         //중복제거
+            lvi.Text = departmentName;                              
+
+            //중복제거
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                String query = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    temp = rdr["departmentName"].ToString();
+                }
+                if(temp != "")
+                {
+                    MessageBox.Show("부서가 중복됩니다.");
+                    return;
+                }
+                else
+                {
+                    listViewShow.Items.Add(lvi);
+                    DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
+                }
+            }
             /*
             List<string> arrdata = new List<string>();
             for(int i=0; i< strs.Length; i++)

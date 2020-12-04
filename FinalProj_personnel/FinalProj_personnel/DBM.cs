@@ -1053,6 +1053,7 @@ namespace FinalProj_personnel
             }
         }
 
+
         //부서 수정
         public void department_change(string departmentName, string headDepartment)
         {
