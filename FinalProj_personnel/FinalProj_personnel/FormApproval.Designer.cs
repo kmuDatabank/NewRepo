@@ -36,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonnewappr = new System.Windows.Forms.Button();
-            this.comboBoxnewappr_work = new System.Windows.Forms.ComboBox();
             this.textBoxnewappr_comment = new System.Windows.Forms.TextBox();
             this.textBoxnewappr_text = new System.Windows.Forms.TextBox();
             this.textBoxnewappr_name = new System.Windows.Forms.TextBox();
@@ -47,7 +46,12 @@
             this.buttonsearchappr = new System.Windows.Forms.Button();
             this.labelapname = new System.Windows.Forms.Label();
             this.labelaprank = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxnewappr_largework = new System.Windows.Forms.ComboBox();
+            this.comboBoxnewappr_middelwork = new System.Windows.Forms.ComboBox();
+            this.comboBoxnewappr_smallwork = new System.Windows.Forms.ComboBox();
             this.groupBoxnewAppr.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelName
@@ -70,12 +74,12 @@
             // 
             // groupBoxnewAppr
             // 
+            this.groupBoxnewAppr.Controls.Add(this.groupBox1);
             this.groupBoxnewAppr.Controls.Add(this.comboBoxappr2);
             this.groupBoxnewAppr.Controls.Add(this.comboBoxappr1);
             this.groupBoxnewAppr.Controls.Add(this.label6);
             this.groupBoxnewAppr.Controls.Add(this.label5);
             this.groupBoxnewAppr.Controls.Add(this.buttonnewappr);
-            this.groupBoxnewAppr.Controls.Add(this.comboBoxnewappr_work);
             this.groupBoxnewAppr.Controls.Add(this.textBoxnewappr_comment);
             this.groupBoxnewAppr.Controls.Add(this.textBoxnewappr_text);
             this.groupBoxnewAppr.Controls.Add(this.textBoxnewappr_name);
@@ -85,7 +89,7 @@
             this.groupBoxnewAppr.Controls.Add(this.labelnewappr_name);
             this.groupBoxnewAppr.Location = new System.Drawing.Point(15, 79);
             this.groupBoxnewAppr.Name = "groupBoxnewAppr";
-            this.groupBoxnewAppr.Size = new System.Drawing.Size(323, 517);
+            this.groupBoxnewAppr.Size = new System.Drawing.Size(323, 563);
             this.groupBoxnewAppr.TabIndex = 2;
             this.groupBoxnewAppr.TabStop = false;
             this.groupBoxnewAppr.Text = "신규 결재 작성";
@@ -93,7 +97,7 @@
             // comboBoxappr2
             // 
             this.comboBoxappr2.FormattingEnabled = true;
-            this.comboBoxappr2.Location = new System.Drawing.Point(127, 407);
+            this.comboBoxappr2.Location = new System.Drawing.Point(127, 460);
             this.comboBoxappr2.Name = "comboBoxappr2";
             this.comboBoxappr2.Size = new System.Drawing.Size(158, 20);
             this.comboBoxappr2.TabIndex = 15;
@@ -101,7 +105,7 @@
             // comboBoxappr1
             // 
             this.comboBoxappr1.FormattingEnabled = true;
-            this.comboBoxappr1.Location = new System.Drawing.Point(127, 369);
+            this.comboBoxappr1.Location = new System.Drawing.Point(127, 422);
             this.comboBoxappr1.Name = "comboBoxappr1";
             this.comboBoxappr1.Size = new System.Drawing.Size(158, 20);
             this.comboBoxappr1.TabIndex = 14;
@@ -109,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 415);
+            this.label6.Location = new System.Drawing.Point(28, 468);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 12);
             this.label6.TabIndex = 13;
@@ -118,7 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 377);
+            this.label5.Location = new System.Drawing.Point(28, 430);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 12);
             this.label5.TabIndex = 12;
@@ -126,7 +130,7 @@
             // 
             // buttonnewappr
             // 
-            this.buttonnewappr.Location = new System.Drawing.Point(95, 462);
+            this.buttonnewappr.Location = new System.Drawing.Point(95, 515);
             this.buttonnewappr.Name = "buttonnewappr";
             this.buttonnewappr.Size = new System.Drawing.Size(101, 31);
             this.buttonnewappr.TabIndex = 11;
@@ -134,24 +138,16 @@
             this.buttonnewappr.UseVisualStyleBackColor = true;
             this.buttonnewappr.Click += new System.EventHandler(this.buttonnewappr_Click);
             // 
-            // comboBoxnewappr_work
-            // 
-            this.comboBoxnewappr_work.FormattingEnabled = true;
-            this.comboBoxnewappr_work.Location = new System.Drawing.Point(127, 81);
-            this.comboBoxnewappr_work.Name = "comboBoxnewappr_work";
-            this.comboBoxnewappr_work.Size = new System.Drawing.Size(158, 20);
-            this.comboBoxnewappr_work.TabIndex = 10;
-            // 
             // textBoxnewappr_comment
             // 
-            this.textBoxnewappr_comment.Location = new System.Drawing.Point(127, 327);
+            this.textBoxnewappr_comment.Location = new System.Drawing.Point(127, 380);
             this.textBoxnewappr_comment.Name = "textBoxnewappr_comment";
             this.textBoxnewappr_comment.Size = new System.Drawing.Size(158, 21);
             this.textBoxnewappr_comment.TabIndex = 9;
             // 
             // textBoxnewappr_text
             // 
-            this.textBoxnewappr_text.Location = new System.Drawing.Point(127, 125);
+            this.textBoxnewappr_text.Location = new System.Drawing.Point(127, 178);
             this.textBoxnewappr_text.Multiline = true;
             this.textBoxnewappr_text.Name = "textBoxnewappr_text";
             this.textBoxnewappr_text.Size = new System.Drawing.Size(158, 185);
@@ -167,7 +163,7 @@
             // labelnewappr_comment
             // 
             this.labelnewappr_comment.AutoSize = true;
-            this.labelnewappr_comment.Location = new System.Drawing.Point(22, 330);
+            this.labelnewappr_comment.Location = new System.Drawing.Point(22, 383);
             this.labelnewappr_comment.Name = "labelnewappr_comment";
             this.labelnewappr_comment.Size = new System.Drawing.Size(69, 12);
             this.labelnewappr_comment.TabIndex = 6;
@@ -176,7 +172,7 @@
             // labelnewappr_text
             // 
             this.labelnewappr_text.AutoSize = true;
-            this.labelnewappr_text.Location = new System.Drawing.Point(22, 128);
+            this.labelnewappr_text.Location = new System.Drawing.Point(22, 181);
             this.labelnewappr_text.Name = "labelnewappr_text";
             this.labelnewappr_text.Size = new System.Drawing.Size(57, 12);
             this.labelnewappr_text.TabIndex = 5;
@@ -185,7 +181,7 @@
             // labelnewappr_work
             // 
             this.labelnewappr_work.AutoSize = true;
-            this.labelnewappr_work.Location = new System.Drawing.Point(22, 81);
+            this.labelnewappr_work.Location = new System.Drawing.Point(28, 84);
             this.labelnewappr_work.Name = "labelnewappr_work";
             this.labelnewappr_work.Size = new System.Drawing.Size(57, 12);
             this.labelnewappr_work.TabIndex = 4;
@@ -228,11 +224,46 @@
             this.labelaprank.TabIndex = 5;
             this.labelaprank.Text = "labelrank";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxnewappr_smallwork);
+            this.groupBox1.Controls.Add(this.comboBoxnewappr_middelwork);
+            this.groupBox1.Controls.Add(this.comboBoxnewappr_largework);
+            this.groupBox1.Location = new System.Drawing.Point(107, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
+            // comboBoxnewappr_largework
+            // 
+            this.comboBoxnewappr_largework.FormattingEnabled = true;
+            this.comboBoxnewappr_largework.Location = new System.Drawing.Point(20, 12);
+            this.comboBoxnewappr_largework.Name = "comboBoxnewappr_largework";
+            this.comboBoxnewappr_largework.Size = new System.Drawing.Size(158, 20);
+            this.comboBoxnewappr_largework.TabIndex = 0;
+            // 
+            // comboBoxnewappr_middelwork
+            // 
+            this.comboBoxnewappr_middelwork.FormattingEnabled = true;
+            this.comboBoxnewappr_middelwork.Location = new System.Drawing.Point(21, 40);
+            this.comboBoxnewappr_middelwork.Name = "comboBoxnewappr_middelwork";
+            this.comboBoxnewappr_middelwork.Size = new System.Drawing.Size(158, 20);
+            this.comboBoxnewappr_middelwork.TabIndex = 1;
+            // 
+            // comboBoxnewappr_smallwork
+            // 
+            this.comboBoxnewappr_smallwork.FormattingEnabled = true;
+            this.comboBoxnewappr_smallwork.Location = new System.Drawing.Point(21, 66);
+            this.comboBoxnewappr_smallwork.Name = "comboBoxnewappr_smallwork";
+            this.comboBoxnewappr_smallwork.Size = new System.Drawing.Size(158, 20);
+            this.comboBoxnewappr_smallwork.TabIndex = 2;
+            // 
             // FormApproval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 608);
+            this.ClientSize = new System.Drawing.Size(357, 654);
             this.Controls.Add(this.labelaprank);
             this.Controls.Add(this.labelapname);
             this.Controls.Add(this.buttonsearchappr);
@@ -243,6 +274,7 @@
             this.Text = "결재";
             this.groupBoxnewAppr.ResumeLayout(false);
             this.groupBoxnewAppr.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +290,6 @@
         private System.Windows.Forms.Label labelnewappr_work;
         private System.Windows.Forms.Label labelnewappr_name;
         private System.Windows.Forms.Button buttonnewappr;
-        private System.Windows.Forms.ComboBox comboBoxnewappr_work;
         private System.Windows.Forms.TextBox textBoxnewappr_comment;
         private System.Windows.Forms.TextBox textBoxnewappr_text;
         private System.Windows.Forms.TextBox textBoxnewappr_name;
@@ -269,5 +300,9 @@
         private System.Windows.Forms.Button buttonsearchappr;
         private System.Windows.Forms.Label labelapname;
         private System.Windows.Forms.Label labelaprank;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBoxnewappr_smallwork;
+        private System.Windows.Forms.ComboBox comboBoxnewappr_middelwork;
+        private System.Windows.Forms.ComboBox comboBoxnewappr_largework;
     }
 }

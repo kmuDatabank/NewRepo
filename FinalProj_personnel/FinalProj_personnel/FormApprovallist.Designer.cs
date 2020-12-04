@@ -104,7 +104,7 @@
             // labelwork
             // 
             this.labelwork.AutoSize = true;
-            this.labelwork.Location = new System.Drawing.Point(156, 63);
+            this.labelwork.Location = new System.Drawing.Point(106, 63);
             this.labelwork.Name = "labelwork";
             this.labelwork.Size = new System.Drawing.Size(0, 12);
             this.labelwork.TabIndex = 25;

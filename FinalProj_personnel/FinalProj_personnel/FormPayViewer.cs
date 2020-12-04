@@ -53,6 +53,7 @@ namespace FinalProj_personnel
         //수당
         private void buttonAllowance_Click(object sender, EventArgs e)
         {
+            listViewAllowance.Items.Clear();
             int per_n = DBM.GetDBMinstance().personnel_n();
             string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
             for (int i = 0; i < per_n; i++)
@@ -73,6 +74,7 @@ namespace FinalProj_personnel
         //공제
         private void buttonDeduction_Click(object sender, EventArgs e)
         {
+            listViewDeduction.Items.Clear();
             int per_n = DBM.GetDBMinstance().personnel_n();
             string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
             for (int i = 0; i < per_n; i++)
@@ -88,10 +90,16 @@ namespace FinalProj_personnel
                 int plus = (DBM.GetDBMinstance().pay_plus(per_info[i], str)) * 5000;
                 int pay = nor + plus;
                 int a = 0; // 연금 보험료 9%
-                //a = pay * 9 / 100;
-                a = (pay * 45 / 1000) * 2;
-                a = a / 10;
-                a = a * 10;
+                if (pay < 60000)
+                {
+                    a = 28800;
+                }
+                else
+                {
+                    a = (pay * 45 / 1000) * 2;
+                    a = a / 10;
+                    a = a * 10;
+                }
                 int b = 0; // 고용 보험료 1.85%
                 b = pay * 185 / 10000;
                 b = b / 10;
@@ -113,6 +121,7 @@ namespace FinalProj_personnel
         //최종 임금
         private void buttonFinalWage_Click(object sender, EventArgs e)
         {
+            listViewFinalWage.Items.Clear();
             int per_n = DBM.GetDBMinstance().personnel_n();
             string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
             for (int i = 0; i < per_n; i++)
@@ -129,9 +138,16 @@ namespace FinalProj_personnel
                 int pay = nor + plus;
                 int a = 0; // 연금 보험료 9%
                 //a = pay * 9 / 100;
-                a = (pay * 45 / 1000) * 2;
-                a = a / 10;
-                a = a * 10;
+                if (pay < 320000)
+                {
+                    a = 28800;
+                }
+                else
+                {
+                    a = (pay * 45 / 1000) * 2;
+                    a = a / 10;
+                    a = a * 10;
+                }
                 int b = 0; // 고용 보험료 1.85%
                 b = pay * 185 / 10000;
                 b = b / 10;
@@ -151,6 +167,10 @@ namespace FinalProj_personnel
             }
         }
 
-      
+        private void buttonpayfix_Click(object sender, EventArgs e)
+        {
+            FormAllowancefix form = new FormAllowancefix();
+            form.Show();
+        }
     }
 }

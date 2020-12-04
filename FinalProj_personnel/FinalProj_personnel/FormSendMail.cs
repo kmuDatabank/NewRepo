@@ -17,12 +17,40 @@ namespace FinalProj_personnel
 
         FormTransmittedMail mail;
         string name = "";
+
+        /*
+        void ComboBox()
+        {
+            ComboBoxTo.Items.Clear();
+            ComboBoxTo.Items.Add("전체");
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                try
+                {
+                    string strqry = "SELECT name FROM databank.Personnel WHERE where not name=" + name;
+                    MySqlCommand cmd = new MySqlCommand(strqry, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(strqry, conn);
+                    DataSet cat = new DataSet();
+                    foreach (DataRow dr in cat.Tables[1].Rows)
+                    {
+                        ComboBoxTo.Items.Add(dr["name"]);
+                    }
+
+                    ComboBoxTo.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+        */
+
         public FormSendMail()
         {
             InitializeComponent();
-
-            ComboBoxTo.Items.Clear();
-            ComboBoxTo.Items.Add("");
         }
 
         public FormSendMail(string name, FormTransmittedMail form)
@@ -32,6 +60,29 @@ namespace FinalProj_personnel
             mail = form;
         }
 
+        private void FormSendMail_Load(object sender, EventArgs e)
+        {
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                //var query = "SELECT name FROM databank.Personnel WHERE where not name=" + name;
+                string query = "SELECT name FROM databank.Personnel WHERE where not name=" + name;
+                try
+                {
+                    MySqlCommand mcd = new MySqlCommand(query, conn);
+                    MySqlDataReader mdr = mcd.ExecuteReader();
+                    while (mdr.Read())
+                    {
+                        ComboBoxTo.Items.Add(mdr.GetString("name"));
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+
         private void ButtonSendMail_Click(object sender, EventArgs e)
         {
             string title = this.TextBoxTitle.Text.Trim();
@@ -39,7 +90,7 @@ namespace FinalProj_personnel
 
             if (string.IsNullOrEmpty(title))
             {
-                MessageBox.Show("메세지 내용를 입력해주세요!");
+                MessageBox.Show("메세지 제목를 입력해주세요!");
 
                 return;
             }
@@ -55,7 +106,7 @@ namespace FinalProj_personnel
                 DateTime date = DateTime.Now;
                 string sd = date.ToString("yyyy-MM-dd-HH-mm");
                 //mail.ListViewTransmitted.Items.Add(ComboBoxTo.SelectedItem, TextBoxTitle.Text, TextBoxMessage.Text, DateTime.Now);
-                
+
                 string a = ComboBoxTo.SelectedText, b = TextBoxTitle.Text, c = TextBoxMessage.Text, d = sd;
 
                 using (MySqlConnection conn = new MySqlConnection(strConn))

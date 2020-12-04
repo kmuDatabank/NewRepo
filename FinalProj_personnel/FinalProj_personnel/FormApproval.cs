@@ -33,9 +33,30 @@ namespace FinalProj_personnel
         public void InitVariable()
         {
             // 업무 combobox
-            comboBoxnewappr_work.Items.Clear();
-            comboBoxnewappr_work.Items.Add("1"); // 뭐 넣어야 될지 몰라서 1, 2 넣어둠.
-            comboBoxnewappr_work.Items.Add("2");
+            //대분류
+            comboBoxnewappr_largework.Items.Clear();
+            int large_n = DBM.GetDBMinstance().checklarge_n();
+            string[] large = DBM.GetDBMinstance().checklarge(large_n);
+            for(int i = 0; i < large_n; i++)
+            {
+                comboBoxnewappr_largework.Items.Add(large[i]);
+            }
+            //중분류
+            comboBoxnewappr_middelwork.Items.Clear();
+            int mid_n = DBM.GetDBMinstance().checkmid_n();
+            string[] mid = DBM.GetDBMinstance().checkmid(mid_n);
+            for (int i = 0; i < mid_n; i++)
+            {
+                comboBoxnewappr_middelwork.Items.Add(mid[i]);
+            }
+            //소분류
+            comboBoxnewappr_smallwork.Items.Clear();
+            int small_n = DBM.GetDBMinstance().checksmall_n();
+            string[] small = DBM.GetDBMinstance().checksmall(small_n);
+            for (int i = 0; i < small_n; i++)
+            {
+                comboBoxnewappr_smallwork.Items.Add(small[i]);
+            }
 
             // 결재자 1
             comboBoxappr1.Items.Clear();
@@ -46,32 +67,43 @@ namespace FinalProj_personnel
             comboBoxappr2.Items.Add("사장");
 
         }
-
+        
         private void buttonnewappr_Click(object sender, EventArgs e)
         {
+            
             string now = DateTime.Now.ToString();
+            int a = 1;
             if(textBoxnewappr_name.Text == "") // 제목 빈칸
             {
+                a = 0;
                 MessageBox.Show("결재 제목을 작성해 주세요");
             }
-            if (comboBoxnewappr_work.SelectedIndex == -1) // 업무 미선택
+            if (comboBoxnewappr_largework.SelectedIndex == -1 || 
+                comboBoxnewappr_middelwork.SelectedIndex == -1 || 
+                comboBoxnewappr_smallwork.SelectedIndex == -1) // 업무 미선택
             {
+                a = 0;
                 MessageBox.Show("관련 업무을 선택해 주세요");
             }
             if (textBoxnewappr_text.Text == "") // 내용 빈칸
             {
+                a = 0;
                 MessageBox.Show("결재 내용을 작성해 주세요");
             }
             if(comboBoxappr1.SelectedIndex == -1 || comboBoxappr2.SelectedIndex == -1)//결재자 미입력
             {
+                a = 0;
                 MessageBox.Show("결재자를 선택해 주세요");
             }
             
-            if (textBoxnewappr_name.Text != "" && comboBoxnewappr_work.SelectedIndex != -1 && textBoxnewappr_text.Text != ""
-                && comboBoxappr1.SelectedIndex != -1 && comboBoxappr2.SelectedIndex != -1) // 모두 입력시
+            if (a == 1) // 모두 입력시
             {
                 string name = textBoxnewappr_name.Text;
-                string work = comboBoxnewappr_work.SelectedItem.ToString();
+                string large = comboBoxnewappr_largework.Text;
+                string mid = comboBoxnewappr_middelwork.Text;
+                string small = comboBoxnewappr_smallwork.Text;
+                string work = large + "-" + mid + "-" + small;
+                MessageBox.Show(work);
                 string text = textBoxnewappr_text.Text;
                 string comment = textBoxnewappr_comment.Text;
                 string approver1 = comboBoxappr1.SelectedItem.ToString();
@@ -90,6 +122,7 @@ namespace FinalProj_personnel
                     DBM.GetDBMinstance().newApproval_log(name, writer, now);
                 }
             }
+            
         }
 
         private void buttonsearchappr_Click(object sender, EventArgs e)

@@ -207,39 +207,22 @@ namespace FinalProj_personnel
            
             string[] strs = new string[] { departmentName, headDepartment.ToString() };         
             ListViewItem lvi = new ListViewItem(strs);
-            lvi.Text = departmentName;
-           
-            using (DBM.Getinstance())
+            lvi.Text = departmentName;                    
+            listViewShow.Items.Add(lvi);
+            
+         //중복제거
+            /*
+            List<string> arrdata = new List<string>();
+            for(int i=0; i< strs.Length; i++)
             {
-                DBM.Getinstance().Open();
-                //String query="SELECT * FROM Department" +departmentName + "WHERE departmentName=" + "\"" + departmentName + "\""; 
-                String query = "SELECT * FROM Department";
-                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
-
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    temp = rdr["departmentName"].ToString();
-                    
-                }
-                if (temp != "")
-                {
-                    MessageBox.Show("부서가 중복됩니다.");
-                    return;
-                }
-
-                listViewShow.Items.Add(lvi);
-
-                DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
-
-                MessageBox.Show("부서가 등록되었습니다.");
-
-
-
-            }
-
-         
+                if (arrdata.Contains(strs[i]))continue;
+                arrdata.Add(strs[i].ToString());
+             MessageBox.Show("중복된 부서입니다.");              
+            } */        
+            
            
+            DBM.GetDBMinstance().department_enroll(departmentName,headDepartment); 
+
         }
       
         private void buttonChangeDepartment_Click(object sender, EventArgs e) //수정

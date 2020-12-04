@@ -39,17 +39,16 @@
             this.columnHeaderName1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderBasePay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewAllowance = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewDeduction = new System.Windows.Forms.ListView();
             this.columnHeaderName3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDeduction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewFinalWage = new System.Windows.Forms.ListView();
             this.columnHeaderName4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderTotalPay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonpayfix = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMoney
@@ -164,6 +163,15 @@
             this.listViewAllowance.UseCompatibleStateImageBehavior = false;
             this.listViewAllowance.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "이름";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "수당";
+            this.columnHeader2.Width = 113;
+            // 
             // listViewDeduction
             // 
             this.listViewDeduction.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -212,25 +220,6 @@
             this.columnHeaderTotalPay.Text = "최종임금";
             this.columnHeaderTotalPay.Width = 99;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(270, 403);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 21);
-            this.textBox1.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(212, 405);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 11);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "수당입력:";
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(22, 21);
@@ -238,23 +227,23 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(93, 21);
             this.dateTimePicker1.TabIndex = 19;
             // 
-            // columnHeader1
+            // buttonpayfix
             // 
-            this.columnHeader1.Text = "이름";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "수당";
-            this.columnHeader2.Width = 113;
+            this.buttonpayfix.Location = new System.Drawing.Point(231, 415);
+            this.buttonpayfix.Name = "buttonpayfix";
+            this.buttonpayfix.Size = new System.Drawing.Size(100, 23);
+            this.buttonpayfix.TabIndex = 20;
+            this.buttonpayfix.Text = "수당수정";
+            this.buttonpayfix.UseVisualStyleBackColor = true;
+            this.buttonpayfix.Click += new System.EventHandler(this.buttonpayfix_Click);
             // 
             // FormPayViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 450);
+            this.Controls.Add(this.buttonpayfix);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listViewFinalWage);
             this.Controls.Add(this.listViewDeduction);
             this.Controls.Add(this.listViewAllowance);
@@ -286,8 +275,6 @@
         private System.Windows.Forms.ListView listViewAllowance;
         private System.Windows.Forms.ListView listViewDeduction;
         private System.Windows.Forms.ListView listViewFinalWage;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader columnHeaderName1;
         private System.Windows.Forms.ColumnHeader columnHeaderBasePay;
         private System.Windows.Forms.ColumnHeader columnHeaderName3;
@@ -297,5 +284,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button buttonpayfix;
     }
 }

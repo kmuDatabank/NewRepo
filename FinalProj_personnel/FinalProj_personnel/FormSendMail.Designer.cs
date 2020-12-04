@@ -100,6 +100,7 @@
             this.Controls.Add(this.LabelTitle);
             this.Name = "FormSendMail";
             this.Text = "FormSendMail";
+            this.Load += new System.EventHandler(this.FormSendMail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
