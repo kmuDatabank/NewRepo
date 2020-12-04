@@ -230,7 +230,7 @@ namespace FinalProj_personnel
         }
         public string[,] departinfo()
         {
-            string[,] a = new string[13, 2]; //나중에 3명으로 고치기 
+            string[,] a = new string[13, 2]; 
             int i = 0;
             using (DBM.Getinstance())
             {
@@ -836,6 +836,45 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
         }
+        //갯수 반환하는 함수
+        public int department_n()
+        {
+            int i = 0;
+            using(DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    i++; //갯수 반환하게
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+
+        //특정값 받아오는 함수
+        public string[] departmentInfo(int n)
+        {
+            int i = 0;
+            string[] a = new string[n]; //갯수를 파라미터로 받아와서 str[]에 저장
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    a[i] = string.Format("{0}", rdr["departmentName"]);
+                    i++;
+                }
+                rdr.Close();
+            }
+            return a;
+        }
 
         //부서검색 
         public void department_enroll(string departmentName, string headDepartment)
@@ -874,6 +913,16 @@ namespace FinalProj_personnel
 
                 cmd.ExecuteNonQuery();
 
+            }
+        }
+        //일반사원으로 강등
+        public void original(string position,string backupname)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position =" + "\"" + position + "\"" + "WHERE backupname=" + "\"" + backupname + "\"", conn);
+                cmd.ExecuteNonQuery();
             }
         }
 
