@@ -138,7 +138,7 @@ namespace FinalProj_personnel
                 int pay = nor + plus;
                 int a = 0; // 연금 보험료 9%
                 //a = pay * 9 / 100;
-                if (pay < 60000)
+                if (pay < 320000)
                 {
                     a = 28800;
                 }

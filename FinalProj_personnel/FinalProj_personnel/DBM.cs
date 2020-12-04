@@ -198,6 +198,114 @@ namespace FinalProj_personnel
             }
             return str;
         }
+        public int checklarge_n() // 대분류 갯수
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM large_cate";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                   i++;
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] checklarge(int num) // 대분류 이름
+        {
+            int i = 0;
+            string[] large = new string[num];
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM large_cate";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    large[i] = string.Format("{0}", rdr["name"]);
+                    i++;
+                }
+                rdr.Close();
+            }
+            return large;
+        }
+        public int checkmid_n() // 중분류 갯수
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM middle_cate";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    i++;
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] checkmid(int num) // 중분류 이름
+        {
+            int i = 0;
+            string[] large = new string[num];
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM middle_cate";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    large[i] = string.Format("{0}", rdr["name"]);
+                    i++;
+                }
+                rdr.Close();
+            }
+            return large;
+        }
+        public int checksmall_n() // 소분류 갯수
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM small_cate";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    i++;
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[] checksmall(int num) // 소분류 이름
+        {
+            int i = 0;
+            string[] large = new string[num];
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM small_cate";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    large[i] = string.Format("{0}", rdr["name"]);
+                    i++;
+                }
+                rdr.Close();
+            }
+            return large;
+        }
         public void update_allowance(string date, string holiday, string night) // 수당수정
         {
             using (DBM.Getinstance())
