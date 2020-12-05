@@ -17,6 +17,7 @@ namespace FinalProj_personnel
         private bool loadCompleted_ = false;
 
         string backupname = ""; //부서등록에서 사원이름으로 받아올때 필요한 변수
+        string position = ""; //강등시킬때?
         String name="";
         bool[] place = new bool[2]; //삭제할때 필요
         public FormPersonnel()
@@ -70,16 +71,16 @@ namespace FinalProj_personnel
 
             //부서등록 부서장
             comboBoxheadDepartment.Items.Clear();
-            int per_n = DBM.GetDBMinstance().personnel_n();
-            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
+            int per_n = DBM.GetDBMinstance().personnel_n(); //부서장 등록할때 사원이 몇명있는지
+            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n); //사원들 이름
             
             for(int i = 0; i < per_n; i++)
             {
                 comboBoxheadDepartment.Items.Add(per_info[i]);
             }
-            
-            string[,] a = DBM.GetDBMinstance().departinfo();
-            for (int i = 0; i < 3; i++)
+            int a_n = DBM.GetDBMinstance().departinfo_n();
+            string[,] a = DBM.GetDBMinstance().departinfo(a_n);
+            for (int i = 0; i < a_n; i++) 
             {
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 2; j++)
@@ -191,22 +192,51 @@ namespace FinalProj_personnel
             }                 
         }
 
-
-
+   
 
         #region 부서등록 부분 -> 등록, 수정, 삭제
       
         private void buttonSaveDepartment_Click(object sender, EventArgs e) //등록
         {
-            string departmentName = textBoxDepartmentName.Text;
-            string headDepartment = comboBoxheadDepartment.SelectedItem.ToString();          
+            String departmentName = "";
+            String headDepartment = "";
+            String temp = "";
            
-            string[] strs = new string[] { departmentName, headDepartment.ToString() };               
+            departmentName = textBoxDepartmentName.Text;
+            headDepartment = comboBoxheadDepartment.SelectedItem.ToString();          
+           
+            string[] strs = new string[] { departmentName, headDepartment.ToString() };         
             ListViewItem lvi = new ListViewItem(strs);
-            lvi.Text = departmentName;                    
-            listViewShow.Items.Add(lvi);
-            
-         //중복제거
+            lvi.Text = departmentName;
+
+            //중복제거
+            int a = 0;
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                String query = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    temp = rdr["departmentName"].ToString();
+
+                    if (temp == departmentName)
+                    {
+                        MessageBox.Show("부서가 중복됩니다.");
+                        a = 1;
+                        return;                     
+                    }
+                   
+                }              
+            }
+            if (a == 0)
+            {
+                listViewShow.Items.Add(lvi);
+                DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
+            }
+
             /*
             List<string> arrdata = new List<string>();
             for(int i=0; i< strs.Length; i++)
@@ -214,10 +244,7 @@ namespace FinalProj_personnel
                 if (arrdata.Contains(strs[i]))continue;
                 arrdata.Add(strs[i].ToString());
              MessageBox.Show("중복된 부서입니다.");              
-            } */        
-            
-           
-            DBM.GetDBMinstance().department_enroll(departmentName,headDepartment); 
+            } */
 
         }
       
@@ -237,8 +264,9 @@ namespace FinalProj_personnel
             MessageBox.Show("부서장 수정되었습니다.");
 
             listViewShow.Items.Clear();
-            string[,] a = DBM.GetDBMinstance().departinfo();
-            for (int i = 0; i < 10; i++)
+            int a_n = DBM.GetDBMinstance().departinfo_n();
+            string[,] a = DBM.GetDBMinstance().departinfo(a_n);
+            for (int i = 0; i < a_n; i++)
             {
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 2; j++)
@@ -274,10 +302,24 @@ namespace FinalProj_personnel
             listViewShow.Items.Remove(listViewShow.Items[index]);
 
             //DBM.GetDBMinstance().PersonnelDelete(name); //이건 왜 있는거
-
+         
             DBM.GetDBMinstance().department_delete(headDepartment);
+            
+            //강등
+            for(int i=0; i < listViewShow.Items.Count; i++)
+            {
+                if (listViewShow.Items[i].Text == "부서장")
+                {
+                    listViewShow.Items[i].SubItems[1].Text = "일반사원";
+                    DBM.GetDBMinstance().original(position, backupname);
+                }
+                    
+
+            }
 
             MessageBox.Show("삭제되었습니다.");
+
+           
    
         }
         #endregion
