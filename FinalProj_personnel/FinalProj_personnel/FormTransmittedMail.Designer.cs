@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(838, 434);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewTransmitted);
-            this.Name = "FormTransmittedMail";
+
             this.ResumeLayout(false);
 
         }

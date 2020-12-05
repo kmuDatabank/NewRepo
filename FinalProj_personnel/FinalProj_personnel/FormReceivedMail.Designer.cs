@@ -103,7 +103,7 @@
             this.ClientSize = new System.Drawing.Size(984, 549);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewReceived);
-            this.Name = "FormReceivedMail";
+
             this.Text = "myrcvdmail";
             this.ResumeLayout(false);
 

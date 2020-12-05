@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace FinalProj_personnel
 {
@@ -23,6 +24,7 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
             this.name = name;
+            checkunread(name);
         }
 
 
@@ -43,5 +45,45 @@ namespace FinalProj_personnel
             FormTransmittedMail form = new FormTransmittedMail(name);
             form.Show();
         }
+
+
+        public void checkunread(String name)
+        {
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                String query = "SELECT * FROM RMails WHERE WHO=" + "\"" + name + "\"";
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while(rdr.Read()){
+
+                    if (rdr["readed"].ToString() == "0")
+                    {
+                        MessageBox.Show("안읽은 메일이 존재합니다!");
+                        return;
+
+                    }
+
+
+                }
+
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

@@ -69,8 +69,27 @@ namespace FinalProj_personnel
         {
 
             ListViewItem aaa = ListViewReceived.FocusedItem;
-            FormReadReceived aa = new FormReadReceived(name,aaa);
+
+            tempid=aaa.SubItems[4].Text;
+
+
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                String query = "UPDATE RMails   SET readed="+"1"+" WHERE ID= "+tempid;
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+                cmd.ExecuteNonQuery();
+
+
+
+            }
+
+
+
+
+                FormReadReceived aa = new FormReadReceived(name, aaa);
             aa.Show();
+            setting();
 
 
         }
