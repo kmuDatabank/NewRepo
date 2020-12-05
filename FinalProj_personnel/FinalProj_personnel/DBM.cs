@@ -152,6 +152,51 @@ namespace FinalProj_personnel
             }
             return rank;
         }
+        public int weekadd_n(string name, string month)
+        {
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                string sql = "SELECT * FROM GoTowork WHERE date LIKE '" + month + "%'"; 
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["name"]);
+                    if (str.Equals(name))
+                    {
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[,] weekadd(string name, string month, int num)
+        {
+            int i = 0;
+            string[,] wa = new string[num,2];
+            using (DBM.Getinstance())
+            {
+                DBM.Getinstance().Open();
+                string sql = "SELECT * FROM GoTowork WHERE date LIKE '" + month + "%'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str = string.Format("{0}", rdr["name"]);
+                    if (str.Equals(name))
+                    {
+                        wa[i, 0] = string.Format("{0}", rdr["date"]);
+                        wa[i, 1] = string.Format("{0}", rdr["normalwork"]);
+                        i++;
+                    }
+                }
+                rdr.Close();
+            }
+            return wa;
+        }
         public int fir_allowance_n(string name, string month) // 수당 수정
         {
             int i = 0;
@@ -395,7 +440,7 @@ namespace FinalProj_personnel
             }
             return a;
         }
-        public int departinfo_n()
+        public int departinfo_n() // Departmet 테이블 갯수
         {
             int i = 0;
             using (DBM.Getinstance())
@@ -412,7 +457,7 @@ namespace FinalProj_personnel
             }
             return i;
         }
-        public string[,] departinfo(int n)
+        public string[,] departinfo(int n) //Department 부서명, 부서장 이름
         {
             string[,] a = new string[n, 2]; 
             int i = 0;
@@ -432,7 +477,7 @@ namespace FinalProj_personnel
             }
             return a;
         }
-        public int personnel_n()
+        public int personnel_n() // Personnel 사람수
         {
             int i = 0;
             using (DBM.Getinstance())
@@ -449,7 +494,7 @@ namespace FinalProj_personnel
             }
             return i;
         }
-        public string[] personnelinfo(int n)
+        public string[] personnelinfo(int n) // Personnel의 name만 가져옴
         {
             int i = 0;
             string[] a = new string[n];
@@ -967,8 +1012,6 @@ namespace FinalProj_personnel
 
             return rdr;
         }
-
-
 
         // 사원검색(부서별/ 이름별/ 나이별) 검색
         public string[,] Search()
