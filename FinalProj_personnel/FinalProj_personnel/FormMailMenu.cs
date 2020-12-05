@@ -28,19 +28,19 @@ namespace FinalProj_personnel
 
         private void ButtonSendMail_Click(object sender, EventArgs e)
         {
-            FormSendMail form = new FormSendMail();
+            FormSendMail form = new FormSendMail(name);
             form.Show();
         }
 
         private void ButtonReceivedMail_Click(object sender, EventArgs e)
         {
-            FormReceivedMail form = new FormReceivedMail();
+            FormReceivedMail form = new FormReceivedMail(name);
             form.Show();
         }
 
         private void ButtonTransmittedMail_Click(object sender, EventArgs e)
         {
-            FormTransmittedMail form = new FormTransmittedMail();
+            FormTransmittedMail form = new FormTransmittedMail(name);
             form.Show();
         }
     }

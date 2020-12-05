@@ -21,6 +21,11 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
         }
+        public FormReceivedMail(String name)
+        {
+            InitializeComponent();
+            this.name = name;
+        }
 
         public FormReceivedMail(string name, FormReadReceived form)
         {
@@ -59,7 +64,7 @@ namespace FinalProj_personnel
 
         private void ButtonOpenMail_Click(object sender, EventArgs e)
         {
-            FormReadReceived form = new FormReadReceived();
+            FormReadReceived form = new FormReadReceived(name);
             if (ListViewReceived.SelectedItems.Count != 0)
             {
                 int SelectRow = ListViewReceived.SelectedItems[0].Index;

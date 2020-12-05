@@ -21,6 +21,12 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
         }
+        public FormTransmittedMail(String name)
+        {
+            InitializeComponent();
+
+            this.name = name;
+        }
         public FormTransmittedMail(string name, FormReadTransmitted form)
         {
             InitializeComponent();
@@ -56,7 +62,7 @@ namespace FinalProj_personnel
         }
         private void ButtonOpenMail_Click(object sender, EventArgs e)
         {
-            FormReadTransmitted form = new FormReadTransmitted();
+            FormReadTransmitted form = new FormReadTransmitted(name);
 
             if (ListViewTransmitted.SelectedItems.Count != 0)
             {

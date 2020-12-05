@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace FinalProj_personnel
 {
+
     public partial class FormReadTransmitted : Form
     {
+        String name = "";
         public FormReadTransmitted()
         {
             InitializeComponent();
+        }
+        public FormReadTransmitted(String name)
+        {
+            InitializeComponent();
+            this.name = name;
         }
     }
 }
