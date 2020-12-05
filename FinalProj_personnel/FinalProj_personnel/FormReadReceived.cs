@@ -12,9 +12,17 @@ namespace FinalProj_personnel
 {
     public partial class FormReadReceived : Form
     {
+        String name = "";
         public FormReadReceived()
         {
             InitializeComponent();
+            
+        }
+        public FormReadReceived(String name)
+        {
+            InitializeComponent();
+            this.name = name;
+
         }
     }
 }
