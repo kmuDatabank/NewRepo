@@ -175,7 +175,7 @@ namespace FinalProj_personnel
         }
         public string[,] fir_allowance(string name, string month, int num) // 수당 수정
         {
-            string[,] str = new string[num, 3];
+            string[,] str = new string[num, 4];
             int i = 0;
             using (DBM.Getinstance())
             {
@@ -191,6 +191,7 @@ namespace FinalProj_personnel
                         str[i, 0] = string.Format("{0}", rdr["date"]);
                         str[i, 1] = string.Format("{0}", rdr["holidaywork"]);
                         str[i, 2] = string.Format("{0}", rdr["nightwork"]);
+                        str[i, 3] = string.Format("{0}", rdr["addwork"]);
                         i++;
                     }
                 }
@@ -306,13 +307,13 @@ namespace FinalProj_personnel
             }
             return large;
         }
-        public void update_allowance(string date, string holiday, string night) // 수당수정
+        public void update_allowance(string date, string holiday, string night, string add) // 수당수정
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("UPDATE GoTowork SET holidaywork = '"+holiday+"' ,nightwork = '"+night+"'" +
-                    " WHERE date = '"+date+"'", conn);
+                    " ,addwork = '"+add+"'WHERE date = '"+date+"'", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -360,6 +361,8 @@ namespace FinalProj_personnel
                             plus += Convert.ToInt32(str2);
                         }
                         string str3 = string.Format("{0}", rdr["nightwork"]);
+                        plus += Convert.ToInt32(str3);
+                        str3 = string.Format("{0}", rdr["addwork"]);
                         plus += Convert.ToInt32(str3);
                     }
                 }
