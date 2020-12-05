@@ -85,16 +85,16 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.buttonChangeDepartment);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Location = new System.Drawing.Point(403, 279);
+            this.groupBox5.Location = new System.Drawing.Point(403, 264);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(496, 242);
+            this.groupBox5.Size = new System.Drawing.Size(496, 280);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "부서등록";
             // 
             // textBoxDepartmentName
             // 
-            this.textBoxDepartmentName.Location = new System.Drawing.Point(352, 64);
+            this.textBoxDepartmentName.Location = new System.Drawing.Point(357, 73);
             this.textBoxDepartmentName.Name = "textBoxDepartmentName";
             this.textBoxDepartmentName.Size = new System.Drawing.Size(125, 28);
             this.textBoxDepartmentName.TabIndex = 22;
@@ -102,7 +102,7 @@
             // comboBoxheadDepartment
             // 
             this.comboBoxheadDepartment.FormattingEnabled = true;
-            this.comboBoxheadDepartment.Location = new System.Drawing.Point(353, 112);
+            this.comboBoxheadDepartment.Location = new System.Drawing.Point(358, 121);
             this.comboBoxheadDepartment.Name = "comboBoxheadDepartment";
             this.comboBoxheadDepartment.Size = new System.Drawing.Size(124, 26);
             this.comboBoxheadDepartment.TabIndex = 21;
@@ -115,10 +115,11 @@
             this.listViewShow.HideSelection = false;
             this.listViewShow.Location = new System.Drawing.Point(10, 27);
             this.listViewShow.Name = "listViewShow";
-            this.listViewShow.Size = new System.Drawing.Size(223, 209);
+            this.listViewShow.Size = new System.Drawing.Size(237, 247);
             this.listViewShow.TabIndex = 20;
             this.listViewShow.UseCompatibleStateImageBehavior = false;
             this.listViewShow.View = System.Windows.Forms.View.Details;
+            this.listViewShow.Click += new System.EventHandler(this.listViewShow_Click);
             // 
             // columnHeaderDepartment
             // 
@@ -128,11 +129,11 @@
             // columnHeaderHeader
             // 
             this.columnHeaderHeader.Text = "부서장";
-            this.columnHeaderHeader.Width = 107;
+            this.columnHeaderHeader.Width = 88;
             // 
             // buttonDeleteDepartment
             // 
-            this.buttonDeleteDepartment.Location = new System.Drawing.Point(419, 177);
+            this.buttonDeleteDepartment.Location = new System.Drawing.Point(419, 192);
             this.buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             this.buttonDeleteDepartment.Size = new System.Drawing.Size(71, 30);
             this.buttonDeleteDepartment.TabIndex = 5;
@@ -142,7 +143,7 @@
             // 
             // buttonSaveDepartment
             // 
-            this.buttonSaveDepartment.Location = new System.Drawing.Point(246, 177);
+            this.buttonSaveDepartment.Location = new System.Drawing.Point(254, 192);
             this.buttonSaveDepartment.Name = "buttonSaveDepartment";
             this.buttonSaveDepartment.Size = new System.Drawing.Size(71, 30);
             this.buttonSaveDepartment.TabIndex = 1;
@@ -153,7 +154,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(251, 112);
+            this.label10.Location = new System.Drawing.Point(256, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 18);
             this.label10.TabIndex = 17;
@@ -161,7 +162,7 @@
             // 
             // buttonChangeDepartment
             // 
-            this.buttonChangeDepartment.Location = new System.Drawing.Point(334, 177);
+            this.buttonChangeDepartment.Location = new System.Drawing.Point(334, 192);
             this.buttonChangeDepartment.Name = "buttonChangeDepartment";
             this.buttonChangeDepartment.Size = new System.Drawing.Size(71, 30);
             this.buttonChangeDepartment.TabIndex = 4;
@@ -172,7 +173,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(251, 74);
+            this.label9.Location = new System.Drawing.Point(256, 83);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 18);
             this.label9.TabIndex = 7;

@@ -175,7 +175,7 @@ namespace FinalProj_personnel
         }
         public string[,] fir_allowance(string name, string month, int num) // 수당 수정
         {
-            string[,] str = new string[num, 3];
+            string[,] str = new string[num, 4];
             int i = 0;
             using (DBM.Getinstance())
             {
@@ -191,6 +191,7 @@ namespace FinalProj_personnel
                         str[i, 0] = string.Format("{0}", rdr["date"]);
                         str[i, 1] = string.Format("{0}", rdr["holidaywork"]);
                         str[i, 2] = string.Format("{0}", rdr["nightwork"]);
+                        str[i, 3] = string.Format("{0}", rdr["addwork"]);
                         i++;
                     }
                 }
@@ -306,13 +307,13 @@ namespace FinalProj_personnel
             }
             return large;
         }
-        public void update_allowance(string date, string holiday, string night) // 수당수정
+        public void update_allowance(string date, string holiday, string night, string add) // 수당수정
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("UPDATE GoTowork SET holidaywork = '"+holiday+"' ,nightwork = '"+night+"'" +
-                    " WHERE date = '"+date+"'", conn);
+                    " ,addwork = '"+add+"'WHERE date = '"+date+"'", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -360,6 +361,8 @@ namespace FinalProj_personnel
                             plus += Convert.ToInt32(str2);
                         }
                         string str3 = string.Format("{0}", rdr["nightwork"]);
+                        plus += Convert.ToInt32(str3);
+                        str3 = string.Format("{0}", rdr["addwork"]);
                         plus += Convert.ToInt32(str3);
                     }
                 }
@@ -1082,10 +1085,33 @@ namespace FinalProj_personnel
             }
         }
 
-       
-        public void department_delete(string headDepartment) //부서 삭제기능
+        //일반 사원으로 강등
+        public void original(string position,string department)
         {
-            String query = "DELETE FROM Department WHERE headDepartment=" + "\'" + headDepartment + "\'";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='일반 사원' WHERE department=" + "\"" + department + "\"", conn);
+               
+                cmd.ExecuteNonQuery();
+            }
+        }
+        //부서장으로 업데이트
+        public void upgrade(string position, string backupname)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='부서장' WHERE name=" + "\"" + backupname + "\"", conn);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+      
+        public void department_delete(string departmentName) //부서 삭제기능
+        {
+            String query = "DELETE FROM Department WHERE departmentName=" + "\'" + departmentName + "\'";
 
             using (DBM.Getinstance())
             {
@@ -1097,17 +1123,7 @@ namespace FinalProj_personnel
 
             }
         }
-        //일반사원으로 강등
-        public void original(string position,string backupname)
-        {
-            using (DBM.Getinstance())
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position =" + "\"" + position + "\"" + "WHERE backupname=" + "\"" + backupname + "\"", conn);
-                cmd.ExecuteNonQuery();
-            }
-        }
-
+     
 
     }
 }
