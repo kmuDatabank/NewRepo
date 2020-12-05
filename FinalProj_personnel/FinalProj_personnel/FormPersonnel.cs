@@ -247,7 +247,7 @@ namespace FinalProj_personnel
             {
                 listViewShow.Items.Add(lvi);
                 DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
-                DBM.GetDBMinstance().upgrade(headDepartment);
+                DBM.GetDBMinstance().upgrade(headDepartment,departmentName);
             }
 
         }
@@ -268,7 +268,7 @@ namespace FinalProj_personnel
             // department 변경
             DBM.GetDBMinstance().department_change(departmentName,headDepartment);
             // 새로운 부서장 등록
-            DBM.GetDBMinstance().upgrade(headDepartment);
+            DBM.GetDBMinstance().upgrade(headDepartment,departmentName);
             MessageBox.Show("부서장 수정되었습니다.");
            
             listViewShow.Items.Clear();

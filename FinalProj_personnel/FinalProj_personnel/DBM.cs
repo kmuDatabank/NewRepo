@@ -1160,12 +1160,13 @@ namespace FinalProj_personnel
             }
         }
         //부서장으로 업데이트
-        public void upgrade(string name)
+        public void upgrade(string name, string department)
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='부서장' WHERE name=" + "\"" + name + "\"", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='부서장',department= '"+department+"'" +
+                    " WHERE name=" + "\"" + name + "\"", conn);
                 cmd.ExecuteNonQuery();
             }
         }
