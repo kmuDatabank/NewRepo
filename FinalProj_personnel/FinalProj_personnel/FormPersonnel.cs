@@ -192,10 +192,21 @@ namespace FinalProj_personnel
             }                 
         }
 
-   
+
 
         #region 부서등록 부분 -> 등록, 수정, 삭제
-      
+
+        //리스트뷰 사원 선택시 옆 텍스트박스에 정보 띄우기
+        private void listViewShow_Click(object sender, EventArgs e)
+        {
+            if (listViewShow.SelectedIndices.Count > 0)
+            {
+                textBoxDepartmentName.Text = listViewShow.SelectedItems[0].SubItems[0].Text;
+                comboBoxheadDepartment.Text = listViewShow.SelectedItems[0].SubItems[1].Text;
+
+                backupname = listViewShow.SelectedItems[0].SubItems[0].Text;
+            }
+        }
         private void buttonSaveDepartment_Click(object sender, EventArgs e) //등록
         {
             String departmentName = "";
@@ -235,6 +246,7 @@ namespace FinalProj_personnel
             {
                 listViewShow.Items.Add(lvi);
                 DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
+                DBM.GetDBMinstance().upgrade(position, headDepartment);
             }
 
         }
@@ -246,7 +258,7 @@ namespace FinalProj_personnel
         
             string departmentName = textBoxDepartmentName.Text;
             string headDepartment = comboBoxheadDepartment.SelectedItem.ToString();
-            
+          
             //부서등록에서 업데이트문
             DBM.GetDBMinstance().department_change(departmentName, headDepartment);
 
@@ -279,11 +291,10 @@ namespace FinalProj_personnel
                 listViewShow.Items.Add(item);
             }
 
-
         }
+       
         private void buttonDeleteDepartment_Click(object sender, EventArgs e) //삭제
-        {
-           
+        {        
             string department = listViewShow.FocusedItem.Text;
             string departmentName = textBoxDepartmentName.Text;
             string headDepartment = comboBoxheadDepartment.Focused.ToString();      
@@ -294,8 +305,8 @@ namespace FinalProj_personnel
             string d = listViewShow.Items[index].SubItems[0].Text; //선택된 열의 이름으로 삭제
 
             listViewShow.Items.Remove(listViewShow.Items[index]);
-            DBM.GetDBMinstance().original(position, backupname); //선택된 열이면 강등
 
+            DBM.GetDBMinstance().original(position, department); //일반 사원으로 강등
             DBM.GetDBMinstance().department_delete(department); //부서 삭제
 
 
@@ -318,6 +329,9 @@ namespace FinalProj_personnel
             form.Show();
         }
 
-     
+        
+
+
+
     }
 }

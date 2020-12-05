@@ -119,6 +119,7 @@
             this.listViewShow.TabIndex = 20;
             this.listViewShow.UseCompatibleStateImageBehavior = false;
             this.listViewShow.View = System.Windows.Forms.View.Details;
+            this.listViewShow.Click += new System.EventHandler(this.listViewShow_Click);
             // 
             // columnHeaderDepartment
             // 
