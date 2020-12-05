@@ -266,7 +266,7 @@ namespace FinalProj_personnel
             listViewShow.Items.Clear();
             int a_n = DBM.GetDBMinstance().departinfo_n();
             string[,] a = DBM.GetDBMinstance().departinfo(a_n);
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < a_n; i++)
             {
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 2; j++)
