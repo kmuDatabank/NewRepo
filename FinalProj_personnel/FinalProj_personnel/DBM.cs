@@ -1082,10 +1082,33 @@ namespace FinalProj_personnel
             }
         }
 
-       
-        public void department_delete(string headDepartment) //부서 삭제기능
+        //일반 사원으로 강등
+        public void original(string position,string department)
         {
-            String query = "DELETE FROM Department WHERE headDepartment=" + "\'" + headDepartment + "\'";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='일반 사원' WHERE department=" + "\"" + department + "\"", conn);
+               
+                cmd.ExecuteNonQuery();
+            }
+        }
+        //부서장으로 업데이트
+        public void upgrade(string position, string backupname)
+        {
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='부서장' WHERE name=" + "\"" + backupname + "\"", conn);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+      
+        public void department_delete(string departmentName) //부서 삭제기능
+        {
+            String query = "DELETE FROM Department WHERE departmentName=" + "\'" + departmentName + "\'";
 
             using (DBM.Getinstance())
             {
@@ -1097,17 +1120,7 @@ namespace FinalProj_personnel
 
             }
         }
-        //일반사원으로 강등
-        public void original(string position,string backupname)
-        {
-            using (DBM.Getinstance())
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position =" + "\"" + position + "\"" + "WHERE backupname=" + "\"" + backupname + "\"", conn);
-                cmd.ExecuteNonQuery();
-            }
-        }
-
+     
 
     }
 }
