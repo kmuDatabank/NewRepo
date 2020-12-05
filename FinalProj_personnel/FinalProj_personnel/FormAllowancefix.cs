@@ -36,7 +36,7 @@ namespace FinalProj_personnel
             for(int i = 0; i < num; i++)
             {
                 ListViewItem item = new ListViewItem();
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 4; j++)
                 {
                     if (j == 0)
                         item.Text = allowance[i, j];
@@ -55,6 +55,7 @@ namespace FinalProj_personnel
                 label3.Text = listView1.SelectedItems[0].SubItems[0].Text;
                 textBoxh.Text = listView1.SelectedItems[0].SubItems[1].Text;
                 textBoxnw.Text = listView1.SelectedItems[0].SubItems[2].Text;
+                textBoxadd.Text = listView1.SelectedItems[0].SubItems[3].Text;
             }
             catch
             {
@@ -67,8 +68,9 @@ namespace FinalProj_personnel
             string date = label3.Text;
             string holi = textBoxh.Text;
             string nig = textBoxnw.Text;
+            string add = textBoxadd.Text;
 
-            DBM.GetDBMinstance().update_allowance(date, holi, nig);
+            DBM.GetDBMinstance().update_allowance(date, holi, nig, add);
 
             listView1.Items.Clear();
             DateTime dt = dateTimePicker1.Value;
@@ -81,7 +83,7 @@ namespace FinalProj_personnel
             for (int i = 0; i < num; i++)
             {
                 ListViewItem item = new ListViewItem();
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 4; j++)
                 {
                     if (j == 0)
                         item.Text = allowance[i, j];

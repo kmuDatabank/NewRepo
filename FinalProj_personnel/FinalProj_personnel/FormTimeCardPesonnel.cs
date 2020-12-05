@@ -99,18 +99,22 @@ namespace FinalProj_personnel
                 cmd.ExecuteNonQuery();
             }
 
-            string intime = DBM.GetDBMinstance().checkintime(name, time);
-            string intime_t = intime[14].ToString() + intime[15].ToString();
-            string outtime_t = time[14].ToString() + time[15].ToString();
-            int intime1 = Convert.ToInt32(intime_t);
+            string intime = DBM.GetDBMinstance().checkintime(name, time); // 출근시간
+            string intime_t = intime[14].ToString() + intime[15].ToString(); // 시간만 따옴
+            string outtime_t = time[14].ToString() + time[15].ToString(); // 퇴근시간의 시간
+            int intime1 = Convert.ToInt32(intime_t); 
             int outtime1 = Convert.ToInt32(outtime_t);
-            int normal = outtime1 - intime1;
-
+            int normal = outtime1 - intime1; // 총 일한 시간
+            int add = 0;
+            if(normal > 8)
+            {
+                add = normal - 8;
+            }
             using (DBM.Getinstance())
             {
                 DBM.Getinstance().Open();
 
-                String query = "UPDATE GoTowork SET normalwork = '"+normal+"' WHERE name = '"+name+"' AND outtime = '"+time+"'";
+                String query = "UPDATE GoTowork SET normalwork = '"+normal+"', addwork = '"+add+"' WHERE name = '"+name+"' AND outtime = '"+time+"'";
 
                 MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
                 cmd.ExecuteNonQuery();

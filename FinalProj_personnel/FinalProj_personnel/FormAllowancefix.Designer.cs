@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxn = new System.Windows.Forms.TextBox();
             this.buttons = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +43,9 @@
             this.textBoxh = new System.Windows.Forms.TextBox();
             this.textBoxnw = new System.Windows.Forms.TextBox();
             this.buttonc = new System.Windows.Forms.Button();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBoxadd = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -50,15 +53,29 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 56);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(333, 421);
+            this.listView1.Size = new System.Drawing.Size(355, 421);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "날짜";
+            this.columnHeader1.Width = 170;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "휴일수당";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "야근수당";
             // 
             // dateTimePicker1
             // 
@@ -93,25 +110,10 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "이름";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "날짜";
-            this.columnHeader1.Width = 170;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "휴일수당";
-            this.columnHeader2.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "야근수당";
-            this.columnHeader3.Width = 80;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(417, 100);
+            this.label2.Location = new System.Drawing.Point(425, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 5;
@@ -120,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(504, 100);
+            this.label3.Location = new System.Drawing.Point(512, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 12);
             this.label3.TabIndex = 6;
@@ -128,7 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(402, 150);
+            this.label4.Location = new System.Drawing.Point(410, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 7;
@@ -137,7 +139,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(402, 208);
+            this.label5.Location = new System.Drawing.Point(410, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 8;
@@ -145,21 +147,21 @@
             // 
             // textBoxh
             // 
-            this.textBoxh.Location = new System.Drawing.Point(507, 147);
+            this.textBoxh.Location = new System.Drawing.Point(515, 162);
             this.textBoxh.Name = "textBoxh";
             this.textBoxh.Size = new System.Drawing.Size(100, 21);
             this.textBoxh.TabIndex = 9;
             // 
             // textBoxnw
             // 
-            this.textBoxnw.Location = new System.Drawing.Point(507, 208);
+            this.textBoxnw.Location = new System.Drawing.Point(515, 223);
             this.textBoxnw.Name = "textBoxnw";
             this.textBoxnw.Size = new System.Drawing.Size(100, 21);
             this.textBoxnw.TabIndex = 10;
             // 
             // buttonc
             // 
-            this.buttonc.Location = new System.Drawing.Point(467, 296);
+            this.buttonc.Location = new System.Drawing.Point(478, 329);
             this.buttonc.Name = "buttonc";
             this.buttonc.Size = new System.Drawing.Size(75, 23);
             this.buttonc.TabIndex = 11;
@@ -167,11 +169,33 @@
             this.buttonc.UseVisualStyleBackColor = true;
             this.buttonc.Click += new System.EventHandler(this.buttonc_Click);
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "연장근로";
+            // 
+            // textBoxadd
+            // 
+            this.textBoxadd.Location = new System.Drawing.Point(515, 284);
+            this.textBoxadd.Name = "textBoxadd";
+            this.textBoxadd.Size = new System.Drawing.Size(100, 21);
+            this.textBoxadd.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(410, 284);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "연장근로";
+            // 
             // FormAllowancefix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 498);
+            this.Controls.Add(this.textBoxadd);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonc);
             this.Controls.Add(this.textBoxnw);
             this.Controls.Add(this.textBoxh);
@@ -208,5 +232,8 @@
         private System.Windows.Forms.TextBox textBoxh;
         private System.Windows.Forms.TextBox textBoxnw;
         private System.Windows.Forms.Button buttonc;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox textBoxadd;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -18,40 +18,18 @@ namespace FinalProj_personnel
         FormTransmittedMail mail;
         string name = "";
 
-        /*
-        void ComboBox()
-        {
-            ComboBoxTo.Items.Clear();
-            ComboBoxTo.Items.Add("전체");
-            using (MySqlConnection conn = new MySqlConnection(strConn))
-            {
-                conn.Open();
-                try
-                {
-                    string strqry = "SELECT name FROM databank.Personnel WHERE where not name=" + name;
-                    MySqlCommand cmd = new MySqlCommand(strqry, conn);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(strqry, conn);
-                    DataSet cat = new DataSet();
-                    foreach (DataRow dr in cat.Tables[1].Rows)
-                    {
-                        ComboBoxTo.Items.Add(dr["name"]);
-                    }
 
-                    ComboBoxTo.SelectedIndex = 0;
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
-        }
-        */
 
         public FormSendMail()
         {
             InitializeComponent();
         }
+        public FormSendMail(String name)
+        {
+            InitializeComponent();
+            this.name = name;
+        }
+
 
         public FormSendMail(string name, FormTransmittedMail form)
         {
