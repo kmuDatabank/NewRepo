@@ -17,67 +17,72 @@ namespace FinalProj_personnel
 
         FormReadTransmitted mail;
         string name = "";
+        String tempid = "";
         public FormTransmittedMail()
         {
             InitializeComponent();
         }
-        public FormTransmittedMail(String name)
+        public FormTransmittedMail(String name)//송신 정보
         {
             InitializeComponent();
 
             this.name = name;
+
+            setting();
+
+
+
         }
-        public FormTransmittedMail(string name, FormReadTransmitted form)
+        public void setting()
         {
-            InitializeComponent();
-            this.name = name;
-            mail = form;
-
-            string strqry = "select * from databank.TMails where FROM=" + name;
-
-            using (MySqlConnection conn = new MySqlConnection(strConn))
+            ListViewTransmitted.Items.Clear();
+            using (DBM.Getinstance())
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(strqry, conn);
-                cmd.CommandType = CommandType.Text;
-                MySqlDataReader R = cmd.ExecuteReader();
+                DBM.Getinstance().Open();
+                String query = "SELECT * FROM TMails WHERE WHO= " + "\"" + name + "\"";
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
 
-                if (R.HasRows)
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                //받는사람 제목 내용 전송날짜 ~리스트뷰 칼럼
+                while (rdr.Read())
                 {
-                    while (R.Read())
-                    {
-                        ListViewItem lvt = new ListViewItem();
-                        lvt.SubItems.Add(R.GetString(0));
-                        lvt.SubItems.Add(R.GetString(1));
-                        lvt.SubItems.Add(R.GetString(2));
-                        lvt.SubItems.Add(R.GetString(3));
-                        ListViewTransmitted.Items.Add(lvt);
-                    }
+                    ListViewItem item = new ListViewItem();
+
+
+                    item.Text = rdr["SENDED"].ToString();
+                    item.SubItems.Add(rdr["TITLE"].ToString());
+                    item.SubItems.Add(rdr["CONTENT"].ToString());
+                    item.SubItems.Add(rdr["DATE"].ToString());
+                    item.SubItems.Add(rdr["readed"].ToString());
+                    item.SubItems.Add(rdr["ID"].ToString());
+
+
+                    ListViewTransmitted.Items.Add(item);
+
                 }
-                else
-                {
-                    
-                }
-            }
-        }
-        private void ButtonOpenMail_Click(object sender, EventArgs e)
-        {
-            FormReadTransmitted form = new FormReadTransmitted(name);
 
-            if (ListViewTransmitted.SelectedItems.Count != 0)
-            {
-                int SelectRow = ListViewTransmitted.SelectedItems[0].Index;
 
-                string who = ListViewTransmitted.Items[SelectRow].SubItems[0].Text;
-                string title = ListViewTransmitted.Items[SelectRow].SubItems[1].Text;
-                string content = ListViewTransmitted.Items[SelectRow].SubItems[2].Text;
 
-                mail.TextBoxWho.Text = who;
-                mail.TextBoxTitle.Text = title;
-                mail.TextBoxContent.Text = content;
+
+
             }
 
+
+
+        }
+
+        private void ButtonOpenMail_Click(object sender, EventArgs e)//수정요망
+        {
+            tempid=ListViewTransmitted.FocusedItem.SubItems[5].Text;
+
+            ListViewItem item=ListViewTransmitted.FocusedItem;
+            FormReadTransmitted form = new FormReadTransmitted(name, item);
             form.Show();
+
+
+
+
+            setting();
         }
     }
 }

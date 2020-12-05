@@ -28,6 +28,11 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
             this.name = name;
+            addcombo();
+
+
+
+
         }
 
 
@@ -38,30 +43,40 @@ namespace FinalProj_personnel
             mail = form;
         }
 
-        private void FormSendMail_Load(object sender, EventArgs e)
+
+        public void addcombo()
         {
-            using (MySqlConnection conn = new MySqlConnection(strConn))
+            using (DBM.Getinstance())
             {
-                conn.Open();
-                //var query = "SELECT name FROM databank.Personnel WHERE where not name=" + name;
-                string query = "SELECT name FROM databank.Personnel WHERE where not name=" + name;
-                try
+                DBM.Getinstance().Open();
+                String query = "SELECT * FROM Personnel";
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    MySqlCommand mcd = new MySqlCommand(query, conn);
-                    MySqlDataReader mdr = mcd.ExecuteReader();
-                    while (mdr.Read())
-                    {
-                        ComboBoxTo.Items.Add(mdr.GetString("name"));
-                    }
-                }
-                catch (Exception ex)
-                {
+                    ComboBoxTo.Items.Add(rdr["name"].ToString());
+                    
+                   
+
 
                 }
+
+
+
             }
+
+
+
+
         }
 
-        private void ButtonSendMail_Click(object sender, EventArgs e)
+
+
+
+
+
+        private void ButtonSendMail_Click(object sender, EventArgs e)//전송
         {
             string title = this.TextBoxTitle.Text.Trim();
             string message = this.TextBoxMessage.Text.Trim();
@@ -85,24 +100,29 @@ namespace FinalProj_personnel
                 string sd = date.ToString("yyyy-MM-dd-HH-mm");
                 //mail.ListViewTransmitted.Items.Add(ComboBoxTo.SelectedItem, TextBoxTitle.Text, TextBoxMessage.Text, DateTime.Now);
 
-                string a = ComboBoxTo.SelectedText, b = TextBoxTitle.Text, c = TextBoxMessage.Text, d = sd;
-
-                using (MySqlConnection conn = new MySqlConnection(strConn))
+                string a = ComboBoxTo.Text, b = TextBoxTitle.Text, c = TextBoxMessage.Text, d = sd;
+                //a는 받는이
+                using (DBM.Getinstance())
                 {
-                    MySqlCommand cmd1 = new MySqlCommand("INSERT INTO `databank`.`RMails` (`WHO`, `TITLE`, `CONTENT`, `DATE`) " +
-                        "VALUES ('" + a + "', '" + b + "', '" + c + "', '" + d + "');", conn);
+                    DBM.Getinstance().Open();
+                    String query = "INSERT INTO RMails (WHO,TITLE,CONTENT,DATE,BYMAN)" +
+                        " VALUES ("+"\"" + a + "\"," + "\"" + b + "\"," + "\"" + c + "\"," + "\"" + d + "\"," + "\"" + name + "\""+")";
+                    MySqlCommand cmd1 = new MySqlCommand(query, DBM.Getinstance());
                     cmd1.ExecuteNonQuery();
-                    MySqlCommand cmd2 = new MySqlCommand("INSERT INTO `databank`.`TMails` (`WHO`, `TITLE`, `CONTENT`, `DATE`) " +
-                        "VALUES ('" + a + "', '" + b + "', '" + c + "', '" + d + "');", conn);
+
+
+                     query="INSERT INTO TMails (WHO, TITLE, CONTENT, DATE,SENDED)"+
+                       " VALUES (" + "\"" + name + "\"," + "\"" + b + "\"," + "\"" + c + "\"," + "\"" + d + "\"," + "\"" + a + "\""+")";
+                    MySqlCommand cmd2 = new MySqlCommand(query, DBM.Getinstance());
                     cmd2.ExecuteNonQuery();
                 }
 
-                //mail.ListViewTransmitted.Items.AddRange(a, b, c, d);
+
                 MessageBox.Show("전송 완료");
             }
             else
             {
-
+                MessageBox.Show("전송실패");
             }
         }
     }
