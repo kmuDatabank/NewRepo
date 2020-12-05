@@ -78,9 +78,9 @@ namespace FinalProj_personnel
             {
                 comboBoxheadDepartment.Items.Add(per_info[i]);
             }
-            
-            string[,] a = DBM.GetDBMinstance().departinfo();
-            for (int i = 0; i < 10; i++) 
+            int a_n = DBM.GetDBMinstance().departinfo_n();
+            string[,] a = DBM.GetDBMinstance().departinfo(a_n);
+            for (int i = 0; i < a_n; i++) 
             {
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 2; j++)
@@ -264,7 +264,8 @@ namespace FinalProj_personnel
             MessageBox.Show("부서장 수정되었습니다.");
 
             listViewShow.Items.Clear();
-            string[,] a = DBM.GetDBMinstance().departinfo();
+            int a_n = DBM.GetDBMinstance().departinfo_n();
+            string[,] a = DBM.GetDBMinstance().departinfo(a_n);
             for (int i = 0; i < 10; i++)
             {
                 ListViewItem item = new ListViewItem();

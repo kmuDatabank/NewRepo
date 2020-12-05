@@ -392,9 +392,26 @@ namespace FinalProj_personnel
             }
             return a;
         }
-        public string[,] departinfo()
+        public int departinfo_n()
         {
-            string[,] a = new string[13, 2]; 
+            int i = 0;
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    i++;
+                }
+                rdr.Close();
+            }
+            return i;
+        }
+        public string[,] departinfo(int n)
+        {
+            string[,] a = new string[n, 2]; 
             int i = 0;
             using (DBM.Getinstance())
             {
