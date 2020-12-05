@@ -1116,7 +1116,27 @@ namespace FinalProj_personnel
             }
         }
 
-
+        public string ori_depart(string department)
+        {
+            string str = "";
+            using (DBM.Getinstance())
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Department";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string str1 = string.Format("{0}", rdr["departmentName"]);
+                    if (str1.Equals(department))
+                    {
+                        str = string.Format("{0}", rdr["headDepartment"]);
+                    }
+                }
+                rdr.Close();
+            }
+            return str;
+        }
         //부서 수정
         public void department_change(string departmentName, string headDepartment)
         {
@@ -1129,24 +1149,23 @@ namespace FinalProj_personnel
         }
 
         //일반 사원으로 강등
-        public void original(string position,string department)
+        public void original(string name)
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='일반 사원' WHERE department=" + "\"" + department + "\"", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='일반 사원' WHERE name=" + "\"" + name + "\"", conn);
                
                 cmd.ExecuteNonQuery();
             }
         }
         //부서장으로 업데이트
-        public void upgrade(string position, string backupname)
+        public void upgrade(string name)
         {
             using (DBM.Getinstance())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='부서장' WHERE name=" + "\"" + backupname + "\"", conn);
-
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='부서장' WHERE name=" + "\"" + name + "\"", conn);
                 cmd.ExecuteNonQuery();
             }
         }

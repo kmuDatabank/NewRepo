@@ -242,11 +242,12 @@ namespace FinalProj_personnel
                    
                 }              
             }
+            
             if (a == 0)
             {
                 listViewShow.Items.Add(lvi);
                 DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
-                DBM.GetDBMinstance().upgrade(position, headDepartment);
+                DBM.GetDBMinstance().upgrade(headDepartment);
             }
 
         }
@@ -256,18 +257,18 @@ namespace FinalProj_personnel
             PersonInfo personInfo = new PersonInfo();
             personInfo.departmentName= textBoxDepartmentName.Text;
         
-            string departmentName = textBoxDepartmentName.Text;
-            string headDepartment = comboBoxheadDepartment.SelectedItem.ToString();
-          
-            //부서등록에서 업데이트문
-            DBM.GetDBMinstance().department_change(departmentName, headDepartment);
+            string departmentName = textBoxDepartmentName.Text; // 텍스트박스 부서명
+            string headDepartment = comboBoxheadDepartment.SelectedItem.ToString(); // 콤보박스 사원명
 
-            //새로운 부서장으로 바꾸기
-            DBM.GetDBMinstance().upgrade(position, headDepartment);
-
-            //기존 부서장은 강등시키기
-            DBM.GetDBMinstance().original(position, departmentName);
-
+            // 기존 부서장 이름 따오기
+            string ori_name = DBM.GetDBMinstance().ori_depart(departmentName);
+            MessageBox.Show(ori_name);
+            // 기존 부서장 강등
+            DBM.GetDBMinstance().original(ori_name);
+            // department 변경
+            DBM.GetDBMinstance().department_change(departmentName,headDepartment);
+            // 새로운 부서장 등록
+            DBM.GetDBMinstance().upgrade(headDepartment);
             MessageBox.Show("부서장 수정되었습니다.");
            
             listViewShow.Items.Clear();
@@ -306,7 +307,7 @@ namespace FinalProj_personnel
 
             listViewShow.Items.Remove(listViewShow.Items[index]);
 
-            DBM.GetDBMinstance().original(position, department); //일반 사원으로 강등
+            DBM.GetDBMinstance().original(department); //일반 사원으로 강등
             DBM.GetDBMinstance().department_delete(department); //부서 삭제
 
 
