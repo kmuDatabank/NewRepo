@@ -34,6 +34,8 @@
             this.Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ButtonOpenMail = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // ListViewReceived
@@ -42,11 +44,13 @@
             this.Name,
             this.Title,
             this.Content,
-            this.Date});
+            this.Date,
+            this.columnHeader1,
+            this.columnHeader2});
             this.ListViewReceived.HideSelection = false;
             this.ListViewReceived.Location = new System.Drawing.Point(12, 12);
             this.ListViewReceived.Name = "ListViewReceived";
-            this.ListViewReceived.Size = new System.Drawing.Size(714, 410);
+            this.ListViewReceived.Size = new System.Drawing.Size(862, 410);
             this.ListViewReceived.TabIndex = 0;
             this.ListViewReceived.UseCompatibleStateImageBehavior = false;
             this.ListViewReceived.View = System.Windows.Forms.View.Details;
@@ -66,7 +70,7 @@
             // 
             this.Content.Text = "내용";
             this.Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Content.Width = 339;
+            this.Content.Width = 250;
             // 
             // Date
             // 
@@ -76,20 +80,31 @@
             // 
             // ButtonOpenMail
             // 
-            this.ButtonOpenMail.Location = new System.Drawing.Point(743, 12);
+            this.ButtonOpenMail.Location = new System.Drawing.Point(897, 12);
             this.ButtonOpenMail.Name = "ButtonOpenMail";
             this.ButtonOpenMail.Size = new System.Drawing.Size(75, 23);
             this.ButtonOpenMail.TabIndex = 1;
             this.ButtonOpenMail.Text = "확인";
             this.ButtonOpenMail.UseVisualStyleBackColor = true;
+            this.ButtonOpenMail.Click += new System.EventHandler(this.ButtonOpenMail_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "읽음여부";
             // 
             // FormReceivedMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 434);
+            this.ClientSize = new System.Drawing.Size(984, 549);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewReceived);
+            this.Name = "FormReceivedMail";
+            this.Text = "myrcvdmail";
             this.ResumeLayout(false);
 
         }
@@ -102,5 +117,7 @@
         private System.Windows.Forms.ColumnHeader Content;
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Button ButtonOpenMail;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

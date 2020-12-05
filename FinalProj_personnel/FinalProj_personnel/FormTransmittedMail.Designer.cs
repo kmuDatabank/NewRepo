@@ -34,6 +34,8 @@
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.readed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // ButtonOpenMail
@@ -52,7 +54,9 @@
             this.Name,
             this.Title,
             this.Content,
-            this.Date});
+            this.Date,
+            this.readed,
+            this.columnHeader1});
             this.ListViewTransmitted.HideSelection = false;
             this.ListViewTransmitted.Location = new System.Drawing.Point(12, 12);
             this.ListViewTransmitted.Name = "ListViewTransmitted";
@@ -70,19 +74,28 @@
             // 
             this.Title.Text = "제목";
             this.Title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Title.Width = 110;
+            this.Title.Width = 86;
             // 
             // Content
             // 
             this.Content.Text = "내용";
             this.Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Content.Width = 339;
+            this.Content.Width = 185;
             // 
             // Date
             // 
             this.Date.Text = "전송 날짜";
             this.Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Date.Width = 160;
+            // 
+            // readed
+            // 
+            this.readed.Text = "읽음여부";
+            this.readed.Width = 81;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
             // 
             // FormTransmittedMail
             // 
@@ -91,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(838, 434);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewTransmitted);
-            //this.Name = "FormTransmittedMail";
+            this.Name = "FormTransmittedMail";
             this.ResumeLayout(false);
 
         }
@@ -104,5 +117,7 @@
         private System.Windows.Forms.ColumnHeader Content;
         private System.Windows.Forms.ColumnHeader Date;
         public System.Windows.Forms.ListView ListViewTransmitted;
+        private System.Windows.Forms.ColumnHeader readed;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

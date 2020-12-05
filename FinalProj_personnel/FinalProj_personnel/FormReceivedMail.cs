@@ -16,6 +16,7 @@ namespace FinalProj_personnel
         string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
 
         string name = "";
+        String tempid = "";
         FormReadReceived mail;
         public FormReceivedMail()
         {
@@ -25,60 +26,60 @@ namespace FinalProj_personnel
         {
             InitializeComponent();
             this.name = name;
+            setting();
         }
 
-        public FormReceivedMail(string name, FormReadReceived form)
+        public void setting()
         {
-            InitializeComponent();
-            this.name = name;
-            mail = form;
-
-            string strqry = "select * from databank.RMails where TO=" + name;
-
-            using (MySqlConnection conn = new MySqlConnection(strConn))
+            ListViewReceived.Items.Clear();
+            using (DBM.Getinstance())
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(strqry, conn);
-                cmd.CommandType = CommandType.Text;
-                MySqlDataReader R = cmd.ExecuteReader();
+                DBM.Getinstance().Open();
+                String query = "SELECT * FROM RMails WHERE WHO= " + "\"" + name + "\"";
+                MySqlCommand cmd = new MySqlCommand(query, DBM.Getinstance());
 
-                if (R.HasRows)
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                //받는사람 제목 내용 전송날짜 ~리스트뷰 칼럼
+                while (rdr.Read())
                 {
-                    while (R.Read())
-                    {
-                        ListViewItem lvt = new ListViewItem();
-                        lvt.SubItems.Add(R.GetString(0));
-                        lvt.SubItems.Add(R.GetString(1));
-                        lvt.SubItems.Add(R.GetString(2));
-                        lvt.SubItems.Add(R.GetString(3));
-                        ListViewReceived.Items.Add(lvt);
-                    }
+                    ListViewItem item = new ListViewItem();
+
+
+                    item.Text = rdr["WHO"].ToString();
+                    item.SubItems.Add(rdr["TITLE"].ToString());
+                    item.SubItems.Add(rdr["CONTENT"].ToString());
+                    item.SubItems.Add(rdr["DATE"].ToString());
+                    item.SubItems.Add(rdr["ID"].ToString());
+                    item.SubItems.Add(rdr["readed"].ToString());
+
+
+
+                    ListViewReceived.Items.Add(item);
+
                 }
-                else
-                {
-                    
-                }
+
+
+
+
+
             }
-
         }
 
         private void ButtonOpenMail_Click(object sender, EventArgs e)
         {
-            FormReadReceived form = new FormReadReceived(name);
-            if (ListViewReceived.SelectedItems.Count != 0)
-            {
-                int SelectRow = ListViewReceived.SelectedItems[0].Index;
 
-                string who = ListViewReceived.Items[SelectRow].SubItems[0].Text;
-                string title = ListViewReceived.Items[SelectRow].SubItems[1].Text;
-                string content = ListViewReceived.Items[SelectRow].SubItems[2].Text;
+            ListViewItem aaa = ListViewReceived.FocusedItem;
+            FormReadReceived aa = new FormReadReceived(name,aaa);
+            aa.Show();
 
-                mail.TextBoxWho.Text = who;
-                mail.TextBoxTitle.Text = title;
-                mail.TextBoxContent.Text = content;
-            }
 
-            form.Show();
         }
+
+
+
+
     }
 }
+
+
+
