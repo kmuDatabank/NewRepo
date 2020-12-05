@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 다음주소api;
 
 namespace FinalProj_personnel
 {
@@ -329,9 +330,18 @@ namespace FinalProj_personnel
             form.Show();
         }
 
-        
+        private void button_addresssearch_Click(object sender, EventArgs e)//
+        {
+            frmSearchZip frm = new frmSearchZip();
+            frm.Show();
 
 
 
+
+
+
+
+
+        }
     }
 }
