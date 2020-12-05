@@ -1040,7 +1040,7 @@ namespace FinalProj_personnel
             return a;
         }
 
-        //부서검색 
+        //부서등록
         public void department_enroll(string departmentName, string headDepartment)
         {
             using (DBM.Getinstance())
@@ -1068,7 +1068,7 @@ namespace FinalProj_personnel
        
         public void department_delete(string headDepartment) //부서 삭제기능
         {
-            String query = "delete from Department where headDepartment=" + "\'" + headDepartment + "\'";
+            String query = "DELETE FROM Department WHERE headDepartment=" + "\'" + headDepartment + "\'";
 
             using (DBM.Getinstance())
             {

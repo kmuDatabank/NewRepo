@@ -71,8 +71,8 @@ namespace FinalProj_personnel
 
             //부서등록 부서장
             comboBoxheadDepartment.Items.Clear();
-            int per_n = DBM.GetDBMinstance().personnel_n();
-            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n);
+            int per_n = DBM.GetDBMinstance().personnel_n(); //부서장 등록할때 사원이 몇명있는지
+            string[] per_info = DBM.GetDBMinstance().personnelinfo(per_n); //사원들 이름
             
             for(int i = 0; i < per_n; i++)
             {
@@ -80,7 +80,7 @@ namespace FinalProj_personnel
             }
             
             string[,] a = DBM.GetDBMinstance().departinfo();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++) 
             {
                 ListViewItem item = new ListViewItem();
                 for (int j = 0; j < 2; j++)
@@ -207,9 +207,10 @@ namespace FinalProj_personnel
            
             string[] strs = new string[] { departmentName, headDepartment.ToString() };         
             ListViewItem lvi = new ListViewItem(strs);
-            lvi.Text = departmentName;                              
+            lvi.Text = departmentName;
 
             //중복제거
+            int a = 0;
             using (DBM.Getinstance())
             {
                 DBM.Getinstance().Open();
@@ -220,18 +221,22 @@ namespace FinalProj_personnel
                 while (rdr.Read())
                 {
                     temp = rdr["departmentName"].ToString();
-                }
-                if(temp != "")
-                {
-                    MessageBox.Show("부서가 중복됩니다.");
-                    return;
-                }
-                else
-                {
-                    listViewShow.Items.Add(lvi);
-                    DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
-                }
+
+                    if (temp == departmentName)
+                    {
+                        MessageBox.Show("부서가 중복됩니다.");
+                        a = 1;
+                        return;                     
+                    }
+                   
+                }              
             }
+            if (a == 0)
+            {
+                listViewShow.Items.Add(lvi);
+                DBM.GetDBMinstance().department_enroll(departmentName, headDepartment);
+            }
+
             /*
             List<string> arrdata = new List<string>();
             for(int i=0; i< strs.Length; i++)
@@ -239,10 +244,7 @@ namespace FinalProj_personnel
                 if (arrdata.Contains(strs[i]))continue;
                 arrdata.Add(strs[i].ToString());
              MessageBox.Show("중복된 부서입니다.");              
-            } */        
-            
-           
-            DBM.GetDBMinstance().department_enroll(departmentName,headDepartment); 
+            } */
 
         }
       
