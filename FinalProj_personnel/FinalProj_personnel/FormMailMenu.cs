@@ -36,7 +36,7 @@ namespace FinalProj_personnel
 
         private void ButtonReceivedMail_Click(object sender, EventArgs e)
         {
-            FormReceivedMail form = new FormReceivedMail(name);
+            rcvdmail form = new rcvdmail(name);
             form.Show();
         }
 

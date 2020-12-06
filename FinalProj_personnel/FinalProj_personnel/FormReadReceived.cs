@@ -30,7 +30,7 @@ namespace FinalProj_personnel
         public void setting()
         {
             
-            TextBoxWho.Text=item1.Text;
+            TextBoxWho.Text=item1.SubItems[6].Text;
             TextBoxTitle.Text = item1.SubItems[1].Text;
             TextBoxContent.Text = item1.SubItems[2].Text;
             MessageBox.Show(item1.SubItems[3].Text);

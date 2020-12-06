@@ -142,11 +142,11 @@
     <Compile Include="FormReadTransmitted.Designer.cs">
       <DependentUpon>FormReadTransmitted.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReceivedMail.cs">
+    <Compile Include="rcvdmail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReceivedMail.Designer.cs">
-      <DependentUpon>FormReceivedMail.cs</DependentUpon>
+    <Compile Include="rcvdmail.Designer.cs">
+      <DependentUpon>rcvdmail.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSendMail.cs">
       <SubType>Form</SubType>
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="FormReadTransmitted.resx">
       <DependentUpon>FormReadTransmitted.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReceivedMail.resx">
-      <DependentUpon>FormReceivedMail.cs</DependentUpon>
+    <EmbeddedResource Include="rcvdmail.resx">
+      <DependentUpon>rcvdmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSendMail.resx">
       <DependentUpon>FormSendMail.cs</DependentUpon>

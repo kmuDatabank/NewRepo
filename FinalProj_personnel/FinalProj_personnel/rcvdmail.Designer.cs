@@ -1,6 +1,6 @@
 ﻿namespace FinalProj_personnel
 {
-    partial class FormReceivedMail
+    partial class rcvdmail
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,13 @@
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ButtonOpenMail = new System.Windows.Forms.Button();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ButtonOpenMail = new System.Windows.Forms.Button();
+            this.comboBox_search = new System.Windows.Forms.ComboBox();
+            this.textBox_search = new System.Windows.Forms.TextBox();
+            this.button_search = new System.Windows.Forms.Button();
+            this.qtq123 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // ListViewReceived
@@ -46,9 +50,10 @@
             this.Content,
             this.Date,
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.qtq123});
             this.ListViewReceived.HideSelection = false;
-            this.ListViewReceived.Location = new System.Drawing.Point(12, 12);
+            this.ListViewReceived.Location = new System.Drawing.Point(12, 106);
             this.ListViewReceived.Name = "ListViewReceived";
             this.ListViewReceived.Size = new System.Drawing.Size(862, 410);
             this.ListViewReceived.TabIndex = 0;
@@ -57,7 +62,7 @@
             // 
             // Name
             // 
-            this.Name.Text = "보낸 사람";
+            this.Name.Text = "받는 사람";
             this.Name.Width = 101;
             // 
             // Title
@@ -78,6 +83,14 @@
             this.Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Date.Width = 160;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "읽음여부";
+            // 
             // ButtonOpenMail
             // 
             this.ButtonOpenMail.Location = new System.Drawing.Point(897, 12);
@@ -88,24 +101,53 @@
             this.ButtonOpenMail.UseVisualStyleBackColor = true;
             this.ButtonOpenMail.Click += new System.EventHandler(this.ButtonOpenMail_Click);
             // 
-            // columnHeader1
+            // comboBox_search
             // 
-            this.columnHeader1.Text = "ID";
+            this.comboBox_search.FormattingEnabled = true;
+            this.comboBox_search.Items.AddRange(new object[] {
+            "보낸사람",
+            "제목",
+            "내용"});
+            this.comboBox_search.Location = new System.Drawing.Point(12, 35);
+            this.comboBox_search.Name = "comboBox_search";
+            this.comboBox_search.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_search.TabIndex = 2;
             // 
-            // columnHeader2
+            // textBox_search
             // 
-            this.columnHeader2.Text = "읽음여부";
+            this.textBox_search.Location = new System.Drawing.Point(190, 35);
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.Size = new System.Drawing.Size(287, 21);
+            this.textBox_search.TabIndex = 3;
+            // 
+            // button_search
+            // 
+            this.button_search.Location = new System.Drawing.Point(505, 35);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(75, 23);
+            this.button_search.TabIndex = 4;
+            this.button_search.Text = "검색";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
+            // qtq123
+            // 
+            this.qtq123.Text = "보낸사람";
             // 
             // FormReceivedMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 549);
+            this.Controls.Add(this.button_search);
+            this.Controls.Add(this.textBox_search);
+            this.Controls.Add(this.comboBox_search);
             this.Controls.Add(this.ButtonOpenMail);
             this.Controls.Add(this.ListViewReceived);
 
             this.Text = "myrcvdmail";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,5 +161,9 @@
         private System.Windows.Forms.Button ButtonOpenMail;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ComboBox comboBox_search;
+        private System.Windows.Forms.TextBox textBox_search;
+        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.ColumnHeader qtq123;
     }
 }

@@ -15,7 +15,7 @@ namespace FinalProj_personnel
     {
         string strConn = "Server=49.50.174.201;Database=databank;Uid=databank;Pwd=dbdb;Charset=utf8";
 
-        FormReadTransmitted mail;
+
         string name = "";
         String tempid = "";
         public FormTransmittedMail()
