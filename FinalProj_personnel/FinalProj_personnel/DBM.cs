@@ -1154,7 +1154,7 @@ namespace FinalProj_personnel
             using (DBM.Getinstance())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position ='일반 사원' WHERE name=" + "\"" + name + "\"", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET position = "+"\""+"일반 사원"+"\""+ "WHERE name=" + "\"" + name + "\"", conn);
                
                 cmd.ExecuteNonQuery();
             }

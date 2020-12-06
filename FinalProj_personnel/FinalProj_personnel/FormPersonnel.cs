@@ -275,7 +275,7 @@ namespace FinalProj_personnel
         {        
             string department = listViewShow.FocusedItem.Text;
             string departmentName = textBoxDepartmentName.Text;
-            string headDepartment = comboBoxheadDepartment.Focused.ToString();      
+            string headDepartment = comboBoxheadDepartment.Text;    
             
             place[1] = false;
 
@@ -284,7 +284,7 @@ namespace FinalProj_personnel
 
             listViewShow.Items.Remove(listViewShow.Items[index]);
 
-            DBM.GetDBMinstance().original(department); //일반 사원으로 강등
+            DBM.GetDBMinstance().original(headDepartment); //일반 사원으로 강등
             DBM.GetDBMinstance().department_delete(department); //부서 삭제
 
 
