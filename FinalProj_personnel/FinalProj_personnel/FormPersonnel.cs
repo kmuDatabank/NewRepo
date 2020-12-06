@@ -139,29 +139,6 @@ namespace FinalProj_personnel
          
         }
 
-        #region 메뉴Strip부분 -> 기본급, 수당, 공제
-        private void 기본급ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormPayViewer form = new FormPayViewer();
-            form.SetPayText("기본급");
-            form.Show();
-        }
-
-        private void 수당ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormPayViewer form = new FormPayViewer();
-            form.SetPayText("수당");
-            form.Show();
-        }
-
-        private void 공제ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormPayViewer form = new FormPayViewer();
-            form.SetPayText("공제");
-            form.Show();
-        }
-        #endregion
-
 
         //사원 검색부분에서 콤보박스랑 텍스트박스 변수
         String text1 = ""; //콤보박스
@@ -263,7 +240,6 @@ namespace FinalProj_personnel
 
             // 기존 부서장 이름 따오기
             string ori_name = DBM.GetDBMinstance().ori_depart(departmentName);
-            MessageBox.Show(ori_name);
             // 기존 부서장 강등
             DBM.GetDBMinstance().original(ori_name);
             // department 변경
@@ -335,14 +311,12 @@ namespace FinalProj_personnel
         {
             frmSearchZip frm = new frmSearchZip();
             frm.Show();
+        }
 
-
-
-
-
-
-
-
+        private void 급여내역서확인ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPayViewer form = new FormPayViewer();
+            form.Show();
         }
     }
 }

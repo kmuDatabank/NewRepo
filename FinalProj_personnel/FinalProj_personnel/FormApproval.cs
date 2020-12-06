@@ -103,7 +103,6 @@ namespace FinalProj_personnel
                 string mid = comboBoxnewappr_middelwork.Text;
                 string small = comboBoxnewappr_smallwork.Text;
                 string work = large + "-" + mid + "-" + small;
-                MessageBox.Show(work);
                 string text = textBoxnewappr_text.Text;
                 string comment = textBoxnewappr_comment.Text;
                 string approver1 = comboBoxappr1.SelectedItem.ToString();

@@ -102,13 +102,21 @@ namespace FinalProj_personnel
         }
         private void listBoxwork_SelectedIndexChanged(object sender, EventArgs e) // 결재 해야할 업무 선택시
         {
-            string name = listBoxwork.SelectedItem.ToString();
-            //결재 제목로 업무, 텍스트, 코멘트를 가져옴
-            string[] app_info = DBM.GetDBMinstance().Approval_info(name);
-            labelname.Text = name;
-            labelwork.Text = app_info[0];
-            textBoxapptext.Text = app_info[1];
-            labelcomment.Text = app_info[2];
+            try
+            {
+                string name = listBoxwork.SelectedItem.ToString();
+                //결재 제목로 업무, 텍스트, 코멘트를 가져옴
+                string[] app_info = DBM.GetDBMinstance().Approval_info(name);
+                labelname.Text = name;
+                labelwork.Text = app_info[0];
+                textBoxapptext.Text = app_info[1];
+                labelcomment.Text = app_info[2];
+            }
+            catch
+            {
+                MessageBox.Show("결제제목을 선택해 주세요");
+            }
+            
         }
         private void buttonappr_Click(object sender, EventArgs e) // 승인버튼 클릭시
         {
@@ -130,6 +138,13 @@ namespace FinalProj_personnel
             {
                 MessageBox.Show("권한이 없습니다.");
             }
+            int num = DBM.GetDBMinstance().MyApproval_work_c(rank);
+            string[] work = DBM.GetDBMinstance().MyApproval_work(rank, num);
+            listBoxwork.Items.Clear();
+            for (int i = 0; i < num; i++)
+            {
+                listBoxwork.Items.Add(work[i]);
+            }
         }
 
         private void buttonreturn_Click(object sender, EventArgs e) // 반려버튼 클릭시
@@ -145,6 +160,13 @@ namespace FinalProj_personnel
             else
             {
                 MessageBox.Show("권한이 없습니다.");
+            }
+            int num = DBM.GetDBMinstance().MyApproval_work_c(rank);
+            string[] work = DBM.GetDBMinstance().MyApproval_work(rank, num);
+            listBoxwork.Items.Clear();
+            for (int i = 0; i < num; i++)
+            {
+                listBoxwork.Items.Add(work[i]);
             }
         }
 
