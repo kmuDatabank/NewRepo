@@ -53,10 +53,10 @@ namespace FinalProj_personnel
             comboBoxDepartment.Items.Add("관리부서");
 
 
-            string[,] aa = new string[13, 8];
+            string[,] aa = new string[14, 8];
             aa = DBM.GetDBMinstance().Search();
 
-            for (int i = 0; i <13; i++)
+            for (int i = 0; i <14; i++)
             {
                 if (aa[i, 0] == null)
                 {
@@ -88,7 +88,7 @@ namespace FinalProj_personnel
         private void buttonDepartSearch_Click(object sender, EventArgs e) //사원검색
         {
             string text = textBoxInput.Text;
-            String[,] save = new String[13, 8];
+            String[,] save = new String[14, 8];
             int k = 0;
 
             foreach (ListViewItem lvi in listViewDepartmentType.Items)
@@ -114,7 +114,7 @@ namespace FinalProj_personnel
 
             listViewDepartmentType.Items.Clear();
 
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 14; i++)
             {
                 if (save[i, 0] == null)
                 {
