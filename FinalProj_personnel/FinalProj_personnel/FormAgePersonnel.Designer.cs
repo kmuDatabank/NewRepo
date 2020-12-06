@@ -77,10 +77,9 @@
             this.listViewDepartmentType.FullRowSelect = true;
             this.listViewDepartmentType.GridLines = true;
             this.listViewDepartmentType.HideSelection = false;
-            this.listViewDepartmentType.Location = new System.Drawing.Point(15, 57);
-            this.listViewDepartmentType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewDepartmentType.Location = new System.Drawing.Point(21, 86);
             this.listViewDepartmentType.Name = "listViewDepartmentType";
-            this.listViewDepartmentType.Size = new System.Drawing.Size(537, 319);
+            this.listViewDepartmentType.Size = new System.Drawing.Size(765, 476);
             this.listViewDepartmentType.TabIndex = 25;
             this.listViewDepartmentType.UseCompatibleStateImageBehavior = false;
             this.listViewDepartmentType.View = System.Windows.Forms.View.Details;
@@ -130,28 +129,24 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("돋움", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(223, 29);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(319, 44);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(135, 11);
+            this.label9.Size = new System.Drawing.Size(89, 16);
             this.label9.TabIndex = 34;
-            this.label9.Text = "(이름으로 본인 바로 검색)";
+            this.label9.Text = "(바로 검색)";
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Location = new System.Drawing.Point(31, 23);
-            this.textBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxInput.Location = new System.Drawing.Point(44, 34);
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(96, 21);
+            this.textBoxInput.Size = new System.Drawing.Size(135, 28);
             this.textBoxInput.TabIndex = 33;
-
             // 
             // buttonDepartSearch
             // 
-            this.buttonDepartSearch.Location = new System.Drawing.Point(150, 23);
-            this.buttonDepartSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDepartSearch.Location = new System.Drawing.Point(214, 34);
             this.buttonDepartSearch.Name = "buttonDepartSearch";
-            this.buttonDepartSearch.Size = new System.Drawing.Size(52, 20);
+            this.buttonDepartSearch.Size = new System.Drawing.Size(74, 30);
             this.buttonDepartSearch.TabIndex = 32;
             this.buttonDepartSearch.Text = "검색";
             this.buttonDepartSearch.UseVisualStyleBackColor = true;
@@ -176,21 +171,18 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.textBoxMemberName);
-            this.groupBox3.Location = new System.Drawing.Point(568, 43);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(811, 64);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(170, 347);
+            this.groupBox3.Size = new System.Drawing.Size(243, 520);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "(수정 list)";
             // 
             // buttonFixComplete
             // 
-            this.buttonFixComplete.Location = new System.Drawing.Point(50, 317);
-            this.buttonFixComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFixComplete.Location = new System.Drawing.Point(71, 476);
             this.buttonFixComplete.Name = "buttonFixComplete";
-            this.buttonFixComplete.Size = new System.Drawing.Size(74, 21);
+            this.buttonFixComplete.Size = new System.Drawing.Size(106, 32);
             this.buttonFixComplete.TabIndex = 34;
             this.buttonFixComplete.Text = "수정완료";
             this.buttonFixComplete.UseVisualStyleBackColor = true;
@@ -199,177 +191,159 @@
             // comboBoxDepartment
             // 
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(75, 178);
-            this.comboBoxDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(107, 267);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
-            this.comboBoxDepartment.Size = new System.Drawing.Size(73, 20);
+            this.comboBoxDepartment.Size = new System.Drawing.Size(103, 26);
             this.comboBoxDepartment.TabIndex = 32;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 178);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(19, 267);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 12);
+            this.label5.Size = new System.Drawing.Size(86, 18);
             this.label5.TabIndex = 31;
             this.label5.Text = "소속부서:";
             // 
             // numericUpDownAge
             // 
-            this.numericUpDownAge.Location = new System.Drawing.Point(75, 103);
-            this.numericUpDownAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownAge.Location = new System.Drawing.Point(107, 154);
             this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(72, 21);
+            this.numericUpDownAge.Size = new System.Drawing.Size(103, 28);
             this.numericUpDownAge.TabIndex = 30;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(75, 288);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAddress.Location = new System.Drawing.Point(107, 432);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(73, 20);
+            this.textBoxAddress.Size = new System.Drawing.Size(103, 28);
             this.textBoxAddress.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 288);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(29, 432);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 12);
+            this.label8.Size = new System.Drawing.Size(56, 18);
             this.label8.TabIndex = 14;
             this.label8.Text = "주소 :";
             // 
             // textBoxPhoneNum
             // 
-            this.textBoxPhoneNum.Location = new System.Drawing.Point(75, 253);
-            this.textBoxPhoneNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPhoneNum.Location = new System.Drawing.Point(107, 380);
             this.textBoxPhoneNum.Multiline = true;
             this.textBoxPhoneNum.Name = "textBoxPhoneNum";
-            this.textBoxPhoneNum.Size = new System.Drawing.Size(73, 20);
+            this.textBoxPhoneNum.Size = new System.Drawing.Size(103, 28);
             this.textBoxPhoneNum.TabIndex = 13;
             // 
             // comboBoxMemberGender
             // 
             this.comboBoxMemberGender.FormattingEnabled = true;
-            this.comboBoxMemberGender.Location = new System.Drawing.Point(75, 64);
-            this.comboBoxMemberGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMemberGender.Location = new System.Drawing.Point(107, 96);
             this.comboBoxMemberGender.Name = "comboBoxMemberGender";
-            this.comboBoxMemberGender.Size = new System.Drawing.Size(73, 20);
+            this.comboBoxMemberGender.Size = new System.Drawing.Size(103, 26);
             this.comboBoxMemberGender.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(29, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 12);
+            this.label2.Size = new System.Drawing.Size(56, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "성별 :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 253);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(19, 380);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 12);
+            this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 12;
             this.label7.Text = "연락처 :";
             // 
             // textBoxDate
             // 
-            this.textBoxDate.Location = new System.Drawing.Point(75, 214);
-            this.textBoxDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDate.Location = new System.Drawing.Point(107, 321);
             this.textBoxDate.Multiline = true;
             this.textBoxDate.Name = "textBoxDate";
-            this.textBoxDate.Size = new System.Drawing.Size(73, 20);
+            this.textBoxDate.Size = new System.Drawing.Size(103, 28);
             this.textBoxDate.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 216);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(19, 324);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 12);
+            this.label6.Size = new System.Drawing.Size(74, 18);
             this.label6.TabIndex = 10;
             this.label6.Text = "입사일 :";
             // 
             // comboBoxPosition
             // 
             this.comboBoxPosition.FormattingEnabled = true;
-            this.comboBoxPosition.Location = new System.Drawing.Point(75, 141);
-            this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxPosition.Location = new System.Drawing.Point(107, 212);
             this.comboBoxPosition.Name = "comboBoxPosition";
-            this.comboBoxPosition.Size = new System.Drawing.Size(73, 20);
+            this.comboBoxPosition.Size = new System.Drawing.Size(103, 26);
             this.comboBoxPosition.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 143);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(29, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 12);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "직급 :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 103);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(29, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 12);
+            this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "나이 :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(29, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 12);
+            this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "이름 :";
             // 
             // textBoxMemberName
             // 
-            this.textBoxMemberName.Location = new System.Drawing.Point(75, 27);
-            this.textBoxMemberName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMemberName.Location = new System.Drawing.Point(107, 40);
             this.textBoxMemberName.Multiline = true;
             this.textBoxMemberName.Name = "textBoxMemberName";
-            this.textBoxMemberName.Size = new System.Drawing.Size(73, 20);
+            this.textBoxMemberName.Size = new System.Drawing.Size(103, 28);
             this.textBoxMemberName.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("돋움체", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(139, 381);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(199, 572);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(245, 11);
+            this.label10.Size = new System.Drawing.Size(328, 16);
             this.label10.TabIndex = 40;
             this.label10.Text = "(삭제를 원하시면 우클릭으로 선택하세요.)";
             // 
             // FormAgePersonnel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 398);
+            this.ClientSize = new System.Drawing.Size(1089, 597);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxInput);
             this.Controls.Add(this.buttonDepartSearch);
             this.Controls.Add(this.listViewDepartmentType);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormAgePersonnel";
             this.Text = "나이별";
             this.groupBox3.ResumeLayout(false);

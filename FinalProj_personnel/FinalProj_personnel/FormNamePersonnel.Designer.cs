@@ -124,9 +124,9 @@
             this.label9.Font = new System.Drawing.Font("돋움", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(323, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(195, 16);
+            this.label9.Size = new System.Drawing.Size(89, 16);
             this.label9.TabIndex = 37;
-            this.label9.Text = "(이름으로 본인 바로 검색)";
+            this.label9.Text = "(바로 검색)";
             // 
             // textBoxInput
             // 
