@@ -680,7 +680,7 @@ namespace FinalProj_personnel
                 {
                     string str1 = string.Format("{0}", rdr["Approval_writer"]);
                     string str2 = string.Format("{0}", rdr["Approval_rank"]);
-                    if (str1.Equals(name) && str2.Equals(state1) || str2.Equals(state2))
+                    if (str1.Equals(name) && (str2.Equals(state1) || str2.Equals(state2)))
                     {
                         i++;
                     }
@@ -705,7 +705,7 @@ namespace FinalProj_personnel
                 {
                     string str1 = string.Format("{0}", rdr["Approval_writer"]);
                     string str2 = string.Format("{0}", rdr["Approval_rank"]);
-                    if (str1.Equals(name) && str2.Equals(state1) || str2.Equals(state2))
+                    if (str1.Equals(name) && (str2.Equals(state1) || str2.Equals(state2)))
                     {
                         str[i] = string.Format("{0}", rdr["Approval_name"]);
                         i++;

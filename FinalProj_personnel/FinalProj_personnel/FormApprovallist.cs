@@ -12,8 +12,8 @@ namespace FinalProj_personnel
 {
     public partial class FormApprovallist : Form
     {
-        public string name = "홍길동";
-        public string rank = "부서장";
+        public string name = "";
+        public string rank = "";
         // 결재 로그
         // 결재 승인, 반려
 
